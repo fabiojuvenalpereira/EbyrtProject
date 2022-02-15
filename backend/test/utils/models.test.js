@@ -2,9 +2,6 @@ const frisby = require('frisby');
 
 describe('')
 
-
-
-
 // testar a conexão com o backend
 
 // quero testar se é possivel fazer uma requisição de post
