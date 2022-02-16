@@ -6,14 +6,14 @@ export const tasksSlice = createSlice({
     createTask: '',
     removeTask: null,
   },
-  reducers: {
-    addTask: (state, action) => {
+  // reducers: {
+  //   addTask: (state, action) => {
 
-    },
-    removeTask: (state, action) => {
+  //   },
+  //   removeTask: (state, action) => {
 
-    },
-  },
+  //   },
+  // },
 });
 
 export const { addTask, removeTask } = tasksSlice.actions
