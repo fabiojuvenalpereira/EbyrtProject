@@ -2,7 +2,7 @@ const BaseJoi = require('joi');
 const JoiDate = require('@hapi/joi-date');
 const Joi = BaseJoi.extend(JoiDate);
 
-const dateFormat = `${ Date.now }`;
+const dateFormat = `DD-MM-YYYY HH:mm:ss`;
 
 const SCHEMA = Joi.object ({
   userName: Joi.string().required(),
