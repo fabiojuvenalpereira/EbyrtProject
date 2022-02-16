@@ -1,10 +1,10 @@
 const sinon = require('sinon');
-const { expect } = require('chai').expect;
+const { expect } = require('chai');
 const { MongoClient } = require('mongodb');
 
 const { dbConnection } = require('./utils/mockConnection');
 const { mockTask } = require('./utils/mockTask')
-const tasksModel = require('../src/models/taskModel');
+const tasksModel = require('../src/models/task.model');
 
 describe('Quando adiciona uma nova task no banco de dados', () => {
   let connectionMock;
@@ -23,11 +23,12 @@ describe('Quando adiciona uma nova task no banco de dados', () => {
 
   it('retorna um objeto, com as informações da task criada', async () => {
     await tasksModel.createTask(mockTask);
+
     const taskCreated = await connectionMock
       .db('ebytr')
       .collection('tasks')
       .find({ userName: mockTask.userName });
       
-    expect((taskCreated).to.be.not.null);
+    expect(taskCreated).to.have.property('id');
   })
 });
