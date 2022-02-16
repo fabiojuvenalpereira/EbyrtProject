@@ -16,7 +16,7 @@ const findAllTasks = async (_req, res, next) => {
     const foundTasks = await tasksServices.findAllTasks();
     return res.status(foundTasks.status).json(foundTasks.content);
   } catch (error) {
-    console.log();
+    console.log(error);
     next(error);
   }
 };
@@ -28,7 +28,18 @@ const deleteTask = async (req, res, next) => {
     const deleted = await tasksServices.deleteTask(id);
     return res.status(deleted.status).json(deleted.content);
   } catch (error) {
-    console.log();
+    console.log(error);
+    next(error);
+  }
+}
+
+const updateTask = async (req, res, next) => {
+  const {_id, taskContent, status, date } = req.body;
+  try {
+    const deleted = await tasksServices.updateTask(_id, taskContent, status, date);
+    return res.status(deleted.status).json(deleted.content);
+  } catch (error) {
+    console.log(error);
     next(error);
   }
 }
@@ -37,4 +48,5 @@ module.exports = {
   createTask,
   findAllTasks,
   deleteTask,
+  updateTask,
 };

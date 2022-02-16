@@ -2,11 +2,10 @@ const connection = require('./connection');
 
 const createTask = async (userTask) => {
   const conn = await connection();
-  const { insertedId: id } = await conn.collection('tasks').insertOne({userTask});
+  await conn.collection('tasks').insertOne(userTask);
 
-  return { id, ...userTask };
+  return { ...userTask };
 };
-
 
 const getAllTasks = async () => {
   const conn = await connection();
@@ -20,8 +19,26 @@ const deleteTask = async (taskId) => {
   return deleted;
 }
 
+const updateTask = async (userId, taskContent, status, date) => {
+  const conn = await connection();
+  const updatedTask = await conn.collection('tasks').findOneAndUpdate(
+    { _id: userId },
+    { $set: { taskContent, date, status } },
+    { returnOriginal: false },
+  );
+  return updatedTask.value;
+}
+
+const findByName = async (name) => {
+  const conn = await connection();
+  const foundTask = await conn.collection('tasks').findOne({name});
+  return foundTask;
+};
+
 module.exports = {
   createTask,
   getAllTasks,
   deleteTask,
+  updateTask,
+  findByName,
 }

@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb');
 const BaseJoi = require('joi');
 const JoiDate = require('@hapi/joi-date');
 const Joi = BaseJoi.extend(JoiDate);
@@ -12,7 +13,7 @@ const SCHEMA = Joi.object ({
 });
 
 
-const validateTaskEntries =  async ({ userName, taskContent, date, status }) => {
+const validateTaskEntries =  async ({ userName, taskContent, status, date }) => {
   const isValid = SCHEMA.validate({ userName, taskContent, date, status });
   if (isValid.error) {
     return {
@@ -23,7 +24,9 @@ const validateTaskEntries =  async ({ userName, taskContent, date, status }) => 
 
 }
 
+const convertId = (id) => ObjectId(id);
 
 module.exports = {
   validateTaskEntries,
+  convertId,
 };
