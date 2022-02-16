@@ -13,7 +13,6 @@ const SCHEMA = Joi.object ({
 
 
 const validateTaskEntries =  async ({ userName, taskContent, date, status }) => {
-  console.log(date);
   const isValid = SCHEMA.validate({ userName, taskContent, date, status });
   if (isValid.error) {
     return {

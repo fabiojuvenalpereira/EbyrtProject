@@ -19,9 +19,22 @@ const findAllTasks = async (_req, res, next) => {
     console.log();
     next(error);
   }
+};
+
+
+const deleteTask = async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const deleted = await tasksServices.deleteTask(id);
+    return res.status(deleted.status).json(deleted.content);
+  } catch (error) {
+    console.log();
+    next(error);
+  }
 }
 
 module.exports = {
   createTask,
   findAllTasks,
+  deleteTask,
 };
