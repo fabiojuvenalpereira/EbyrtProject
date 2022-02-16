@@ -29,9 +29,9 @@ const updateTask = async (userId, taskContent, status, date) => {
   return updatedTask.value;
 }
 
-const findByName = async (name) => {
+const findTaskById = async (id) => {
   const conn = await connection();
-  const foundTask = await conn.collection('tasks').findOne({name});
+  const foundTask = await conn.collection('tasks').findOne({ _id : id });
   return foundTask;
 };
 
@@ -40,5 +40,5 @@ module.exports = {
   getAllTasks,
   deleteTask,
   updateTask,
-  findByName,
+  findTaskById,
 }

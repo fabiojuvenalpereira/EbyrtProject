@@ -24,9 +24,13 @@ const validateTaskEntries =  async ({ userName, taskContent, status, date }) => 
 
 }
 
-const convertId = (id) => ObjectId(id);
+const idConvertedAndValid = (id) => {
+  if (id && ObjectId.isValid(id)) {
+    return ObjectId(id)
+  }
+};
 
 module.exports = {
   validateTaskEntries,
-  convertId,
+  idConvertedAndValid,
 };
