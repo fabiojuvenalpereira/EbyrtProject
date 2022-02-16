@@ -10,9 +10,8 @@ const createTask = async (userTask) => {
 
 const getAllTasks = async () => {
   const conn = await connection();
-  const foundTasks = await conn.collection('tasks').find({});
-  
-  return { foundTasks };
+  const foundTasks = await conn.collection('tasks').find({}).toArray();
+  return foundTasks ;
 }
 
 module.exports = {

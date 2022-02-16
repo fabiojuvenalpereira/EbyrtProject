@@ -2,7 +2,7 @@ const BaseJoi = require('joi');
 const JoiDate = require('@hapi/joi-date');
 const Joi = BaseJoi.extend(JoiDate);
 
-const dateFormat = `DD-MM-YYYY HH:mm:ss`;
+const dateFormat = `DD/MM/YYYY-HH:mm:ss`;
 
 const SCHEMA = Joi.object ({
   userName: Joi.string().required(),
@@ -13,6 +13,7 @@ const SCHEMA = Joi.object ({
 
 
 const validateTaskEntries =  async ({ userName, taskContent, date, status }) => {
+  console.log(date);
   const isValid = SCHEMA.validate({ userName, taskContent, date, status });
   if (isValid.error) {
     return {
