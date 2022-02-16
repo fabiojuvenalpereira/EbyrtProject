@@ -11,8 +11,8 @@ const OPTIONS = {
 
 const connection = () => mongodb
     .connect(MONGO_DB_URL, OPTIONS).then((connection) => connection.db(DB_NAME))
-    .catch((err) => {
-      console.error(err);
+    .catch((error) => {
+      console.error(error);
       process.exit(1);
     }
 );
