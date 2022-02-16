@@ -14,7 +14,14 @@ const getAllTasks = async () => {
   return foundTasks ;
 }
 
+const deleteTask = async (taskId) => {
+  const conn = await connection();
+  const deleted = await conn.collection('tasks').deleteOne({ _id: taskId });
+  return deleted;
+}
+
 module.exports = {
   createTask,
   getAllTasks,
+  deleteTask,
 }
