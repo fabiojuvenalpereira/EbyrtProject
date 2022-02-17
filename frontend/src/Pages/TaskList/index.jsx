@@ -1,14 +1,16 @@
 import React from 'react'
 
+import CreateTask from '../../components/CreateTask';
+import ToDoList from '../../components/ToDoList'
+
 function TaskList() {
   return (
     <div className="main-taskList-Page">
-      
+      <div className='create-task'>
+        <CreateTask />
+      </div>
       <div className="task-list">
-        <div>Task1</div>  
-        <div>Task1</div>  
-        <div>Task1</div>  
-        <div>Task1</div>  
+        <ToDoList />
       </div>
     </div>
   )
