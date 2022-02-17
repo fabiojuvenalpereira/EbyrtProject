@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests/**/*$NAME*.test.js --exit",
+    "test": "nyc mocha ./tests/**/*$NAME*.test.js --exit ",
     "start": "node src/api/server.js",
     "dev": "nodemon src/api/server.js"
   },
@@ -16,7 +16,8 @@
     "eslint": "^8.9.0",
     "jest": "^27.5.1",
     "mongodb-memory-server": "^6.9.6",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "nyc": "^15.1.0"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
