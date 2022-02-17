@@ -2,6 +2,7 @@ const connection = require('./connection');
 
 const createTask = async (userTask) => {
   const conn = await connection();
+  console.log(userTask);
   await conn.collection('tasks').insertOne(userTask);
 
   return { ...userTask };
