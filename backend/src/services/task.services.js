@@ -1,15 +1,15 @@
 const taskModel = require('../models/task.model');
 const { validateTaskEntries, idConvertedAndValid } = require('./utils');
 
-const createTask = async (userName, taskContent, date, status) => {
-  const taskUser =  { userName, taskContent, date, status };
+const createTask = async (userName, taskContent, date, statusTask) => {
+  const taskUser =  { userName, taskContent, date, statusTask };
   
   const notIsValid = await validateTaskEntries(taskUser);
   if (notIsValid) return { status: notIsValid.status, content: { message: notIsValid.message }}
 
   
   const createdTask = await taskModel.createTask(taskUser)
-  return { status: 200, content: createdTask }
+  return { status: 201, content: createdTask }
 };
 
 const findAllTasks = async () => {

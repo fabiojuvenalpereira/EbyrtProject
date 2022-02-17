@@ -1,9 +1,9 @@
 const tasksServices = require('../services/task.services');
 
 const createTask = async (req, res, next) => {
-  const { userName, taskContent, date, status } = req.body;
+  const { userName, taskContent, date, statusTask } = req.body;
   try {
-    const createdTask = await tasksServices.createTask(userName, taskContent, date, status);
+    const createdTask = await tasksServices.createTask(userName, taskContent, date, statusTask);
     return res.status(createdTask.status).json(createdTask.content);
   } catch (error) {
     console.log(error);

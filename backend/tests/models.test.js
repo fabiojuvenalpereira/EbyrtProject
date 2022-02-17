@@ -6,7 +6,7 @@ const { dbConnection } = require('./utils/mockConnection');
 const { mockTask } = require('./utils/mockTask')
 const tasksModel = require('../src/models/task.model');
 
-describe('Quando adiciona uma nova task no banco de dados', () => {
+describe('Camada model: task create', () => {
   let connectionMock;
 
   before(async () => {
@@ -19,16 +19,17 @@ describe('Quando adiciona uma nova task no banco de dados', () => {
     await connectionMock.db('ebytr').collection('tasks').drop();
     MongoClient.connect.restore();
   })
-
-
-  it('retorna um objeto, com as informações da task criada', async () => {
+  
+  it('retorna um objeto, com que possui um id da task criada', async () => {
     await tasksModel.createTask(mockTask);
 
-    const taskCreated = await connectionMock
+    const createTask = await connectionMock
       .db('ebytr')
       .collection('tasks')
       .find({ userName: mockTask.userName });
       
-    expect(taskCreated).to.have.property('id');
+    expect(createTask).to.have.property('id');
   })
 });
+
+
