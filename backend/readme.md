@@ -28,11 +28,12 @@ Copie o ssh do projeto `git@github.com:fabiojuvenalpereira/EbytrProject.git`
 
   A aplicação está configurada para rodar na porta local 3000.
 
-## Back-end
 
-A API consta com 4 rotas: 
+## Backend
+
+A API consta com 4 requisições: 
   * `/` [`POST`] Cria uma nova tarefa e adiciona no banco
   * `/` [`GET`] Busca toda tarefa que esta no banco
   * `/` [`PUT`]  Edita dados de uma tarefa já cadastrada no banco
-  * `/` [`DELETE`] Deleta uma tarefa cadastrada no banco
+  * `/:id` [`DELETE`] Deleta uma tarefa cadastrada no banco
 
