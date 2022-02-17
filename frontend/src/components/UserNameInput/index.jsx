@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../App/slices/tasks/tasksSlice';
 
+import './UserNameInput.css';
 
 function InputName() {
   const navigate = useNavigate();
@@ -32,19 +33,22 @@ function InputName() {
   }
 
   return (
-    <div>
+    <div className='main-input'>
       <form onSubmit={handleSubmit}>
         <div className='input-text'>
           <label htmlFor='textInput' >
             <input
               type="text"
               name="textIput"
+              className='input-text-bar'
               value={inputText}
               onChange={ handleChange }
             />
           </label>
         </div>
-        <div onClick={handleClick}>
+        <div
+          className='enter-button'
+          onClick={handleClick}>
           entrar
         </div>
       </form>
