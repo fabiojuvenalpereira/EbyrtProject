@@ -1,0 +1,64 @@
+.main-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+}
+
+.main-tasks-box {
+  background-color: rgb(35, 69, 216);
+}
+
+.task-title-box {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 1em;
+}
+
+.task-title {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  width: 70vw;
+}
+
+.task-content-box {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+}
+
+.task-content-box-static {
+  align-items: center;
+  background-color: rgb(133, 146, 146);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+  margin: 0.5em;
+}
+
+.task-section {
+  padding: 0.8em;
+}
+
+.task-status-button {
+  max-width: 100px;
+  flex-grow: 1;
+  border-radius: 10px;
+  padding: 0.8em;
+}
+
+.progress {
+  background-color: rgb(241, 218, 7);
+}
+
+.done {
+  background-color: rgb(81, 241, 7);
+}
+
+.pending {
+  background-color: rgb(241, 7, 7);
+}
+
