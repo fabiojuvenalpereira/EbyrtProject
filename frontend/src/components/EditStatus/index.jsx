@@ -17,8 +17,8 @@ function EditStatus() {
 
   const handleClick = async (button) => {
     console.log(button.target.value);
-    await request(data);
     dispatch(setStatus(false));
+    await request(data);
   }
 
   return (

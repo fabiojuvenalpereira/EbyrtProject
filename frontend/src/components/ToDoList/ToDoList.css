@@ -6,7 +6,10 @@
 }
 
 .main-tasks-box {
-  background-color: rgb(35, 69, 216);
+  background-color: rgba(207, 207, 207, 0.205);
+  box-shadow: 4px 5px 13px 1px rgba(0, 0, 0, 0.123);
+  border-radius: 10px;
+  padding: 1em;
 }
 
 .task-title-box {

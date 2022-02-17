@@ -1,3 +1,4 @@
+import axios from 'axios';
 const URL = 'http://localHost:3001';
 
 export async function fetchTasks() {
@@ -8,15 +9,6 @@ export async function fetchTasks() {
 }
 
 export async function request(data) {
-  const USER_DATE= data;
-  const METHOD = {
-    method: `POST`,
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(USER_DATE)
-  }
-
-  const response = await fetch(`${URL}`, METHOD);
+  const response = await axios.post(URL, data);
   console.log(response);
 }
