@@ -22,7 +22,7 @@ Copie o ssh do projeto `git@github.com:fabiojuvenalpereira/EbytrProject.git`
 * Abra um terminal no seu computador e utilize os comandos a baixo na ordem que são apresentados:
 
   * `git clone git@github.com:fabiojuvenalpereira/EbytrProject.git`
-  * `cd Projeto_To_Do_Ebyrt`
+  * `cd EbytrProject`
   * `npm install`
   * `npm start`
 
