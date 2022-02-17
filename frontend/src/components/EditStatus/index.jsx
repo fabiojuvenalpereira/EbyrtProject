@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import './EditStatus.css';
+import { setStatus } from '../../App/slices/tasks/tasksSlice';
+
 
 function EditStatus() {
+  const dispatch = useDispatch()
+
   const handleClick = (button) => {
+    dispatch(setStatus(false));
     console.log(button.target.value);
   }
 

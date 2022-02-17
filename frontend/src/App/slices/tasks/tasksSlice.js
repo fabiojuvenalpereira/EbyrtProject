@@ -17,7 +17,6 @@ export const tasksSlice = createSlice({
     },
 
     setStatus: (state, action) => {
-      console.log('aqui');
       state.status = action.payload
     }
   },
