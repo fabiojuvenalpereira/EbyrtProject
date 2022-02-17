@@ -1,13 +1,18 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react'
-
 import { fetchTasks } from '../../api/'
+
+import { useDispatch } from 'react-redux'
+
+import { selectedTask, setStatus } from '../../App/slices/tasks/tasksSlice';
 import './ToDoList.css';
 
 function ToDoList() {
   const [tasks, setTasks] = useState([]);
   
+  const dispatch = useDispatch();
+
   useEffect(async () => {
     const response = await fetchTasks();
     setTasks(response)
@@ -26,8 +31,12 @@ function ToDoList() {
     }
   };
 
-  const handleClick = (task) => {
-    console.log(task);
+  const handleClick = (button, task) => {
+    const { target } = button;
+    if (target.id === 'status') {
+      dispatch(setStatus(true));
+      dispatch(selectedTask(task))
+    }
   }
 
   return (
@@ -42,14 +51,15 @@ function ToDoList() {
           <div key={task._id} className="task-content-box">
             <div
               className="task-content-box-static"
-              onClick={ () => handleClick(task) }
+              onClick={ (button) => handleClick(button, task) }
               >
               <div className='task-section'>{task.taskContent}</div>
               <div className='task-section'>{task.date}</div>
             </div>
             <div
-              className={`task-button ${task.status}`}
-              onClick={() => handleClick(task)}
+              id='status'
+              className={`task-status-button ${task.status}`}
+              onClick={(button) => handleClick(button, task)}
               >
               {statusConversion(task.status)}
             </div>
