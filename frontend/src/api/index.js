@@ -7,16 +7,16 @@ export async function fetchTasks() {
   return data;
 }
 
-export async function request(data, methodRequest) {
+export async function request(data) {
   const USER_DATE= data;
   const METHOD = {
-    method: `${methodRequest}`,
+    method: `POST`,
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(USER_DATE)
   }
 
-  const response = await fetch(`${URL}/createTask`, METHOD);
+  const response = await fetch(`http://localhost:3000/createTask`, METHOD);
   console.log(response);
 }

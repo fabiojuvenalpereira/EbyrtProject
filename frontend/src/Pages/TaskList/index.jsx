@@ -10,10 +10,7 @@ import './TaskList.css';
 
 
 function TaskList() {
-  // const selectedTask = useSelector((state) => state.tasksState.value);
   const status = useSelector((state) => state.tasksState.status);
-
-  console.log(status);
 
   return (
     <div className="main-taskList-Page">

@@ -1,10 +1,18 @@
 const generateDate = () => {
-  return 
+  const date=new Date();
+  const dia=date.getDate();
+  const mes=date.getMonth()+1;
+  const ano=date.getFullYear();
+  const h=date.getUTCHours()-3;
+  const m=date.getMinutes();
+  const s=date.getSeconds();
+
+  const fullDate = (`${dia}/${mes}/${ano} - ${h}:${m}:${s}`)
+  return fullDate;
 };
 
-const generateObjectToSend = (_id, userName, taskContent, status) => {
+const generateObjectToSend = (userName, taskContent, status) => {
   const data = {
-    _id,
     userName,
     taskContent,
     date: generateDate(),

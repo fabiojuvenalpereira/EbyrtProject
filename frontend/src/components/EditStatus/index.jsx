@@ -1,16 +1,24 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './EditStatus.css';
 import { setStatus } from '../../App/slices/tasks/tasksSlice';
-
+import { request } from '../../api';
 
 function EditStatus() {
+  const selectedTask = useSelector((state) => state.tasksState.selectedTask)
   const dispatch = useDispatch()
 
-  const handleClick = (button) => {
-    dispatch(setStatus(false));
+  const data = {
+    userName: selectedTask.userName,
+    taskContent: selectedTask.taskContent,
+    status: selectedTask.status,
+  }
+
+  const handleClick = async (button) => {
     console.log(button.target.value);
+    await request(data);
+    dispatch(setStatus(false));
   }
 
   return (
