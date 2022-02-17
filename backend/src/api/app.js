@@ -7,6 +7,7 @@ const PERMITED_URL = process.env.APLICATION_URL || 'http://localhost:3000'
 
 app.use(cors({
   origin: PERMITED_URL,
+  methods: ['POST', 'PUT', 'DELETE', 'GET'],
 }))
 
 app.use(express.json());

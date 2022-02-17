@@ -9,12 +9,12 @@ const SCHEMA = Joi.object ({
   userName: Joi.string().required(),
   taskContent: Joi.string().required(),
   date: Joi.date().format(dateFormat).required().error( new Error('Invalid Date')),
-  status: Joi.string().required(),
+  statusTask: Joi.string().required(),
 });
 
 
-const validateTaskEntries =  async ({ userName, taskContent, status, date }) => {
-  const isValid = SCHEMA.validate({ userName, taskContent, date, status });
+const validateTaskEntries =  async ({ userName, taskContent, statusTask, date }) => {
+  const isValid = SCHEMA.validate({ userName, taskContent, date, statusTask });
   if (isValid.error) {
     return {
       status: 400,
