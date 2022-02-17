@@ -17,6 +17,6 @@ export async function request(data) {
     body: JSON.stringify(USER_DATE)
   }
 
-  const response = await fetch(`http://localhost:3000/createTask`, METHOD);
+  const response = await fetch(`${URL}/`, METHOD);
   console.log(response);
 }

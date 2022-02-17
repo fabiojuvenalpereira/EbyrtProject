@@ -1,0 +1,26 @@
+.main-content-input-task {
+}
+
+.main-content-form {
+  align-items: center;
+  display: flex;
+  margin: auto;
+  width: 80vw;
+}
+
+.create-task-input {
+  flex-grow: 1;
+}
+
+.create-task-input input {
+  border: none;
+  background-color: rgb(208, 216, 216);
+  border-radius: 10px;
+  padding: 0.5em;
+  width: 100%;
+};
+
+.create-button-label {
+  background-color: red;
+  padding: 1em;
+}

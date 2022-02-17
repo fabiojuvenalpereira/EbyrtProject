@@ -1,27 +1,36 @@
-import React from 'react'
+import React from 'react';
 import { useEffect } from 'react';
-import { useState } from 'react'
+// import { useEffect } from 'react';
+import { useState } from 'react';
+
+import generateObjectToSend from '../../services/requestData';
+import './CreateTask.css';
 
 function CreateTask() {
-  const [text,setText] = useState('');
+  const [text, setText] = useState('');
   const [task, setTask] = useState('');
-  
+
+  const initialStatus = 'pending';
+
+  useEffect(() => {
+    setTask(text)
+  },[text]);
+
   const handleChange = ({ target }) => {
     setText(target.value);
-  }
+  };
 
   const handleClick = () => {
     setTask(text)
-  }
-
-  useEffect(()=> {
-    console.log(text);
-  }, [task])
+    const userName = JSON.parse(localStorage.getItem('userName'));
+    generateObjectToSend(userName, task, initialStatus);
+    //fazer request de post para criar.
+  };
 
   return (
     <div className="main-content-input-task">
       <form action="post">
-          <div className="main-content-form">
+        <div className="main-content-form">
           <label htmlFor="create-task-input" className="create-task-input">
             <input
               type="text"
@@ -31,18 +40,21 @@ function CreateTask() {
             />
           </label>
           <div>
-            <label htmlFor="create-task-button">
+            <label htmlFor="create-task-button" className="create-button-label">
               <button
                 type="button"
                 name="create-task-button"
+                className="create-button"
                 onClick={handleClick}
-              >create task</button>
+              >
+                create task
+              </button>
             </label>
           </div>
         </div>
       </form>
     </div>
-  )
+  );
 }
 
-export default CreateTask
+export default CreateTask;
