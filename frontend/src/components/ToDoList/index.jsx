@@ -26,7 +26,10 @@ function ToDoList() {
     }
   };
 
-  
+  const handleClick = (task) => {
+    console.log(task);
+  }
+
   return (
     <div className="main-content">
       <div className="task-title-box">
@@ -36,13 +39,17 @@ function ToDoList() {
       </div>
       <div className="main-tasks-box">
         { tasks.map((task) => (
-          <div key={task.id} className="task-content-box">
-            <div className="task-content-box-static">
+          <div key={task._id} className="task-content-box">
+            <div
+              className="task-content-box-static"
+              onClick={ () => handleClick(task) }
+              >
               <div className='task-section'>{task.taskContent}</div>
               <div className='task-section'>{task.date}</div>
             </div>
             <div
               className={`task-button ${task.status}`}
+              onClick={() => handleClick(task)}
               >
               {statusConversion(task.status)}
             </div>

@@ -1,5 +1,6 @@
 import React from 'react'
-import ImputText from '../../components/InputText';
+
+import UserNameInput from '../../components/UserNameInput';
 
 function Home() {
   return (
@@ -10,7 +11,7 @@ function Home() {
           <p>TO DO LIST</p>
         </div>
         <div className="input-text">
-          <ImputText />
+          <UserNameInput />
         </div>
       </div>
     </div>
