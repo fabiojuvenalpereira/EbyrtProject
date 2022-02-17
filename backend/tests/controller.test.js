@@ -50,12 +50,24 @@ describe('Camada Controller: task create', () => {
           .send(mockTask);
       });
 
-      it('retorna o status 201',() => {
-        expect(response.body).to.have.status(201);
+      it('espera que tenha a propriedade "userName"',() => {
+        expect(response.body).to.have.property('userName');
+      });
+      
+      it('espera que tenha a "taskContent" ',() => {
+        expect(response.body).to.have.property('taskContent');
       });
 
-      it('espera que tenha a propriedade userName',() => {
-        expect(response.body).to.have.property('userName');
+      it('espera que tenha a propriedade "date"',() => {
+        expect(response.body).to.have.property('date');
+      });
+
+      it('espera que tenha a propriedade "statusTask"',() => {
+        expect(response.body).to.have.property('statusTask');
+      });
+
+      it('retorna o status 201',() => {
+        expect(response).to.have.status(201);
       });
 
     });
