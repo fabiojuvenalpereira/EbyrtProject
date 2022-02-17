@@ -12,11 +12,16 @@ function ToDoList() {
     const response = await fetchTasks();
     console.log(response);
     setTasks(response)
-  }, [tasks]);
+  },[]);
   
   return (
-    <div>
-
+    <div className="main-content">
+      <div>
+        { tasks.map((task) => {
+          <div key={task.id}>task.id</div>
+          })
+        }
+      </div>
     </div>
   )
 }
