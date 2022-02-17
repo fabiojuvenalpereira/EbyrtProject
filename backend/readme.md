@@ -30,6 +30,8 @@ Copie o ssh do projeto `git@github.com:fabiojuvenalpereira/EbytrProject.git`
 
 
 ## Backend
+Desenho simplificado de como os dados são armazenados no banco de dados.
+![exemplo de armazenamento de dados](https://thumbs2.imgbox.com/34/65/NYJLq8at_t.png)
 
 A API consta com 4 requisições: 
   * `/` [`POST`] Cria uma nova tarefa e adiciona no banco
