@@ -11,12 +11,12 @@ const generateDate = () => {
   return fullDate;
 };
 
-const generateObjectToSend = (userName, taskContent, status) => {
+const generateObjectToSend = async (userName, taskContent, statusTask) => {
   const data = {
     userName,
     taskContent,
-    date: generateDate(),
-    status,
+    date: await generateDate(),
+    statusTask,
   };
 
   return data
