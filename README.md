@@ -86,7 +86,7 @@
 Para conseguir instalar e fazer com que o código rode no seu computador, você vai precisar seguir alguns
 requisitos.
 
-Primeiro você precisará de ter os softwares utilizados para criar instalados em sua máquina, mas não se preocupe você poderá encontrá-los [aqui](#softwares-utilizados). As versões dos softwares que utilizei, estão logo ao final da síntese, contidas em colchetes assim como neste exemplo: **[1.64.2]**.
+Primeiro você precisará de ter os softwares utilizados para criar instalados em sua máquina, mas não se preocupe você poderá encontrá-los na seção de softwares e ferramentas utilizadas, que é esta [aqui](#softwares-e-ferramentas-utilizadas). As versões dos softwares que utilizei, estão logo ao final da síntese, contidas entre colchetes assim como neste exemplo: **[1.64.2]**.
 
 Tendo os softwares instalados em sua  máquina você precisará realizar os seguintes passos
 ####
