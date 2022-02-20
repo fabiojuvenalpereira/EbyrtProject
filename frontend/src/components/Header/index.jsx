@@ -1,21 +1,34 @@
-import React from 'react'
+import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
+import './Header.css';
 
 function Header() {
-  const [userName, setUserName ] = useState('');
-  
+  const user = useSelector((state) => state.tasksState.user);
+
+  const [userName, setUserName] = useState('');
+
   useEffect(() => {
-    const foundUsername = JSON.parse(localStorage.getItem('userName'));
-    setUserName(foundUsername)
-  }, [])  
+    const userFromLocalStorage = JSON.parse(localStorage.getItem('user'));
+    setUserName(user !== null ? user : userFromLocalStorage);
+  }, [user]);
 
   return (
-    <div>
-      <div>Header</div>
-      <div>{userName}</div>
+    <div className="main-header-content">
+
+      <div className="title-header-content">
+        <p>TO DO LIST</p>
+      </div>
+
+      <div className="user-header-content">
+        NAME:
+        <div className="user-header-content-name">{userName}</div>
+      </div>
+
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

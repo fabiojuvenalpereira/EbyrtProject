@@ -1,11 +1,8 @@
-.main-content-input-task {
-}
-
 .main-content-form {
   align-items: center;
   display: flex;
   margin: auto;
-  width: 80vw;
+  width: 50vw;
 }
 
 .create-task-input {
@@ -13,14 +10,14 @@
 }
 
 .create-task-input input {
-  border: none;
   background-color: rgb(208, 216, 216);
+  border: none;
   border-radius: 10px;
+  height: 2em;
   padding: 0.5em;
   width: 100%;
 };
 
 .create-button-label {
-  background-color: red;
   padding: 1em;
 }

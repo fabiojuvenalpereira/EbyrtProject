@@ -3,11 +3,11 @@ const generateDate = () => {
   const dia=date.getDate();
   const mes=date.getMonth()+1;
   const ano=date.getFullYear();
-  const h=date.getUTCHours()-3;
+  const h=date.getHours();
   const m=date.getMinutes();
   const s=date.getSeconds();
 
-  const fullDate = (`${dia}/${mes}/${ano} - ${h}:${m}:${s}`)
+  const fullDate = (`${dia}/${mes}/${ano} - ${h}:${m}:${s}`);
   return fullDate;
 };
 
