@@ -96,10 +96,10 @@ Tendo os softwares instalados em sua  máquina você precisará realizar os segu
 
 ## COMO FUNCIONA
 #####  Desenho simbólico do armazenamento de dados realizado no banco de dados:
-| _id |userName |task              | date                 |
-|-----|---------|------------------|----------------------|
-| 1   | teste   | do anything      | 14/02/2022 - 14:00:01| 
-| 2   | teste   | do anything again| 14/02/2022 - 14:00:01| 
+| _id |userName |task                   | date                  |
+|-----|---------|-----------------------|-----------------------|
+| 1   | Xablau  | Beber água            | 14/02/2022 - 14:00:01 | 
+| 2   | Xablau 	| Terminar a série      | 14/02/2022 - 14:50:00 | 
 
 
 ##
