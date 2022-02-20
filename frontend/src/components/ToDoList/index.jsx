@@ -14,7 +14,7 @@ function ToDoList() {
 
   const statusConversion = (status) => {
     switch (status) {
-      case 'progress':
+      case 'in progress':
         return 'EM PROGRESSO';
       case 'pending':
         return 'PENDENTE';

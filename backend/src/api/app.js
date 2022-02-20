@@ -1,14 +1,9 @@
 const express = require('express');
-const Routes = require('../routes/index.routes');
 const cors = require('cors')
 
-const app = express();
-// const PERMITED_URL = process.env.APLICATION_URL || 'http://localhost:3000'
+const Routes = require('../routes/index.routes');
 
-// app.use(cors({
-//   origin: PERMITED_URL,
-//   methods: ['POST', 'PUT', 'DELETE', 'GET'],
-// }))
+const app = express();
 
 app.use(cors());
 
