@@ -2,20 +2,22 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  width: 70vw;
+  width: 100%;
 }
 
 .main-tasks-box {
-  background-color: rgba(207, 207, 207, 0.205);
-  box-shadow: 4px 5px 13px 1px rgba(0, 0, 0, 0.123);
+  background-color: #ffffff05;
+  box-shadow: 4px 5px 13px 1px rgba(0, 0, 0, 0.021);
   border-radius: 10px;
-  padding: 1em;
+  padding: 1.5em;
+  width: 50vw;
 }
 
 .task-title-box {
   display: flex;
   justify-content: space-around;
   padding-bottom: 1em;
+  width: 55vw;
 }
 
 .task-title {
@@ -23,7 +25,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 1em;
-  width: 70vw;
+  width: 100%;
 }
 
 .task-content-box {
@@ -34,7 +36,7 @@
 
 .task-content-box-static {
   align-items: center;
-  background-color: rgb(133, 146, 146);
+  background-color: #a6a6a6;
   border-radius: 10px;
   display: flex;
   justify-content: space-evenly;
@@ -54,14 +56,14 @@
 }
 
 .progress {
-  background-color: rgb(241, 218, 7);
+  background-color: rgba(241, 218, 7, 0.705);
 }
 
 .done {
-  background-color: rgb(81, 241, 7);
+  background-color: rgba(81, 241, 7, 0.685);
 }
 
 .pending {
-  background-color: rgb(241, 7, 7);
+  background-color: rgba(241, 7, 7, 0.753);
 }
 
