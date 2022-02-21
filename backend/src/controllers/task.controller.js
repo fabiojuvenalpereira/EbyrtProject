@@ -34,10 +34,10 @@ const deleteTask = async (req, res, next) => {
 }
 
 const updateTask = async (req, res, next) => {
-  const {_id, taskContent, status, date } = req.body;
-  console.log(req.body);
+  const {_id, userName, taskContent, date, statusTask } = req.body;
+  
   try {
-    const updated = await tasksServices.updateTask(_id, taskContent, status, date);
+    const updated = await tasksServices.updateTask(_id, userName, taskContent, date, statusTask);
     return res.status(updated.status).json(updated.content);
   } catch (error) {
     console.log(error);

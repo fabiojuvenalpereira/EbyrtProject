@@ -34,14 +34,19 @@ const deleteTask = async (taskId) => {
 };
 
 
-const updateTask = async (taskId, taskContent, status, date) => {
+const updateTask = async (taskId, userName, taskContent, date, statusTask) => {
+  const taskUserUpdate =  { userName, taskContent, date, statusTask };
+
+  const isNotValid = await validateTaskEntries(taskUserUpdate);
+  if (isNotValid) return { status: isNotValid.status, content: { message: isNotValid.message }}
+
   const validId = await idConvertedAndValid(taskId)
   if (!validId) return { status: 404, content: { message: 'O ID precisa ser válido'} };
 
   const taskExits = await taskModel.findTaskById(validId);
   if (!taskExits) return { status: 404, content: { message: 'Não existe esta task'} };
 
-  const updatedTask = await taskModel.updateTask(validId, taskContent, status, date);
+  const updatedTask = await taskModel.updateTask(validId, taskContent, statusTask, date);
 
   return { status: 200, content: { message: updatedTask } };
 }
