@@ -2,44 +2,46 @@ import React from 'react';
 
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-import {request} from '../../api/index';
+import {makePostToServer} from '../../api/index';
+import { setRefresh } from '../../App/slices/tasks/tasksSlice';
 
 import generateObjectToSend from '../../services/requestData';
 import './CreateTask.css';
 
 function CreateTask() {
   const user = useSelector((state) => state.tasksState.user);
+  const refresh = useSelector((state) => state.tasksState.refresh);
+  const dispatch = useDispatch();
 
-  const [text, setText] = useState('');
-  const [task, setTask] = useState('');
+  const [inputText, setInputText] = useState('');
   const [userName, setUserName] = useState('');
-
   const initialStatus = 'pending';
 
   useEffect(() => {
-    setTask(text);
     const getUserFromLocalStorage = JSON.parse(localStorage.getItem('user'));
-    setUserName(user !== null ? user : getUserFromLocalStorage)
-  }, [text]);
+    setUserName(user !== null ? user : getUserFromLocalStorage);
+    console.log(userName);
+  }, [inputText]);
 
   const handleChange = ({ target }) => {
-    setText(target.value);
+    setInputText(target.value);
   };
 
   const handleClick = async () => {
-    setTask(text);
 
-    const objetoFormatado = await generateObjectToSend(userName, task, initialStatus);
+    const objectGenerated = await generateObjectToSend(userName, inputText, initialStatus);
 
-    request(objetoFormatado);
+    await makePostToServer(objectGenerated);
+
+    dispatch(setRefresh(!refresh));
   };
 
   return (
     <div className="main-content-input-task">
 
-      <form action="post">
+      <div>
 
         <div className="main-content-form">
           <label htmlFor="create-task-input" className="create-task-input">
@@ -47,7 +49,7 @@ function CreateTask() {
               type="text"
               name="create-task-input"
               className="create-input-task"
-              value={text}
+              value={inputText}
               onChange={handleChange}
             />
           </label>
@@ -66,7 +68,7 @@ function CreateTask() {
           </div>
         </div>
 
-      </form>
+      </div>
 
     </div>
   );

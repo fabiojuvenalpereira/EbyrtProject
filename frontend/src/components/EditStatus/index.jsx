@@ -3,54 +3,69 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import './EditStatus.css';
 import { setStatus } from '../../App/slices/tasks/tasksSlice';
-import { request } from '../../api';
+import { makePutToServer } from '../../api';
 
 function EditStatus() {
-  const selectedTask = useSelector((state) => state.tasksState.selectedTask)
-  const dispatch = useDispatch()
+  const selectedTask = useSelector((state) => state.tasksState.selectedTask);
+  const dispatch = useDispatch();
 
   const data = {
+    _id: selectedTask._id,
     userName: selectedTask.userName,
     taskContent: selectedTask.taskContent,
-    status: selectedTask.status,
-  }
+    statusTask: selectedTask.statusTask,
+  };
 
-  const handleClick = async (button) => {
-    console.log(button.target.value);
+  const handleClick = async ({target}) => {
+    let { statusTask , ...dataContent } = data;
+    statusTask = target.value;
+
+    const dataWithNewStatus = {
+      ...dataContent,
+      statusTask
+    }
+
+    await makePutToServer(dataWithNewStatus);
+
     dispatch(setStatus(false));
-    await request(data);
-  }
+  };
 
   return (
-    <div className='box-edit-status'> 
-      <div className='title-edit-status'>
-        ALTERE O STATUS:
-      </div>
-      <div className='buttons-edit-status'>
+    <div
+      className="box-edit-status"
+      >
+      <div className="title-edit-status">ALTERE O STATUS:</div>
+      <div className="buttons-edit-status">
         <button
-          type='button'
-          value='pending'
-          onClick={ (button) => { handleClick(button) }}
-          >
-            PENDENTE
+          type="button"
+          value="pending"
+          onClick={(button) => {
+            handleClick(button);
+          }}
+        >
+          PENDENTE
         </button>
         <button
-          type='button'
-          value='progress'
-          onClick={ (button) => { handleClick(button) }}
-          >
-            EM PROGRESSO
-          </button>
+          type="button"
+          value="in progress"
+          onClick={(button) => {
+            handleClick(button);
+          }}
+        >
+          EM PROGRESSO
+        </button>
         <button
-          type='button'
-          value='done'
-          onClick={ (button) => { handleClick(button) }}
-          >
-            CONCLUIDO
-          </button>
+          type="button"
+          value="done"
+          onClick={(button) => {
+            handleClick(button);
+          }}
+        >
+          CONCLUIDO
+        </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default EditStatus
+export default EditStatus;
