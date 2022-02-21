@@ -35,7 +35,7 @@ const deleteTask = async (req, res, next) => {
 
 const updateTask = async (req, res, next) => {
   const {_id, userName, taskContent, date, statusTask } = req.body;
-  
+  console.log(_id, userName, taskContent, date, statusTask);
   try {
     const updated = await tasksServices.updateTask(_id, userName, taskContent, date, statusTask);
     return res.status(updated.status).json(updated.content);

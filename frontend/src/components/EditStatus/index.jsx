@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './EditStatus.css';
 import { setStatus } from '../../App/slices/tasks/tasksSlice';
 import { makePutToServer } from '../../api';
+import generateDate from '../../utils/generateDate';
 
 function EditStatus() {
   const selectedTask = useSelector((state) => state.tasksState.selectedTask);
@@ -20,11 +21,16 @@ function EditStatus() {
     let { statusTask , ...dataContent } = data;
     statusTask = target.value;
 
+    const generatedData = generateDate();
+    console.log(generatedData);
     const dataWithNewStatus = {
       ...dataContent,
-      statusTask
+      statusTask,
+      date: generatedData,
     }
-
+    
+    console.log(dataWithNewStatus);
+  
     await makePutToServer(dataWithNewStatus);
 
     dispatch(setStatus(false));

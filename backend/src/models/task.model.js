@@ -19,11 +19,11 @@ const deleteTask = async (taskId) => {
   return deleted;
 }
 
-const updateTask = async (userId, taskContent, status, date) => {
+const updateTask = async (userId, taskContent, statusTask, date) => {
   const conn = await connection();
   const updatedTask = await conn.collection('tasks').findOneAndUpdate(
     { _id: userId },
-    { $set: { taskContent, date, status } },
+    { $set: { taskContent, date, statusTask } },
     { returnOriginal: false },
   );
   return updatedTask.value;

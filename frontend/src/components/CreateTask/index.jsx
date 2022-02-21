@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {makePostToServer} from '../../api/index';
 import { setRefresh } from '../../App/slices/tasks/tasksSlice';
 
-import generateObjectToSend from '../../services/requestData';
+import generateObjectToSend from '../../utils/generateObjectToSend';
 import './CreateTask.css';
 
 function CreateTask() {
