@@ -31,9 +31,10 @@ function ToDoList() {
 
   };
 
-  const deleteTask = ({_id : id}) => {
+  const deleteTask = async ({_id : id}) => {
+    await makeDeleteToServer(id);
+
     dispatch(setRefresh(!refresh));
-    makeDeleteToServer(id);
   }
 
   return (

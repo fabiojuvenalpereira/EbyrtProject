@@ -15,29 +15,27 @@ function CreateTask() {
   const refresh = useSelector((state) => state.tasksState.refresh);
   const dispatch = useDispatch();
 
-  const [text, setText] = useState('');
-  const [task, setTask] = useState('');
+  const [inputText, setInputText] = useState('');
   const [userName, setUserName] = useState('');
-
-  const initialStatus = 'pending';
+  const [initialStatus, setInitialStatus] = useState('');
 
   useEffect(() => {
-    setTask(text);
     const getUserFromLocalStorage = JSON.parse(localStorage.getItem('user'));
     setUserName(user !== null ? user : getUserFromLocalStorage)
-  }, [text]);
+  }, [inputText]);
 
   const handleChange = ({ target }) => {
-    setText(target.value);
+    setInputText(target.value);
   };
 
   const handleClick = async () => {
-    setTask(text);
+    setInitialStatus('pending');
 
-    dispatch(setRefresh(!refresh))
-    const objetoFormatado = await generateObjectToSend(userName, task, initialStatus);
-    
-    makePostToServer(objetoFormatado);
+    const objectGenerated = await generateObjectToSend(userName, inputText, initialStatus);
+
+    await makePostToServer(objectGenerated);
+
+    dispatch(setRefresh(!refresh));
   };
 
   return (
@@ -51,7 +49,7 @@ function CreateTask() {
               type="text"
               name="create-task-input"
               className="create-input-task"
-              value={text}
+              value={inputText}
               onChange={handleChange}
             />
           </label>
