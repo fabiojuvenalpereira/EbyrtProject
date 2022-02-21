@@ -17,6 +17,7 @@ const getAllTasks = async () => {
 const deleteTask = async (taskId) => {
   const conn = await connection();
   const deleted = await conn.collection('tasks').deleteOne({ _id: taskId });
+  console.log(taskId);
   return deleted;
 }
 
