@@ -28,10 +28,13 @@
   width: 100%;
 }
 
-.task-content-box {
+.task-box-content {
+  background-color: rgba(19, 19, 19, 0.13);
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   display: flex;
+  padding: 1em;
+  margin: 1em;
 }
 
 .task-content-box-static {

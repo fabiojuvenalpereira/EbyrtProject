@@ -51,7 +51,7 @@ function InputName() {
 
         </div>
 
-        <div className="enter-button" disabled="true" onClick={handleClick}>
+        <div className="enter-button" onClick={handleClick}>
           entrar
         </div>
 

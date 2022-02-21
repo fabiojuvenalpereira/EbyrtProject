@@ -2,42 +2,39 @@ import React from 'react';
 
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { fetchTasks } from '../../api/';
-import { useDispatch } from 'react-redux';
-import { selectedTask, setStatus } from '../../App/slices/tasks/tasksSlice';
+import { useDispatch,useSelector } from 'react-redux';
+
+import statusConversion from '../../utils/statusConversion';
+import { fetchTasks, makeDeleteToServer } from '../../api/';
+import { selectedTask, setStatus, setRefresh } from '../../App/slices/tasks/tasksSlice';
 
 import './ToDoList.css';
 
 function ToDoList() {
+  const refresh = useSelector((state) => state.tasksState.refresh);
   const dispatch = useDispatch();
+  
   const [tasks, setTasks] = useState([]);
-
-  const statusConversion = (status) => {
-    switch (status) {
-      case 'in progress':
-        return 'EM PROGRESSO';
-      case 'pending':
-        return 'PENDENTE';
-      case 'done':
-        return 'PRONTO';
-      default:
-        'done';
-        break;
-    }
-  };
-
+  
   useEffect(async () => {
     const response = await fetchTasks();
     setTasks(response);
-  }, []);
+  }, [refresh]);
 
-  const handleClick = (button, task) => {
+  const handleClick = (button, taskContent) => {
     const { target } = button;
+
     if (target.id === 'status') {
       dispatch(setStatus(true));
-      dispatch(selectedTask(task));
+      dispatch(selectedTask(taskContent));
     }
+
   };
+
+  const deleteTask = ({_id : id}) => {
+    dispatch(setRefresh(!refresh));
+    makeDeleteToServer(id);
+  }
 
   return (
     <div className="main-content">
@@ -50,9 +47,10 @@ function ToDoList() {
 
       <div className="main-tasks-box">
         {tasks.map((task) => (
-          <div key={task._id} className="task-content-box">
+          <div key={task._id} className="task-box-content">
 
             <div
+              id='taskContent'
               className="task-content-box-static"
               onClick={(button) => handleClick(button, task)}
               >
@@ -62,10 +60,17 @@ function ToDoList() {
 
             <div
               id="status"
-              className={`task-status-button ${task.status}`}
+              className={`task-status-button ${task.statusTask}`}
               onClick={(button) => handleClick(button, task)}
             >
-              {statusConversion(task.status)}
+              {statusConversion(task.statusTask)}
+            </div>
+
+            <div
+              className="task-delete-button"
+              onClick={() => deleteTask(task)}
+            >
+              deletar
             </div>
 
           </div>

@@ -2,15 +2,18 @@ import React from 'react';
 
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-import {request} from '../../api/index';
+import {makePostToServer} from '../../api/index';
+import { setRefresh } from '../../App/slices/tasks/tasksSlice';
 
 import generateObjectToSend from '../../services/requestData';
 import './CreateTask.css';
 
 function CreateTask() {
   const user = useSelector((state) => state.tasksState.user);
+  const refresh = useSelector((state) => state.tasksState.refresh);
+  const dispatch = useDispatch();
 
   const [text, setText] = useState('');
   const [task, setTask] = useState('');
@@ -31,15 +34,16 @@ function CreateTask() {
   const handleClick = async () => {
     setTask(text);
 
+    dispatch(setRefresh(!refresh))
     const objetoFormatado = await generateObjectToSend(userName, task, initialStatus);
-
-    request(objetoFormatado);
+    
+    makePostToServer(objetoFormatado);
   };
 
   return (
     <div className="main-content-input-task">
 
-      <form action="post">
+      <div>
 
         <div className="main-content-form">
           <label htmlFor="create-task-input" className="create-task-input">
@@ -66,7 +70,7 @@ function CreateTask() {
           </div>
         </div>
 
-      </form>
+      </div>
 
     </div>
   );

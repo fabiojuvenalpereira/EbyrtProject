@@ -1,13 +1,9 @@
-const generateDate = () => {
-  const date=new Date();
-  const dia=date.getDate();
-  const mes=date.getMonth()+1;
-  const ano=date.getFullYear();
-  const h=date.getHours();
-  const m=date.getMinutes();
-  const s=date.getSeconds();
+import moment from 'moment';
 
-  const fullDate = (`${dia}/${mes}/${ano} - ${h}:${m}:${s}`);
+const generateDate = () => {
+  const date = moment().format('DD/MM/YYYY');
+  const hours = moment().format('HH:mm:ss');
+  const fullDate = `${date} - ${hours}`
   return fullDate;
 };
 
