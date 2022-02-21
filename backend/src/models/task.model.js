@@ -2,7 +2,6 @@ const connection = require('./connection');
 
 const createTask = async (userTask) => {
   const conn = await connection();
-  console.log(userTask);
   await conn.collection('tasks').insertOne(userTask);
 
   return { ...userTask };
@@ -17,7 +16,6 @@ const getAllTasks = async () => {
 const deleteTask = async (taskId) => {
   const conn = await connection();
   const deleted = await conn.collection('tasks').deleteOne({ _id: taskId });
-  console.log(taskId);
   return deleted;
 }
 
