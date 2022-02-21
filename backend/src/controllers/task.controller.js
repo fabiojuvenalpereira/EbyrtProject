@@ -2,7 +2,6 @@ const tasksServices = require('../services/task.services');
 
 const createTask = async (req, res, next) => {
   const { userName, taskContent, date, statusTask } = req.body;
-  console.log(req.body);
   try {
     const createdTask = await tasksServices.createTask(userName, taskContent, date, statusTask);
     return res.status(createdTask.status).json(createdTask.content);
@@ -36,9 +35,10 @@ const deleteTask = async (req, res, next) => {
 
 const updateTask = async (req, res, next) => {
   const {_id, taskContent, status, date } = req.body;
+  console.log(req.body);
   try {
-    const deleted = await tasksServices.updateTask(_id, taskContent, status, date);
-    return res.status(deleted.status).json(deleted.content);
+    const updated = await tasksServices.updateTask(_id, taskContent, status, date);
+    return res.status(updated.status).json(updated.content);
   } catch (error) {
     console.log(error);
     next(error);

@@ -10,15 +10,24 @@ function EditStatus() {
   const dispatch = useDispatch();
 
   const data = {
+    _id: selectedTask._id,
     userName: selectedTask.userName,
     taskContent: selectedTask.taskContent,
-    status: selectedTask.status,
+    statusTask: selectedTask.statusTask,
   };
 
-  const handleClick = async (button) => {
-    console.log(button.target.value);
+  const handleClick = async ({target}) => {
+    let { statusTask , ...dataContent } = data;
+    statusTask = target.value;
+
+    const dataWithNewStatus = {
+      ...dataContent,
+      statusTask
+    }
+
+    await makePutToServer(dataWithNewStatus);
+
     dispatch(setStatus(false));
-    await makePutToServer(data);
   };
 
   return (
@@ -38,7 +47,7 @@ function EditStatus() {
         </button>
         <button
           type="button"
-          value="progress"
+          value="in progress"
           onClick={(button) => {
             handleClick(button);
           }}

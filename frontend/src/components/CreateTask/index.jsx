@@ -17,11 +17,12 @@ function CreateTask() {
 
   const [inputText, setInputText] = useState('');
   const [userName, setUserName] = useState('');
-  const [initialStatus, setInitialStatus] = useState('');
+  const initialStatus = 'pending';
 
   useEffect(() => {
     const getUserFromLocalStorage = JSON.parse(localStorage.getItem('user'));
-    setUserName(user !== null ? user : getUserFromLocalStorage)
+    setUserName(user !== null ? user : getUserFromLocalStorage);
+    console.log(userName);
   }, [inputText]);
 
   const handleChange = ({ target }) => {
@@ -29,7 +30,6 @@ function CreateTask() {
   };
 
   const handleClick = async () => {
-    setInitialStatus('pending');
 
     const objectGenerated = await generateObjectToSend(userName, inputText, initialStatus);
 
