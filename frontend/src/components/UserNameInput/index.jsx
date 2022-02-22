@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './UserNameInput.css';
+import '../../styles/UserNameInput.css';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
