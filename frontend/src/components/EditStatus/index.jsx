@@ -2,12 +2,13 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import './EditStatus.css';
-import { setStatus } from '../../App/slices/tasks/tasksSlice';
+import { setRefresh, setStatus } from '../../App/slices/tasks/tasksSlice';
 import { makePutToServer } from '../../api';
 import generateDate from '../../utils/generateDate';
 
 function EditStatus() {
   const selectedTask = useSelector((state) => state.tasksState.selectedTask);
+  const refresh = useSelector((state) => state.tasksState.refresh);
   const dispatch = useDispatch();
 
   const data = {
@@ -28,12 +29,10 @@ function EditStatus() {
       statusTask,
       date: generatedData,
     }
-    
-    console.log(dataWithNewStatus);
-  
-    await makePutToServer(dataWithNewStatus);
 
+    await makePutToServer(dataWithNewStatus);
     dispatch(setStatus(false));
+    dispatch(setRefresh(!refresh));
   };
 
   return (
