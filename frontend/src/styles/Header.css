@@ -1,5 +1,5 @@
 .main-header-content {
-  background-color: #7d8aab;
+  background-color: #8eabf3;
   align-items: center;
   display: flex;
   height: 8vh;
@@ -14,7 +14,7 @@
 }
 
 .user-header-content {
-  align-items:  center;
+  align-items: center;
   display: flex;
   color: rgba(0, 0, 0, 0.473);
   font-weight: 800;

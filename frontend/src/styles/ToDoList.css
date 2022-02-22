@@ -1,0 +1,97 @@
+.main-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.task-title-box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.title-status {
+  margin-right: 7%;
+}
+
+.main-tasks-box {
+  width: 100%;
+}
+
+.task-box-content {
+  align-items: center;
+  background-color: rgba(19, 19, 19, 0.13);
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1em;
+  padding: 1em;
+  height: 100%;
+}
+
+.task-content-box-static {
+  align-items: center;
+  background-color: #a6a6a6;
+  border-radius: 10px;
+  display: flex;
+  min-height: 5em;
+  justify-content: space-evenly;
+  width: 70%;
+  margin: 0.5em;
+}
+
+.task-section-content {
+  padding: 0.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 50%;
+}
+
+.task-section-date {
+  padding: 0.8em;
+}
+
+.task-buttons-box {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 30%;
+}
+
+.task-button {
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  font-weight: 400;
+  min-height: 3em;
+  text-decoration: none;
+  padding: 0.8em;
+  width: 40%;
+}
+
+.task-button.delete {
+  border: solid 1px rgb(0, 17, 255);
+}
+
+.task-status-button {
+  border-radius: 10px;
+  min-height: 3em;
+  width: 40%;
+  padding: 0.8em;
+  text-align: center;
+}
+
+.progress {
+  background-color: rgba(241, 218, 7, 0.705);
+}
+
+.done {
+  background-color: rgba(81, 241, 7, 0.685);
+}
+
+.pending {
+  background-color: rgba(245, 58, 58, 0.753);
+}
