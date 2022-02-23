@@ -1,0 +1,36 @@
+@media screen and (max-width:500px) {
+  .main-content-todo {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.082);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2em auto;
+    width: 70vw;
+  }
+  
+  .task-content {
+    border: 1px solid rgba(58, 239, 245, 0.753);
+    border-radius: 5px;
+    display: flex;
+    width: 50vw;
+  }
+}
+
+
+
+.left-side-content-card {
+  border: rgb(29, 139, 19) 1px solid;
+}
+
+.progress {
+  background-color: rgba(241, 218, 7, 0.705);
+}
+
+.done {
+  background-color: rgba(81, 241, 7, 0.685);
+}
+
+.pending {
+  background-color: rgba(245, 58, 58, 0.753);
+}

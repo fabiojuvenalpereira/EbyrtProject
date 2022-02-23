@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import '../../styles/Header.css';
+import './Header.css';
 
 function Header() {
   const user = useSelector((state) => state.tasksState.user);

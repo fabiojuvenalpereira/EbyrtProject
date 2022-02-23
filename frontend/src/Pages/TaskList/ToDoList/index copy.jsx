@@ -4,15 +4,15 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import statusConversion from '../../utils/statusConversion';
-import { fetchTasks, makeDeleteToServer } from '../../api/';
+import statusConversion from '../../../utils/statusConversion';
+import { fetchTasks, makeDeleteToServer } from '../../../api/';
 import {
   selectedTask,
   setStatus,
   setRefresh,
-} from '../../App/slices/tasks/tasksSlice';
+} from '../../../App/slices/tasks/tasksSlice';
 
-import '../../styles/ToDoList.css';
+import './ToDoList.css';
 
 function ToDoList() {
   const refresh = useSelector((state) => state.tasksState.refresh);

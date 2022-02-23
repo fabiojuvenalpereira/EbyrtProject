@@ -1,0 +1,127 @@
+@media screen and (max-width: 600px) {
+  .main-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .input-text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .input-text-bar {
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.89);
+    font-size: 1em;
+    padding: 1.5em 0;
+    text-indent: 2em;
+    margin-top: 2em;
+    outline: 0;
+    transition: 0.2s;
+    width: 70vw;
+  }
+
+  .input-text-bar:hover {
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.541);
+    padding: 1.5em 0;
+    text-indent: 2em;
+    width: 70vw;
+    outline: 0;
+    transition: 0.2s;
+  }
+
+  .enter-button {
+    background-color: rgba(252, 252, 252, 0.103);
+    border-radius: 5px;
+    border: none;
+    color: rgb(77, 77, 77);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    padding: 1em;
+    text-align: center;
+    transition: 0.2s;
+    width: 50vw;
+  }
+
+  .enter-button:hover {
+    color: rgb(31, 31, 31);
+    background-color: rgba(252, 252, 252, 0.219);
+    border-radius: 10px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    padding: 1em;
+    text-align: center;
+    transition: 0.2s;
+    width: 10vw;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .main-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .input-text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1000px;
+  }
+  .input-text-bar {
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.39);
+    font-size: 1em;
+    padding: 1.5em;
+    text-indent: 2em;
+    width: 30vw;
+    outline: 0;
+    transition: 0.2s;
+  }
+  .input-text-bar:hover {
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.541);
+    padding: 1.5em;
+    text-indent: 2em;
+    width: 30vw;
+    outline: 0;
+    transition: 0.2s;
+  }
+  .enter-button {
+    background-color: rgba(252, 252, 252, 0.103);
+    border-radius: 10px;
+    border: none;
+    color: rgb(77, 77, 77);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    padding: 1em;
+    text-align: center;
+    transition: 0.2s;
+    width: 10vw;
+  }
+  .enter-button:hover {
+    color: rgb(31, 31, 31);
+    background-color: rgba(252, 252, 252, 0.219);
+    border-radius: 10px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    padding: 1em;
+    text-align: center;
+    transition: 0.2s;
+    width: 10vw;
+  }
+}

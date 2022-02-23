@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import '../../styles/EditStatus.css';
+import './EditStatus.css';
 import { setRefresh, setStatus } from '../../App/slices/tasks/tasksSlice';
 import { makePutToServer } from '../../api';
 import generateDate from '../../utils/generateDate';

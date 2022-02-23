@@ -4,11 +4,11 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { makePostToServer } from '../../api/index';
-import { setRefresh } from '../../App/slices/tasks/tasksSlice';
+import { makePostToServer } from '../../../api/index';
+import { setRefresh } from '../../../App/slices/tasks/tasksSlice';
 
-import generateObjectToSend from '../../utils/generateObjectToSend';
-import '../../styles/CreateTask.css';
+import generateObjectToSend from '../../../utils/generateObjectToSend';
+import './CreateTask.css';
 
 function CreateTask() {
   const user = useSelector((state) => state.tasksState.user);

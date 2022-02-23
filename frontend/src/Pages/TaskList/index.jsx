@@ -2,12 +2,12 @@ import React from 'react'
 
 import { useSelector } from 'react-redux'
 
-import CreateTask from '../../components/CreateTask';
-import ToDoList from '../../components/ToDoList'
+import CreateTask from './CreateTask';
+import ToDoList from './ToDoList'
 import Header from '../../components/Header';
 import EditStatus from '../../components/EditStatus';
 
-import '../../styles/TaskList.css';
+import './TaskList.css';
 
 
 function TaskList() {

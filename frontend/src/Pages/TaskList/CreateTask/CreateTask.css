@@ -9,7 +9,7 @@
   margin: auto;
 }
 
-.main-content-form button{
+.main-content-form button {
   background-color: rgb(208, 216, 216);
   border: none;
   border-radius: 0 10px 10px 0px;
@@ -30,4 +30,6 @@
 .create-task-input input {
   height: 2em;
   padding: 0.5em;
-};
+}
+
+;
