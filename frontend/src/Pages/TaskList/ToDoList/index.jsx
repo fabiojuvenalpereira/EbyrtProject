@@ -46,7 +46,7 @@ function ToDoList() {
       <div>
         {tasks.map((task) => (
           <div key={task._id}
-            className={`task-content  ${task.statusTask}`}>
+            className={`task-content `}>
             <div className="left-side-content-card">
               <div
                 id="taskContent"
@@ -61,20 +61,23 @@ function ToDoList() {
               </div>
             </div>
 
-            <div
-              id="status"
-              className="task-status-button"
-              onClick={(button) => handleClick(button, task)}
-            >
-              {statusConversion(task.statusTask)}
+            <div className="right-content-text">
+              <div
+                id="status"
+                className={`task-status-button  ${task.statusTask}`}
+                onClick={(button) => handleClick(button, task)}
+                >
+                {statusConversion(task.statusTask)}
+              </div>
+
+              <div
+                className="task-delete-button"
+                onClick={() => deleteTask(task)}
+                >
+                Deletar
+              </div>
             </div>
 
-            <div
-              className="task-button delete"
-              onClick={() => deleteTask(task)}
-            >
-              deletar
-            </div>
           </div>
         ))}
       </div>

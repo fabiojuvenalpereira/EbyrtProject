@@ -1,7 +1,16 @@
+:root {
+  --bg-color: #282828;
+  --card-color:  #3d3d3d;
+  --card-color-dark: #333333;
+  --card-color-bright: #FEFEFE;
+  --text-color: #ff6a00d2;
+}
+
+
 @media screen and (max-width:500px) {
   .main-content-todo {
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.082);
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,27 +19,83 @@
   }
   
   .task-content {
-    border: 1px solid rgba(58, 239, 245, 0.753);
-    border-radius: 5px;
+    background: linear-gradient(195deg, var( --card-color) 30%, var( --card-color-dark) 80%,var( --card-color) 98%);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.563);
+    cursor: pointer;
     display: flex;
-    width: 50vw;
+    height: 10em;
+    margin-top: 1em;
+    width: 20em;
   }
+
+  .left-side-content-card {
+    align-items: center;
+    /* border: rgb(129, 19, 139) 1px solid; */
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+    justify-content: space-between;
+    width: 65%;
+  }
+  
+  .task-content-text {
+    color: var(--card-color-bright);
+    font-weight: 600;
+    margin-top: 1em;
+    overflow-wrap: break-word;
+    padding: 1em;
+    text-indent: 1em;
+    text-align: center;
+  }
+  
+  .task-content-date {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 1em;
+  }
+  
+  .right-content-text {
+    align-items: center;
+    display: flex;
+    font-size: 0.7em;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .task-status-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    width: 100px;
+  }
+  
+  .task-delete-button {
+    align-items: center;
+    background: linear-gradient(195deg, var( --card-color) 30%, var( --card-color-dark) 80%,var( --card-color) 98%);
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+  }
+  
 }
 
 
-
-.left-side-content-card {
-  border: rgb(29, 139, 19) 1px solid;
-}
 
 .progress {
-  background-color: rgba(241, 218, 7, 0.705);
+  background: linear-gradient(197deg, #a3ae0a 10%, #e8e65c 75%, #e8ee98 93%);
+  transition: 0.2s;
 }
 
 .done {
-  background-color: rgba(81, 241, 7, 0.685);
+  background: linear-gradient(197deg, #4cae0a 10%, #81e85c 75%, #a3ee98 93%);
+  transition: 0.2s;
 }
 
 .pending {
-  background-color: rgba(245, 58, 58, 0.753);
+  background: linear-gradient(197deg, #ae0a0a 10%, #e85c5c 75%, #ee9898 93%);
+  transition: 0.2s;
 }
