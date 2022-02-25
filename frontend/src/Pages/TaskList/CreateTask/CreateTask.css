@@ -1,35 +1,89 @@
-.main-content-input-task {
-  display: flex;
-  align-items: center;
+:root {
+  --bg-color: #282828;
+  --card-color: #3d3d3d;
+  --card-color-dark: #333;
+  --card-color-bright: #fefefe;
+  --card-color-highlight-dark: #e5e5e5e5;
+  --card-color-highlight-bright: #e5e5e5e5;
+  --text-color-highlight: #ff6a00d2;
+  --text-color-blue: #43b6ff;
+  --text-color-orange: #f58220;
 }
 
-.main-content-form {
-  align-items: center;
-  display: flex;
-  margin: auto;
+@media screen and (max-width: 500px) {
+  .main-content-input-task {
+    align-items: center;
+    display: flex;
+    width: 100vw;
+  }
+
+  .main-content-form {
+    align-items: center;
+    display: flex;
+    margin: auto;
+    margin-bottom: 0.5em;
+  }
+
+  .create-task-input {
+    display: flex;
+  }
+
+  .create-task-input input[type="text"] {
+    background-color: rgb(208 216 216);
+    border-radius: 15px 0 0 15px;
+    border: none;
+    height: 3em;
+    outline: 0;
+    width: 65vw;
+  }
+
+  .main-content-form button {
+    background-color: var(--text-color-highlight);
+    border-radius: 0 15px 15px 0;
+    border: none;
+    outline: 0;
+    transition: 0.2s;
+    width: 12vw;
+  }
+
+  .add-icon {
+    transform: scale(1.4);
+    filter: invert(100%) sepia(16%) saturate(7463%) hue-rotate(184deg) brightness(116%) contrast(99%);
+  }
 }
 
-.main-content-form button {
-  background-color: rgb(208, 216, 216);
-  border: none;
-  border-radius: 0 10px 10px 0px;
-  color: azure;
-  font-weight: 700;
-  padding: 0.9em;
-  transition: 0.2s;
-}
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  .main-content-input-task {
+    display: flex;
+    align-items: center;
+  }
 
-.create-task-input input[type="text"] {
-  background-color: rgb(208, 216, 216);
-  border-radius: 10px 0px 0px 10px;
-  border: none;
-  outline: 0;
-  width: 30vw;
-}
+  .main-content-form {
+    align-items: center;
+    display: flex;
+    margin: auto;
+  }
 
-.create-task-input input {
-  height: 2em;
-  padding: 0.5em;
-}
+  .main-content-form button {
+    background-color: rgb(208 216 216);
+    border: none;
+    border-radius: 0 10px 10px 0;
+    color: azure;
+    font-weight: 700;
+    padding: 0.9em;
+    transition: 0.2s;
+  }
 
-;
+  .create-task-input input[type="text"] {
+    background-color: rgb(208 216 216);
+    border-radius: 10px 0 0 10px;
+    border: none;
+    outline: 0;
+    width: 30vw;
+  }
+
+  .create-task-input input {
+    height: 2em;
+    padding: 0.5em;
+  }
+}

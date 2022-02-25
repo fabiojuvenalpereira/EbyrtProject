@@ -14,7 +14,7 @@ function TaskList() {
   const status = useSelector((state) => state.tasksState.status);
 
   return (
-    <div className="main-taskList-Page">
+    <div className="main-task-list-page">
         <Header />
         <CreateTask />
       <div className="task-list-box">

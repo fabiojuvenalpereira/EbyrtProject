@@ -1,13 +1,16 @@
 :root {
   --bg-color: #282828;
-  --card-color:  #3d3d3d;
-  --card-color-dark: #333333;
-  --card-color-bright: #FEFEFE;
-  --text-color: #ff6a00d2;
+  --card-color: #3d3d3d;
+  --card-color-dark: #333;
+  --card-color-bright: #fefefe;
+  --card-color-highlight-dark: #e5e5e5e5;
+  --card-color-highlight-bright: #e5e5e5e5;
+  --text-color-highlight: #ff6a00d2;
+  --text-color-blue: #43b6ff;
+  --text-color-orange: #f58220;
 }
 
-
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
   .main-content-todo {
     align-items: center;
     background-color: var(--bg-color);
@@ -17,11 +20,11 @@
     margin: 2em auto;
     width: 70vw;
   }
-  
-  .task-content {
-    background: linear-gradient(195deg, var( --card-color) 30%, var( --card-color-dark) 80%,var( --card-color) 98%);
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.563);
+
+  .task-content-card {
+    animation: growing 1s ease 0s 1 normal forwards;
+    background: linear-gradient(195deg, var(--card-color) 30%, var(--card-color-dark) 80%, var(--card-color) 98%);
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     height: 10em;
@@ -31,6 +34,7 @@
 
   .left-side-content-card {
     align-items: center;
+
     /* border: rgb(129, 19, 139) 1px solid; */
     display: flex;
     flex-direction: column;
@@ -38,64 +42,96 @@
     justify-content: space-between;
     width: 65%;
   }
-  
+
   .task-content-text {
     color: var(--card-color-bright);
-    font-weight: 600;
+    flex-grow: 1;
     margin-top: 1em;
     overflow-wrap: break-word;
     padding: 1em;
-    text-indent: 1em;
-    text-align: center;
+    width: 100%;
   }
-  
+
   .task-content-date {
-    color: var(--text-color);
+    align-self: flex-start;
+    color: var(--text-color-blue);
+    font-size: 0.8em;
     font-weight: 600;
     margin-bottom: 1em;
+    text-indent: 1em;
   }
-  
+
   .right-content-text {
     align-items: center;
     display: flex;
     font-size: 0.7em;
     flex-direction: column;
     justify-content: space-evenly;
+    position: relative;
   }
-  
+
+  .right-content-text::before {
+    content: "";
+    background-color: var(--card-color-highlight-bright);
+    filter: blur(0.7px);
+    height: 120px;
+    position: absolute;
+    left: -10px;
+    opacity: 0.4;
+    width: 1px;
+  }
+
   .task-status-button {
     align-items: center;
+    border-radius: 4px;
     display: flex;
+    flex-grow: 0.3;
     justify-content: center;
-    height: 30px;
     width: 100px;
   }
-  
+
   .task-delete-button {
     align-items: center;
-    background: linear-gradient(195deg, var( --card-color) 30%, var( --card-color-dark) 80%,var( --card-color) 98%);
+    border-radius: 4px;
+    background: linear-gradient(195deg, #e82222 30%, #d35148 80%, #d34d4d 98%);
+    color: white;
     display: flex;
-    height: 30px;
+    flex-grow: 0.3;
     justify-content: center;
+    transition: 0.2s;
     text-align: center;
     width: 100px;
   }
-  
 }
 
-
-
 .progress {
-  background: linear-gradient(197deg, #a3ae0a 10%, #e8e65c 75%, #e8ee98 93%);
-  transition: 0.2s;
+  background: linear-gradient(80deg, #f3f303, #f3eb03, #fcd600);
+  text-shadow: -1px 2px 14px #282828;
+  transition: 1s;
 }
 
 .done {
-  background: linear-gradient(197deg, #4cae0a 10%, #81e85c 75%, #a3ee98 93%);
-  transition: 0.2s;
+  color: white;
+  background: linear-gradient(80deg, #64ee07, #44ee06, #21990e);
+  text-shadow: -1px 2px 14px #282828;
+  transition: 1s;
 }
 
 .pending {
-  background: linear-gradient(197deg, #ae0a0a 10%, #e85c5c 75%, #ee9898 93%);
-  transition: 0.2s;
+  background: linear-gradient(80deg, #ff7f1e, #ff6f00, #dc6002);
+  color: var(--text-color-highlight-bright);
+  text-shadow: 1px 2px 4px #282828;
+  transition: 1s;
+}
+
+@keyframes growing {
+  0% {
+    box-shadow: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    box-shadow: 0 0 20px #0c0c0cc4;
+    transform: scale(1);
+  }
 }

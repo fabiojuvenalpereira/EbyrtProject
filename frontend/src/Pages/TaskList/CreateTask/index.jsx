@@ -10,6 +10,8 @@ import { setRefresh } from '../../../App/slices/tasks/tasksSlice';
 import generateObjectToSend from '../../../utils/generateObjectToSend';
 import './CreateTask.css';
 
+import addIcon from '../../../images/icons/add_icon.svg';
+
 function CreateTask() {
   const user = useSelector((state) => state.tasksState.user);
   const refresh = useSelector((state) => state.tasksState.refresh);
@@ -52,15 +54,17 @@ function CreateTask() {
             value={inputText}
             onChange={handleChange}
           />
-        </label>
-        <label htmlFor="create-task-button" className="create-button-label">
           <button
             type="button"
             name="create-task-button"
             className="create-button"
             onClick={handleClick}
           >
-            create task
+            <img
+              className='add-icon'
+              src={addIcon}
+              alt="add task icon"
+            />
           </button>
         </label>
       </div>

@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
   }
+
   .input-text {
     align-items: center;
     display: flex;
@@ -14,7 +15,7 @@
   .input-text-bar {
     border-radius: 10px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.89);
+    background-color: rgb(255 255 255 / 89%);
     font-size: 1em;
     padding: 1.5em 0;
     text-indent: 2em;
@@ -27,7 +28,7 @@
   .input-text-bar:hover {
     border-radius: 10px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.541);
+    background-color: rgb(255 255 255 / 54.1%);
     padding: 1.5em 0;
     text-indent: 2em;
     width: 70vw;
@@ -36,10 +37,10 @@
   }
 
   .enter-button {
-    background-color: rgba(252, 252, 252, 0.103);
+    background-color: rgb(252 252 252 / 10.3%);
     border-radius: 5px;
     border: none;
-    color: rgb(77, 77, 77);
+    color: rgb(77 77 77);
     margin-left: auto;
     margin-right: auto;
     margin-top: 1em;
@@ -50,8 +51,8 @@
   }
 
   .enter-button:hover {
-    color: rgb(31, 31, 31);
-    background-color: rgba(252, 252, 252, 0.219);
+    color: rgb(31 31 31);
+    background-color: rgb(252 252 252 / 21.9%);
     border-radius: 10px;
     border: none;
     margin-left: auto;
@@ -70,6 +71,7 @@
     flex-direction: column;
     justify-content: center;
   }
+
   .input-text {
     align-items: center;
     display: flex;
@@ -77,10 +79,11 @@
     justify-content: center;
     width: 1000px;
   }
+
   .input-text-bar {
     border-radius: 10px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.39);
+    background-color: rgb(255 255 255 / 39%);
     font-size: 1em;
     padding: 1.5em;
     text-indent: 2em;
@@ -88,21 +91,23 @@
     outline: 0;
     transition: 0.2s;
   }
+
   .input-text-bar:hover {
     border-radius: 10px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.541);
+    background-color: rgb(255 255 255 / 54.1%);
     padding: 1.5em;
     text-indent: 2em;
     width: 30vw;
     outline: 0;
     transition: 0.2s;
   }
+
   .enter-button {
-    background-color: rgba(252, 252, 252, 0.103);
+    background-color: rgb(252 252 252 / 10.3%);
     border-radius: 10px;
     border: none;
-    color: rgb(77, 77, 77);
+    color: rgb(77 77 77);
     margin-left: auto;
     margin-right: auto;
     margin-top: 1em;
@@ -111,9 +116,10 @@
     transition: 0.2s;
     width: 10vw;
   }
+
   .enter-button:hover {
-    color: rgb(31, 31, 31);
-    background-color: rgba(252, 252, 252, 0.219);
+    color: rgb(31 31 31);
+    background-color: rgb(252 252 252 / 21.9%);
     border-radius: 10px;
     border: none;
     margin-left: auto;

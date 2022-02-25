@@ -46,7 +46,7 @@ function ToDoList() {
       <div>
         {tasks.map((task) => (
           <div key={task._id}
-            className={`task-content `}>
+            className={`task-content-card`}>
             <div className="left-side-content-card">
               <div
                 id="taskContent"

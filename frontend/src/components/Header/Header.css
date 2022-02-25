@@ -1,34 +1,79 @@
-.main-header-content {
-  background-color: #8eabf3;
-  align-items: center;
-  display: flex;
-  height: 8vh;
-  margin-bottom: 2em;
+:root {
+  --bg-color-header: #111;
+  --bg-color: #282828;
+  --card-color: #3d3d3d;
+  --card-color-dark: #333;
+  --card-color-bright: #fefefe;
+  --text-color-highlight: #ff6a00d2;
+  --text-color-highlight-bright: rgb(240 240 240);
 }
 
-.title-header-content {
-  font-weight: 800;
-  font-size: 2.5em;
-  margin-left: 5vw;
-  text-align: center;
+@media screen and (max-width: 500px) {
+  .main-header-content {
+    background-color: var(--bg-color-header);
+    box-shadow: 0 0 10px 1px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 8vh;
+    margin-bottom: 2em;
+  }
+
+  .logo-header-content img {
+    font-weight: 1000;
+    margin-left: 5vw;
+    text-align: center;
+    width: 3em;
+  }
+
+  .text-header-content {
+    display: flex;
+    margin-right: 2em;
+  }
+
+  .text-header {
+    color: whitesmoke;
+    margin-right: 5px;
+  }
+
+  .text-header-name {
+    color: whitesmoke;
+  }
 }
 
-.user-header-content {
-  align-items: center;
-  display: flex;
-  color: rgba(0, 0, 0, 0.473);
-  font-weight: 800;
-  justify-content: center;
-  font-size: 2em;
-  margin-left: auto;
-  margin-right: 5vw;
-  text-align: center;
-}
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  .main-header-content {
+    background-color: #8eabf3;
+    align-items: center;
+    display: flex;
+    height: 8vh;
+    margin-bottom: 2em;
+  }
 
-.user-header-content-name {
-  color: rgba(0, 0, 0, 0.856);
-  font-weight: 800;
-  margin-left: auto;
-  padding-left: 1em;
-  text-align: center;
+  .title-header-content {
+    font-weight: 800;
+    font-size: 2.5em;
+    margin-left: 5vw;
+    text-align: center;
+  }
+
+  .user-header-content {
+    align-items: center;
+    display: flex;
+    color: rgb(0 0 0 / 47.3%);
+    font-weight: 800;
+    justify-content: center;
+    font-size: 2em;
+    margin-left: auto;
+    margin-right: 5vw;
+    text-align: center;
+  }
+
+  .user-header-content-name {
+    color: rgb(0 0 0 / 85.6%);
+    font-weight: 800;
+    margin-left: auto;
+    padding-left: 1em;
+    text-align: center;
+  }
 }
