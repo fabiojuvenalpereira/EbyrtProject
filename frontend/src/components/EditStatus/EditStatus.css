@@ -12,7 +12,7 @@
 
 @media screen and (max-width: 500px) {
   .box-edit-status {
-    animation: in 1s ease 0s 1 normal forwards;
+    animation: in 0.3s ease 0s 1 normal forwards;
     background-color: #4d9de2;
     border-radius: 10px;
     box-shadow: 0 0 10px 1px #111111db;
@@ -29,6 +29,10 @@
     z-index: 1;
   }
 
+  .closing {
+    animation: out 0.3s ease 0s 1 normal forwards;
+  }
+
   .title-edit-status {
     align-items: center;
     display: flex;
@@ -38,7 +42,7 @@
 
   .buttons-edit-status {
     align-items: center;
-    animation: buttons 1s ease 0s 1 normal forwards;
+    animation: buttons 0.3s ease 0s 1 normal forwards;
     display: flex;
     flex-direction: column;
     margin-top: auto;
@@ -111,6 +115,16 @@
 
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes out {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
   }
 }
 

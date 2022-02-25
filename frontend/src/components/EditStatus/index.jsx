@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 
 import './EditStatus.css';
 import { setRefresh, setStatus } from '../../App/slices/tasks/tasksSlice';
@@ -11,6 +12,8 @@ function EditStatus() {
   const refresh = useSelector((state) => state.tasksState.refresh);
   const dispatch = useDispatch();
 
+  const [close, setClose] = useState('');
+
   const data = {
     _id: selectedTask._id,
     userName: selectedTask.userName,
@@ -19,25 +22,31 @@ function EditStatus() {
   };
 
   const handleClick = async ({target}) => {
+    setClose('closing');
+    const TIMER = 500;
     let { statusTask , ...dataContent } = data;
+    
     statusTask = target.value;
-
+    
     const generatedData = generateDate();
-    console.log(generatedData);
+
     const dataWithNewStatus = {
       ...dataContent,
       statusTask,
       date: generatedData,
     }
-
+    
     await makePutToServer(dataWithNewStatus);
-    dispatch(setStatus(false));
-    dispatch(setRefresh(!refresh));
+    
+    setTimeout(() => {
+      dispatch(setStatus(false));
+      dispatch(setRefresh(!refresh));
+    }, TIMER)
   };
 
   return (
     <div
-      className="box-edit-status"
+      className={`box-edit-status ${close}`}
       >
       <div className="title-edit-status">ALTERE O STATUS:</div>
       <div className="buttons-edit-status">

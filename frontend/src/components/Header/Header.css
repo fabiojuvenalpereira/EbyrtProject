@@ -15,8 +15,8 @@
     align-items: center;
     justify-content: space-between;
     display: flex;
-    height: 8vh;
-    margin-bottom: 2em;
+    height: 10vh;
+    margin-bottom: 1.2em;
   }
 
   .logo-header-content img {
