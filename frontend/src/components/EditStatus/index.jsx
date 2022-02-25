@@ -23,7 +23,7 @@ function EditStatus() {
 
   const handleClick = async ({target}) => {
     setClose('closing');
-    const TIMER = 500;
+    const TIMER = 200;
     let { statusTask , ...dataContent } = data;
     
     statusTask = target.value;
@@ -53,6 +53,7 @@ function EditStatus() {
         <button
           type="button"
           value="pending"
+          className="pending"
           onClick={(button) => {
             handleClick(button);
           }}
@@ -62,6 +63,7 @@ function EditStatus() {
         <button
           type="button"
           value="in progress"
+          className="progress"
           onClick={(button) => {
             handleClick(button);
           }}
@@ -71,6 +73,7 @@ function EditStatus() {
         <button
           type="button"
           value="done"
+          className="done"
           onClick={(button) => {
             handleClick(button);
           }}

@@ -13,7 +13,7 @@
 @media screen and (max-width: 500px) {
   .box-edit-status {
     animation: in 0.3s ease 0s 1 normal forwards;
-    background-color: #4d9de2;
+    background: linear-gradient(150deg, #646868, #484949, #595c5c);
     border-radius: 10px;
     box-shadow: 0 0 10px 1px #111111db;
     display: flex;
@@ -35,8 +35,10 @@
 
   .title-edit-status {
     align-items: center;
+    color: var(--card-color-bright);
     display: flex;
     flex-direction: column;
+    font-weight: 800;
     margin-top: 2.5em;
   }
 

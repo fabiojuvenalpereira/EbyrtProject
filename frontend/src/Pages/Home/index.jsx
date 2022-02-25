@@ -9,13 +9,15 @@ import './Home.css';
 function Home() {
   return (
     <div className="main-home">
-      <div className="main-content">
-        <div className="title-page ">
-          <p className='main-title magictime puffIn'><img src={logo} alt="logo" /></p>
-          <UserNameInput />
-        </div>
+      <div className="logo-page ">
+        <p className='main-image'><img src={logo} alt="logo" /></p>
       </div>
+      <div className="input-name">
+        <UserNameInput />
+      </div>
+      <div className="footer">
         <Footer />
+      </div>
     </div>
   );
 }
