@@ -5,18 +5,8 @@
   --card-color-bright: #fefefe;
 }
 
-@media screen and (max-width: 600px) {
-  .main-task-list-page {
-    background-color: var(--bg-color);
-    min-height: 100vh;
-    width: 100vw;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .main-task-list-page {
-    background-color: #7d8aab;
-    min-height: 100vh;
-    width: 100vw;
-  }
+.main-task-list-page {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  width: 100vw;
 }

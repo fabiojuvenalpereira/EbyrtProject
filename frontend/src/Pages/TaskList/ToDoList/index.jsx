@@ -42,46 +42,40 @@ function ToDoList() {
 
   return (
     <div className="main-content">
-
-      <div>
-        {tasks.map((task) => (
-          <div key={task._id}
-            className={`task-content-card`}>
-            <div className="left-side-content-card">
-              <div
-                id="taskContent"
-                className="task-content-text"
-                onClick={(button) => handleClick(button, task)}
-              >
-                {task.taskContent}
-              </div>
-
-              <div className="task-content-date">
-                <div>{task.date}</div>
-              </div>
+      {tasks.map((task) => (
+        <div key={task._id} className="task-content-card">
+          <div className="left-side-content-card">
+            <div
+              id="taskContent"
+              className="task-content-text"
+              onClick={(button) => handleClick(button, task)}
+            >
+              {task.taskContent}
             </div>
 
-            <div className="right-content-text">
-              <div
-                id="status"
-                className={`task-status-button  ${task.statusTask}`}
-                onClick={(button) => handleClick(button, task)}
-                >
-                {statusConversion(task.statusTask)}
-              </div>
-
-              <div
-                className="task-delete-button"
-                onClick={() => deleteTask(task)}
-                >
-                Deletar
-              </div>
+            <div className="task-content-date">
+              <div>{task.date}</div>
             </div>
-
           </div>
-        ))}
-      </div>
 
+          <div className="right-content-text">
+            <div
+              id="status"
+              className={`task-status-button  ${task.statusTask}`}
+              onClick={(button) => handleClick(button, task)}
+            >
+              {statusConversion(task.statusTask)}
+            </div>
+            <div
+              className="task-delete-button"
+              onClick={() => deleteTask(task)}
+            >
+              Deletar
+            </div>
+          </div>
+        </div>
+
+      ))}
     </div>
   );
 }
