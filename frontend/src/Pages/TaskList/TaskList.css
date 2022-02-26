@@ -5,7 +5,7 @@
   --card-color-bright: #fefefe;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .main-task-list-page {
     background-color: var(--bg-color);
     min-height: 100vh;

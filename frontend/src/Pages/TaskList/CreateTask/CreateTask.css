@@ -53,7 +53,7 @@
   }
 }
 
-@media screen and (min-width: 500px) and (max-width: 1000px) {
+@media screen and (min-width: 600px) and (max-width: 1000px) {
   .main-content-input-task {
     display: flex;
     align-items: center;

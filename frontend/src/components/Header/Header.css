@@ -1,4 +1,4 @@
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .main-header-content {
     background-color: var(--bg-color-header);
     box-shadow: 0 0 10px 1px;
@@ -31,7 +31,7 @@
   }
 }
 
-@media screen and (min-width: 500px) and (max-width: 1000px) {
+@media screen and (min-width: 600px) and (max-width: 1000px) {
   .main-header-content {
     background-color: #8eabf3;
     align-items: center;

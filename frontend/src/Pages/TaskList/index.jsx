@@ -6,6 +6,7 @@ import CreateTask from './CreateTask';
 import ToDoList from './ToDoList'
 import Header from '../../components/Header';
 import EditStatus from '../../components/EditStatus';
+import Footer from '../../components/Footer';
 
 import './TaskList.css';
 
@@ -20,6 +21,9 @@ function TaskList() {
       <div className="task-list-box">
         { status ? (<EditStatus />) : ('')}
         <ToDoList />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   )

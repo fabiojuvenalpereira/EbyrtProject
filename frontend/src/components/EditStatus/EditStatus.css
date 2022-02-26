@@ -10,7 +10,7 @@
   --text-color-orange: #f58220;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .box-edit-status {
     animation: in 0.3s ease 0s 1 normal forwards;
     background: linear-gradient(150deg, #646868, #484949, #595c5c);
@@ -63,7 +63,7 @@
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) and (max-width: 1000px) {
   .box-edit-status {
     animation: in 1s ease 0s 1 normal forwards;
     background-color: #4d9de2;
@@ -107,6 +107,10 @@
     margin: 0.5em;
     padding: 1.2em;
     text-align: center;
+  }
+
+  .closing {
+    animation: out 0.3s ease 0s 1 normal forwards;
   }
 }
 

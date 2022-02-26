@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 
-@media screen and (max-width: 500px) {
-  .main-home {
-    align-items: center;
-    background-color: #7d8aab;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    width: 100vw;
-  }
+.main-home {
+  align-items: center;
+  background-color: #7d8aab;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+}
 
+@media screen and (max-width: 600px) {
   .logo-page {
     margin: auto;
     margin-top: 15vh;
@@ -23,6 +23,7 @@
   .input-name {
     width: 100vw;
     height: 100%;
+    margin-top: 10vh;
   }
 
   .footer {
@@ -31,69 +32,51 @@
   }
 }
 
-@media only screen and (min-width: 500px) and (max-width: 1000px) {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@media screen and (max-height: 600px) {
+  .input-name {
+    margin-top: 1vh;
   }
+}
 
-  .main-home {
-    background-color: #7d8aab;
-    min-height: 100vh;
-    width: 100vw;
-  }
-
-  .main-content {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .title-page {
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .logo-page {
     margin: auto;
-    margin-top: 15em;
-    text-align: center;
+    margin-top: 10vh;
   }
 
-  .main-title {
-    font-family: Monoton, cursive;
-    font-size: 5em;
-    color: white;
+  .main-image img {
+    width: 50vw;
+  }
+
+  .input-name {
+    width: 100%;
+    height: 20vh;
+    margin-bottom: 5em;
+  }
+
+  .footer {
+    font-size: 3vw;
+    width: 100vw;
   }
 }
 
 @media screen and (min-width: 1000px) {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .main-home {
-    margin: 0;
-    background-color: #7d8aab;
-    height: 100vh;
-    width: 100vw;
-  }
-
-  .main-content {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .title-page {
+  .logo-page {
     margin: auto;
-    margin-top: 15em;
-    text-align: center;
+    margin-top: 10vh;
   }
 
-  .main-title {
-    font-family: Monoton, cursive;
-    font-size: 10em;
-    color: white;
+  .main-image img {
+    width: 10vw;
+  }
+
+  .input-name {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .footer {
+    font-size: 1vw;
+    width: 100vw;
   }
 }

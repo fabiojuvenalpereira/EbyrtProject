@@ -5,12 +5,13 @@
   --card-color-bright: #fefefe;
   --card-color-highlight-dark: #e5e5e5e5;
   --card-color-highlight-bright: #e5e5e5e5;
+  --card-text-color-dark: #e5e5e5e5;
   --text-color-highlight: #ff6a00d2;
   --text-color-blue: #43b6ff;
   --text-color-orange: #f58220;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .task-content-card {
     animation: growing 1s ease 0s 1 normal forwards;
     background: linear-gradient(195deg, var(--card-color) 30%, var(--card-color-dark) 80%, var(--card-color) 98%);
@@ -96,6 +97,97 @@
     width: 30vw;
   }
 }
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .task-content-card {
+    animation: growing 1s ease 0s 1 normal forwards;
+    background: linear-gradient(195deg, var(--card-color) 30%, var(--card-color-dark) 80%, var(--card-color) 98%);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    height: 45vw;
+    margin: auto;
+    margin-top: 1em;
+    width: 90vw;
+  }
+
+  .left-side-content-card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+    justify-content: space-between;
+    width: 65%;
+  }
+
+  .task-content-text {
+    color: var(--card-text-color-dark);
+    flex-grow: 1;
+    margin-top: 1em;
+    overflow-wrap: break-word;
+    padding: 1em;
+    width: 100%;
+  }
+
+  .task-content-date {
+    align-self: flex-start;
+    color: var(--text-color-blue);
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-bottom: 1em;
+    text-indent: 1em;
+  }
+
+  .right-content-text {
+    align-items: center;
+    display: flex;
+    font-size: 0.7em;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+  }
+
+  .right-content-text::before {
+    content: "";
+    background-color: var(--card-color-highlight-bright);
+    filter: blur(0.7px);
+    height: 70%;
+    position: absolute;
+    left: -3vw;
+    opacity: 0.4;
+    width: 1px;
+  }
+
+  .task-status-button {
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    flex-grow: 0.3;
+    font-size: 3vw;
+    justify-content: center;
+    margin-right: 2vw;
+    width: 30vw;
+  }
+
+  .task-delete-button {
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(195deg, #e82222 30%, #d35148 80%, #d34d4d 98%);
+    color: white;
+    display: flex;
+    flex-grow: 0.3;
+    font-size: 3vw;
+    justify-content: center;
+    margin-right: 2vw;
+    transition: 0.2s;
+    text-align: center;
+    width: 30vw;
+  }
+}
+
+/* @media screen and (min-width: 1000px) {
+
+} */
 
 .progress {
   background: linear-gradient(80deg, #f3f303, #f3eb03, #fcd600);

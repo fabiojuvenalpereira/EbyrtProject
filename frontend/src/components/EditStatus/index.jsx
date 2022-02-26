@@ -6,6 +6,7 @@ import './EditStatus.css';
 import { setRefresh, setStatus } from '../../App/slices/tasks/tasksSlice';
 import { makePutToServer } from '../../api';
 import generateDate from '../../utils/generateDate';
+import { useEffect } from 'react';
 
 function EditStatus() {
   const selectedTask = useSelector((state) => state.tasksState.selectedTask);
@@ -21,9 +22,13 @@ function EditStatus() {
     statusTask: selectedTask.statusTask,
   };
 
+  useEffect(() => {
+    setClose()
+  },[]);
+
   const handleClick = async ({target}) => {
     setClose('closing');
-    const TIMER = 200;
+    const TIMER = 500;
     let { statusTask , ...dataContent } = data;
     
     statusTask = target.value;
