@@ -2,13 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap") ;
 
 :root {
-  --bg-color-header: #111;
   --bg-color: #282828;
   --card-color: #3d3d3d;
   --card-color-dark: #333;
   --card-color-bright: #fefefe;
+  --card-color-highlight-dark: #e5e5e5e5;
+  --card-color-highlight-bright: #e5e5e5e5;
   --text-color-highlight: #ff6a00d2;
-  --text-color-highlight-bright: rgb(240 240 240);
+  --text-color-blue: #43b6ff;
+  --text-color-orange: #f58220;
 }
 
 .light-theme {
@@ -25,6 +27,7 @@
   font-family: Montserrat, sans-serif;
   margin: 0;
   padding: 0;
-  outline: 0;
+  outline: none;
+  border: none;
   box-sizing: border-box;
 }

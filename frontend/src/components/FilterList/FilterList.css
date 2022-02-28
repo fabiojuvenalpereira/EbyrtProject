@@ -1,0 +1,74 @@
+:root {
+  --bg-color: #282828;
+  --card-color: #3d3d3d;
+  --card-color-dark: #333;
+  --card-color-bright: #fefefe;
+  --card-color-highlight-dark: #e5e5e5e5;
+  --card-color-highlight-bright: #e5e5e5e5;
+  --text-color-highlight: #ff6a00d2;
+  --text-color-blue: #43b6ff;
+  --text-color-orange: #f58220;
+}
+
+.change-order {
+  color: var(--card-color-bright);
+  display: flex;
+  flex-direction: row;
+  margin-left: -3vw;
+  transform: scale(0.7);
+  position: absolute;
+}
+
+.alfabetic-button {
+  background-color: var(--card-color-dark);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.date-button {
+  background-color: var(--card-color-dark);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.status-button {
+  background-color: var(--card-color-dark);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .change-order {
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .change-order {
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .change-order {
+    position: relative;
+  }
+
+  .alfabetic-button {
+    margin: 0.5em;
+    padding: 1em;
+    width: 10vw;
+  }
+
+  .date-button {
+    margin: 0.5em;
+    padding: 1em;
+    width: 10vw;
+  }
+
+  .status-button {
+    margin: 0.5em;
+    padding: 1em;
+    width: 10vw;
+  }
+}

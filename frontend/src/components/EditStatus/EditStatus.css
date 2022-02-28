@@ -10,23 +10,55 @@
   --text-color-orange: #f58220;
 }
 
+.box-edit-status {
+  animation: in 0.5s ease 0s 1 normal forwards;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px #111111db;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  right: 0;
+  margin-top: 18vh;
+  z-index: 1;
+}
+
+.title-edit-status {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5em;
+}
+
+.buttons-edit-status {
+  align-items: center;
+  animation: buttons 1s ease 0s 1 normal forwards;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.buttons-edit-status button {
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px #11111169;
+  outline: 0;
+  margin: 0.5em;
+  padding: 1.2em;
+  text-align: center;
+}
+
+.closing {
+  animation: out 0.3s ease 0s 1 normal forwards;
+}
+
 @media screen and (max-width: 600px) {
   .box-edit-status {
-    animation: in 0.3s ease 0s 1 normal forwards;
-    background: linear-gradient(150deg, #646868, #484949, #595c5c);
-    border-radius: 10px;
-    box-shadow: 0 0 10px 1px #111111db;
-    display: flex;
-    flex-direction: column;
     height: 18em;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    position: fixed;
-    right: 0;
     width: 18em;
-    margin-top: 18vh;
-    z-index: 1;
   }
 
   .closing {
@@ -64,6 +96,57 @@
 }
 
 @media screen and (min-width: 600px) and (max-width: 1000px) {
+  .box-edit-status {
+    animation: in 1s ease 0s 1 normal forwards;
+    background-color: #4d9de2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px #111111db;
+    display: flex;
+    flex-direction: column;
+    height: 18em;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    right: 0;
+    width: 18em;
+    margin-top: 18vh;
+    z-index: 1;
+  }
+
+  .title-edit-status {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5em;
+  }
+
+  .buttons-edit-status {
+    align-items: center;
+    animation: buttons 1s ease 0s 1 normal forwards;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .buttons-edit-status button {
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px #11111169;
+    width: 12em;
+    outline: 0;
+    margin: 0.5em;
+    padding: 1.2em;
+    text-align: center;
+  }
+
+  .closing {
+    animation: out 0.3s ease 0s 1 normal forwards;
+  }
+}
+
+@media screen and (min-width: 600px) {
   .box-edit-status {
     animation: in 1s ease 0s 1 normal forwards;
     background-color: #4d9de2;

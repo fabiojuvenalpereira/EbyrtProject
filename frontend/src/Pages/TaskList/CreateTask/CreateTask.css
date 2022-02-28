@@ -94,7 +94,7 @@
 
 @media screen and (min-width: 1000px) {
   .main-content-input-task {
-    width: 100vw;
+    margin-left: 20vw;
   }
 
   .main-content-form {
@@ -103,7 +103,7 @@
 
   .create-task-input input[type="text"] {
     text-indent: 1.5em;
-    width: 40vw;
+    width: 30vw;
   }
 
   .main-content-form button {

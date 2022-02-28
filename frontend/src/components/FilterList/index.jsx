@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './FilterList.css';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { setTasks } from '../../App/slices/tasks/tasksSlice';
 
@@ -65,27 +67,27 @@ function FilterList () {
 
   return (
     <div className="change-order">
-      <button
-        className="data-button"
+      <div
+        className="alfabetic-button"
         value="alfabetic"
         onClick={(event) => changeFilter(event)}
         >
           ordem alfabética
-        </button>
-      <button
-        className="data-button"
+        </div>
+      <div
+        className="date-button"
         value="date"
         onClick={(event) => changeFilter(event)}
         >
           data
-        </button>
-      <button
-        className="data-button"
+        </div>
+      <div
+        className="status-button"
         value="status"
         onClick={(event) => changeFilter(event)}
         >
           status
-        </button>
+        </div>
     </div>
   )
 }

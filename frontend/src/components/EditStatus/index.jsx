@@ -26,33 +26,46 @@ function EditStatus() {
     setClose()
   },[]);
 
+  const TIMER = 200;
+
   const handleClick = async ({target}) => {
     setClose('closing');
-    const TIMER = 500;
-    let { statusTask , ...dataContent } = data;
-    
-    statusTask = target.value;
-    
-    const generatedData = generateDate();
 
+    let { statusTask , ...dataContent } = data;
+    statusTask = target.value;
+
+    const generatedData = generateDate();
     const dataWithNewStatus = {
       ...dataContent,
       statusTask,
       date: generatedData,
     }
-    
+
     await makePutToServer(dataWithNewStatus);
-    
+
     setTimeout(() => {
       dispatch(setStatus(false));
       dispatch(setRefresh(!refresh));
     }, TIMER)
   };
 
+  const closeWindow = () => {
+    setClose('closing');
+
+    setTimeout(() => {
+      dispatch(setStatus(false));
+    }, TIMER)
+  }
+
   return (
     <div
       className={`box-edit-status ${close}`}
       >
+      <button
+        type="button"
+        className='close-button'
+        onClick={ closeWindow }
+      >X</button>
       <div className="title-edit-status">ALTERE O STATUS:</div>
       <div className="buttons-edit-status">
         <button

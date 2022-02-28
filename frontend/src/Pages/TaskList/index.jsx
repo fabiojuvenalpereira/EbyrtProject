@@ -14,6 +14,7 @@ import EditTask from '../../components/EditTask';
 
 function TaskList() {
   const status = useSelector((state) => state.tasksState.status);
+  const editTask = useSelector((state) => state.tasksState.editTask);
 
   return (
     <div className="main-task-list-page">
@@ -23,8 +24,10 @@ function TaskList() {
         <FilterList />
       </div>
       <div className="task-list-box">
+        <div className="floating-box">
         { status ? (<EditStatus />) : ('')}
-        <EditTask />
+          { editTask ? (<EditTask />) : ('') }
+        </div>
         <ToDoList />
       </div>
       <div className="footer-content">

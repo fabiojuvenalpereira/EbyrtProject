@@ -1,4 +1,165 @@
 .main-edit-task {
-  position: absolute;
-  z-index: 10;
+  animation: in 0.3s ease 0s 1 normal forwards;
+  background: linear-gradient(150deg, #646868, #484949, #595c5c);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px #111111db;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+}
+
+.input-button {
+  animation: in 0.3s ease 0s 1 normal forwards;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  color: whitesmoke;
+}
+
+.input-button input[type="text"] {
+  background-color: whitesmoke;
+  align-self: center;
+  border-radius: 8px;
+  padding: 1.5em;
+  transition: 0.2s;
+}
+
+.input-button button {
+  background-color: #3f3f3f;
+  border: none;
+  box-shadow: 0 0 10px 2px #00000035;
+  border-radius: 5px;
+  cursor: pointer;
+  color: whitesmoke;
+  margin-top: 1.5em;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.close-button {
+  align-self: flex-end;
+  background-color: #e45b5b;
+  border: none;
+  border-radius: 5px;
+  color: whitesmoke;
+  cursor: pointer;
+  font-weight: 800;
+  margin-top: 1vh;
+  margin-right: 1vh;
+  padding: 0.5em;
+  text-align: center;
+  width: 5vh;
+}
+
+@media screen and (max-width: 600px) {
+  .main-edit-task {
+    height: 18em;
+    width: 18em;
+    margin-top: 18vh;
+  }
+
+  .main-edit-task::before {
+    height: 100%;
+    width: 100%;
+    transform: scale(1.5);
+  }
+
+  .input-button {
+    height: 100%;
+    width: 100%;
+  }
+
+  .input-button input[type="text"] {
+    width: 80%;
+    padding: 1.5em;
+  }
+
+  .title {
+    color: whitesmoke;
+    margin-bottom: 1em;
+  }
+
+  .input-button button {
+    height: 15%;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 600px) and  (max-width: 1000px) {
+  .main-edit-task {
+    height: 18em;
+    width: 18em;
+    margin-top: 18vh;
+  }
+
+  .input-button {
+    height: 100%;
+    width: 100%;
+  }
+
+  .input-button input[type="text"] {
+    width: 80%;
+    padding: 1.5em;
+  }
+
+  .title {
+    color: whitesmoke;
+    margin-bottom: 1em;
+  }
+
+  .input-button button {
+    height: 15%;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .main-edit-task {
+    height: 20em;
+    width: 40em;
+    margin-top: 18vh;
+  }
+
+  .main-edit-task::before {
+    height: 100%;
+    width: 100%;
+    transform: scale(1.5);
+  }
+
+  .input-button {
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+  }
+
+  .title {
+    color: whitesmoke;
+  }
+
+  .input-button input[type="text"] {
+    height: 20%;
+    width: 90%;
+  }
+
+  .input-button button {
+    height: 15%;
+    width: 20%;
+  }
+
+  .input-button button:hover {
+    box-shadow: 0 0 10px 2px #ffffff35;
+    height: 15%;
+    transform: scale(0.99);
+    transition: 0.2s;
+    width: 20%;
+  }
 }
