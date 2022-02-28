@@ -4,7 +4,6 @@ function Loading() {
   return (
     <div>
       Loading
-      {console.log('loading')}
     </div>
   )
 }

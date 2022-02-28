@@ -24,7 +24,6 @@ function CreateTask() {
   useEffect(() => {
     const getUserFromLocalStorage = JSON.parse(localStorage.getItem('user'));
     setUserName(user !== null ? user : getUserFromLocalStorage);
-    console.log(userName);
   }, [inputText]);
 
   const handleChange = ({ target }) => {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect }from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import './ToDoList.css';
+
 import statusConversion from '../../../utils/statusConversion';
 import { fetchTasks, makeDeleteToServer } from '../../../api/';
 import {
@@ -8,9 +10,9 @@ import {
   setStatus,
   setRefresh,
   setTasks,
+  setEditTask,
 } from '../../../App/slices/tasks/tasksSlice';
 
-import './ToDoList.css';
 import Loading from '../../../components/Loading';
 
 function ToDoList() {
@@ -27,7 +29,7 @@ function ToDoList() {
 
     dispatch(setTasks(response));
   }
-  
+
   useEffect(() => {
     fetch();
 
@@ -36,6 +38,11 @@ function ToDoList() {
 
   const handleClick = (button, taskContent) => {
     const { target } = button;
+
+    if (target.id === 'task-content') {
+      dispatch(setEditTask(true));
+      dispatch(selectedTask(taskContent));
+    }
 
     if (target.id === 'status') {
       dispatch(setStatus(true));
@@ -55,7 +62,7 @@ function ToDoList() {
         <div key={task._id} className="task-content-card">
           <div className="left-side-content-card">
             <div
-              id="taskContent"
+              id="task-content"
               className="task-content-text"
               onClick={(button) => handleClick(button, task)}
             >
@@ -81,7 +88,6 @@ function ToDoList() {
             </div>
           </div>
         </div>
-
       ))}
     </div>
   );

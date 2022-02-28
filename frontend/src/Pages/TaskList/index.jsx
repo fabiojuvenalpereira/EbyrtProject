@@ -1,6 +1,7 @@
 import React from 'react'
-
 import { useSelector } from 'react-redux'
+
+import './TaskList.css';
 
 import CreateTask from './CreateTask';
 import ToDoList from './ToDoList'
@@ -8,8 +9,7 @@ import Header from '../../components/Header';
 import EditStatus from '../../components/EditStatus';
 import Footer from '../../components/Footer';
 import FilterList from '../../components/FilterList/';
-
-import './TaskList.css';
+import EditTask from '../../components/EditTask';
 
 
 function TaskList() {
@@ -24,6 +24,7 @@ function TaskList() {
       </div>
       <div className="task-list-box">
         { status ? (<EditStatus />) : ('')}
+        <EditTask />
         <ToDoList />
       </div>
       <div className="footer-content">

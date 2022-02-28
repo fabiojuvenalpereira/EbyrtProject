@@ -14,7 +14,6 @@ function FilterList () {
 
   const orderList = (order, field) => {
     const list = Array.from(tasks)
-    console.log(list);
     let sortedList;
 
     if (order === true) {
@@ -34,19 +33,19 @@ function FilterList () {
     return sortedList;
   }
 
-  const filterAlfabetic = (order, field) => {
+  const orderAlfabetic = (order, field) => {
     setAlfabetic(!alfabetic);
     const sorted = orderList(order, field);
     dispatch(setTasks(sorted));
   }
 
-  const filterStatus = (order, field) => {
+  const orderStatus = (order, field) => {
     setStatus(!status);
     const sorted = orderList(order, field);
     dispatch(setTasks(sorted));
   }
   
-  const filterDate = (order, field) => {
+  const orderDate = (order, field) => {
     setDate(!date);
     const sorted = orderList(order, field);
     dispatch(setTasks(sorted));
@@ -54,9 +53,9 @@ function FilterList () {
 
   const changeOrderList = (filter) => {
     switch (filter) {
-      case 'alfabetic': return filterAlfabetic(alfabetic, 'taskContent');
-      case 'status': return filterStatus(status, 'statusTask');
-      default: filterDate(date, 'date');
+      case 'alfabetic': return orderAlfabetic(alfabetic, 'taskContent');
+      case 'status': return orderStatus(status, 'statusTask');
+      default: orderDate(date, 'date');
     }
   };
 
