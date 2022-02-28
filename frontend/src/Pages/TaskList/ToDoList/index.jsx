@@ -1,7 +1,4 @@
-import React from 'react';
-
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect }from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import statusConversion from '../../../utils/statusConversion';
@@ -10,19 +7,31 @@ import {
   selectedTask,
   setStatus,
   setRefresh,
+  setTasks,
 } from '../../../App/slices/tasks/tasksSlice';
 
 import './ToDoList.css';
+import Loading from '../../../components/Loading';
 
 function ToDoList() {
   const refresh = useSelector((state) => state.tasksState.refresh);
+  const tasks = useSelector((state) => state.tasksState.tasks);
   const dispatch = useDispatch();
 
-  const [tasks, setTasks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  useEffect(async () => {
+  const fetch = async () => {
+    setLoading(true);
+
     const response = await fetchTasks();
-    setTasks(response);
+
+    dispatch(setTasks(response));
+  }
+  
+  useEffect(() => {
+    fetch();
+
+    setLoading(false);
   }, [refresh]);
 
   const handleClick = (button, taskContent) => {
@@ -42,7 +51,7 @@ function ToDoList() {
 
   return (
     <div className="main-content">
-      {tasks.map((task) => (
+      {loading ? <Loading /> : tasks.map((task) => (
         <div key={task._id} className="task-content-card">
           <div className="left-side-content-card">
             <div
@@ -52,12 +61,10 @@ function ToDoList() {
             >
               {task.taskContent}
             </div>
-
             <div className="task-content-date">
               <div>{task.date}</div>
             </div>
           </div>
-
           <div className="right-content-text">
             <div
               id="status"
