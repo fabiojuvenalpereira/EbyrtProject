@@ -8,43 +8,55 @@ function FilterList () {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasksState.tasks);
   
-  // const [filterBy, setFilterBy] = useState('data');
   const [alfabetic, setAlfabetic] = useState(true);
   const [date, setDate] = useState(true);
   const [status, setStatus] = useState(true);
 
-  const filterAlfabetic = (order) => {
-    setAlfabetic(!alfabetic);
-
+  const orderList = (order, field) => {
     const list = Array.from(tasks)
+    console.log(list);
+    let sortedList;
 
-    console.log(order);
+    if (order === true) {
+       sortedList = list.sort((a, b) => {
+        if ( a[field] > b[field] ) return 1;
+        if ( a[field] < b[field] ) return -1;
+        return 0
+      });
+    } else {
+      sortedList = list.sort((a, b) => {
+        if ( a[field] > b[field] ) return -1;
+        if ( a[field] < b[field] ) return 1;
+        return 0
+      });
+    }
 
-    const sortedList = list.sort((a, b) => {
-      console.log(a.taskContent);
-      if ( a.taskContent > b.taskContent ) return 1;
-      if ( a.taskContent < b.taskContent ) return -1;
-      return 0
-    });
-
-    dispatch(setTasks(sortedList));
+    return sortedList;
   }
 
-  const filterStatus = (order) => {
-    setStatus(!status)
-    console.log(order);
+  const filterAlfabetic = (order, field) => {
+    setAlfabetic(!alfabetic);
+    const sorted = orderList(order, field);
+    dispatch(setTasks(sorted));
+  }
+
+  const filterStatus = (order, field) => {
+    setStatus(!status);
+    const sorted = orderList(order, field);
+    dispatch(setTasks(sorted));
   }
   
-  const filterDate = (order) => {
-    setDate(!date)
-    console.log(order);
+  const filterDate = (order, field) => {
+    setDate(!date);
+    const sorted = orderList(order, field);
+    dispatch(setTasks(sorted));
   }
 
   const changeOrderList = (filter) => {
     switch (filter) {
-      case 'alfabetic': return filterAlfabetic(alfabetic);
-      case 'status': return filterStatus(status);
-      default: filterDate(date);
+      case 'alfabetic': return filterAlfabetic(alfabetic, 'taskContent');
+      case 'status': return filterStatus(status, 'statusTask');
+      default: filterDate(date, 'date');
     }
   };
 
