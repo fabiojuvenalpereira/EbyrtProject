@@ -1,0 +1,216 @@
+.box-edit-status {
+  animation: in 0.5s ease 0s 1 normal forwards;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 1px var(--box-shadow-color);
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  right: 0;
+  margin-top: 18vh;
+  z-index: 1;
+}
+
+.title-edit-status {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5em;
+}
+
+.buttons-edit-status {
+  align-items: center;
+  animation: buttons 1s ease 0s 1 normal forwards;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.buttons-edit-status button {
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 1px var(--box-shadow-color);
+  outline: 0;
+  margin: 0.5em;
+  padding: 1.2em;
+  text-align: center;
+}
+
+.closing {
+  animation: out 0.3s ease 0s 1 normal forwards;
+}
+
+@media screen and (max-width: 600px) {
+  .box-edit-status {
+    height: 18em;
+    width: 18em;
+  }
+
+  .closing {
+    animation: out 0.3s ease 0s 1 normal forwards;
+  }
+
+  .title-edit-status {
+    align-items: center;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    font-weight: 800;
+    margin-top: 2.5em;
+  }
+
+  .buttons-edit-status {
+    align-items: center;
+    animation: buttons 0.3s ease 0s 1 normal forwards;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .buttons-edit-status button {
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px var(--box-shadow-color);
+    width: 12em;
+    outline: 0;
+    margin: 0.5em;
+    padding: 1.2em;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .box-edit-status {
+    animation: in 1s ease 0s 1 normal forwards;
+    background-color: #4d9de2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px var(--box-shadow-color);
+    display: flex;
+    flex-direction: column;
+    height: 18em;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    right: 0;
+    width: 18em;
+    margin-top: 18vh;
+    z-index: 1;
+  }
+
+  .title-edit-status {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5em;
+  }
+
+  .buttons-edit-status {
+    align-items: center;
+    animation: buttons 1s ease 0s 1 normal forwards;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .buttons-edit-status button {
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px var(--box-shadow-color);
+    width: 12em;
+    outline: 0;
+    margin: 0.5em;
+    padding: 1.2em;
+    text-align: center;
+  }
+
+  .closing {
+    animation: out 0.3s ease 0s 1 normal forwards;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .box-edit-status {
+    animation: in 1s ease 0s 1 normal forwards;
+    background-color: #4d9de2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px var(--box-shadow-color);
+    display: flex;
+    flex-direction: column;
+    height: 18em;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    right: 0;
+    width: 18em;
+    margin-top: 18vh;
+    z-index: 1;
+  }
+
+  .title-edit-status {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5em;
+  }
+
+  .buttons-edit-status {
+    align-items: center;
+    animation: buttons 1s ease 0s 1 normal forwards;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .buttons-edit-status button {
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px var(--box-shadow-color);
+    width: 12em;
+    outline: 0;
+    margin: 0.5em;
+    padding: 1.2em;
+    text-align: center;
+  }
+
+  .closing {
+    animation: out 0.3s ease 0s 1 normal forwards;
+  }
+}
+
+@keyframes in {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes out {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes buttons {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}

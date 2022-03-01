@@ -1,11 +1,11 @@
 import React from 'react';
 
-import '../../styles/UserNameInput.css';
+import './UserNameInput.css';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../../App/slices/tasks/tasksSlice';
+import { setUser } from '../../../App/slices/tasks/tasksSlice';
 
 function InputName() {
   const navigate = useNavigate();
@@ -44,6 +44,7 @@ function InputName() {
               type="text"
               name="textIput"
               className="input-text-bar"
+              placeholder="Digite Seu Usuário"
               value={userNameInput}
               onChange={handleChange}
             />

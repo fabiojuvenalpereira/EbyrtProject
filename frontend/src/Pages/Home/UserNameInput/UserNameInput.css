@@ -1,0 +1,79 @@
+.main-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-text {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-text-bar {
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(255 255 255 / 89%);
+  font-size: 1em;
+  padding: 1.5em 0;
+  text-indent: 2em;
+  margin-top: 2em;
+  outline: 0;
+  transition: 0.2s;
+}
+
+.enter-button {
+  background-color: rgb(252 252 252 / 10.3%);
+  border-radius: 8px;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  padding: 1em;
+  text-align: center;
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 600px) {
+  .input-text-bar {
+    width: 70vw;
+  }
+
+  .enter-button {
+    width: 70vw;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .input-text-bar {
+    width: 70vw;
+  }
+
+  .enter-button {
+    width: 40vw;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .input-text-bar {
+    width: 40vw;
+  }
+
+  .enter-button {
+    width: 20vw;
+  }
+
+  .input-text-bar:hover {
+    background-color: rgb(255 255 255 / 54.1%);
+    transition: 0.2s;
+  }
+
+  .enter-button:hover {
+    color: rgb(31 31 31);
+    background-color: rgb(252 252 252 / 21.9%);
+    transition: 0.2s;
+  }
+}

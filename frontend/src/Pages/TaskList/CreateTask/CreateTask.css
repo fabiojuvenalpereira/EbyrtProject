@@ -1,0 +1,126 @@
+.main-content-input-task {
+  align-items: center;
+  display: flex;
+}
+
+.main-content-form {
+  align-items: center;
+  display: flex;
+  margin: auto;
+  margin-bottom: 0.5em;
+}
+
+.create-task-input {
+  display: flex;
+}
+
+.create-task-input input[type="text"] {
+  background-color: var(--card-color-highlight-dark);
+  border-radius: 8px 0 0 8px;
+  border: none;
+  color: var(--text-color);
+  height: 6vh;
+  outline: 0;
+  text-indent: 1.5em;
+  width: 65vw;
+}
+
+.create-button {
+  background-color: var(--text-color-highlight);
+  border-radius: 0 8px 8px 0;
+  border: none;
+  outline: 0;
+  transition: 0.2s;
+  width: 12vw;
+}
+
+.add-icon {
+  transform: scale(1.4);
+  filter: invert(100%) sepia(16%) saturate(7463%) hue-rotate(184deg) brightness(116%) contrast(99%);
+}
+
+.mobile-menu {
+  background-color: var(--card-color);
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 600px) {
+  .main-content-input-task {
+    width: 80vw;
+  }
+
+  .main-content-form {
+    margin-bottom: 0.5em;
+  }
+
+  .create-task-input input[type="text"] {
+    text-indent: 1.5em;
+    width: 65vw;
+  }
+
+  .create-button {
+    background-color: var(--text-color-highlight);
+    border-radius: 0;
+    width: 12vw;
+  }
+
+  .mobile-menu {
+    border-radius: 0 8px 8px 0;
+    font-size: 1.5vh;
+    padding: 2vw;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .main-content-input-task {
+    width: 100vw;
+  }
+
+  .main-content-form {
+    margin-bottom: 0.5em;
+  }
+
+  .create-task-input input[type="text"] {
+    background-color: var(--input-color);
+    text-indent: 1.5em;
+    width: 65vw;
+  }
+
+  .create-button {
+    background-color: var(--text-color-highlight);
+    border-radius: 0 8px 8px 0;
+    width: 12vw;
+  }
+
+  .mobile-menu {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .main-content-input-task {
+    margin-left: 20vw;
+  }
+
+  .main-content-form {
+    margin-bottom: 0.5vw;
+  }
+
+  .create-task-input input[type="text"] {
+    text-indent: 1.5em;
+    width: 30vw;
+  }
+
+  .create-button {
+    background-color: var(--text-color-highlight);
+    border-radius: 0 8px 8px 0;
+    width: 5vw;
+  }
+
+  .mobile-menu {
+    visibility: hidden;
+    position: absolute;
+  }
+}

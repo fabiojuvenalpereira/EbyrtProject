@@ -1,0 +1,268 @@
+.task-content-card {
+  animation: growing 1s ease 0s 1 normal forwards;
+  background: linear-gradient(195deg, var(--card-color-2) 30%, var(--card-color) 80%, var(--card-color-2) 98%);
+  display: flex;
+  margin: auto;
+  box-shadow: 0 0 10px var(--box-shadow-color);
+}
+
+.left-side-content-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-content-text {
+  color: var(--text-color-2);
+  cursor: pointer;
+  margin-top: 1vh;
+  overflow-wrap: break-word;
+  padding: 1em;
+}
+
+.task-content-date {
+  align-self: flex-start;
+  color: var(--text-color-blue);
+  margin-bottom: 2vh;
+}
+
+.right-content-text {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.right-content-text::before {
+  content: "";
+  background-color: var(--color-highlight);
+  filter: blur(0.7px);
+  position: absolute;
+  opacity: 0.4;
+}
+
+.task-status-button {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.task-delete-button {
+  align-items: center;
+  background: linear-gradient(195deg, #e82222 30%, #d35148 80%, #d34d4d 98%);
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.progress {
+  background: linear-gradient(80deg, #f3f303, #f3eb03, #fcd600);
+  text-shadow: -1px 2px 14px #282828;
+  transition: 1s;
+}
+
+.done {
+  color: var(--text-color);
+  background: linear-gradient(80deg, #64ee07, #44ee06, #21990e);
+  text-shadow: -1px 2px 14px #282828;
+  transition: 1s;
+}
+
+.pending {
+  background: linear-gradient(80deg, #ff7f1e, #ff6f00, #dc6002);
+  color: var(--text-color);
+  text-shadow: 1px 2px 4px #282828;
+  transition: 1s;
+}
+
+@media screen and (max-width: 600px) {
+  .task-content-card {
+    border-radius: 8px;
+    height: 45vw;
+    margin-top: 1em;
+    width: 90vw;
+  }
+
+  .left-side-content-card {
+    font-size: 0.8em;
+    justify-content: space-between;
+    width: 65%;
+  }
+
+  .task-content-text {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  .task-content-date {
+    font-size: 0.8em;
+    font-weight: 600;
+    text-indent: 1em;
+  }
+
+  .right-content-text {
+    font-size: 0.7em;
+  }
+
+  .right-content-text::before {
+    content: "";
+    height: 70%;
+    left: -3vw;
+    width: 1px;
+  }
+
+  .task-status-button {
+    border-radius: 8px;
+    flex-grow: 0.3;
+    font-size: 3vw;
+    margin-right: 2vw;
+    width: 30vw;
+  }
+
+  .task-delete-button {
+    border-radius: 8px;
+    flex-grow: 0.3;
+    font-size: 3vw;
+    margin-right: 2vw;
+    transition: 0.2s;
+    width: 30vw;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .task-content-card {
+    border-radius: 8px;
+    height: 30vw;
+    margin-top: 1em;
+    width: 90vw;
+  }
+
+  .left-side-content-card {
+    font-size: 1em;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .task-content-text {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  .task-content-date {
+    font-size: 1em;
+    font-weight: 600;
+    text-indent: 1em;
+  }
+
+  .right-content-text {
+    font-size: 0.7em;
+  }
+
+  .right-content-text::before {
+    content: "";
+    height: 70%;
+    left: -3vw;
+    width: 1px;
+  }
+
+  .task-status-button {
+    border-radius: 8px;
+    flex-grow: 0.3;
+    font-size: 3vw;
+    margin-right: 2vw;
+    width: 30vw;
+  }
+
+  .task-delete-button {
+    border-radius: 8px;
+    flex-grow: 0.3;
+    font-size: 3vw;
+    margin-right: 2vw;
+    transition: 0.2s;
+    width: 30vw;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .task-content-card {
+    border-radius: 8px;
+    height: 10vw;
+    margin-top: 1em;
+    width: 60vw;
+  }
+
+  .left-side-content-card {
+    font-size: 1em;
+    justify-content: space-between;
+    width: 65%;
+  }
+
+  .task-content-text {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  .task-content-date {
+    font-size: 0.8em;
+    font-weight: 600;
+    text-indent: 1em;
+  }
+
+  .right-content-text {
+    font-size: 0.7em;
+    flex-direction: row;
+  }
+
+  .right-content-text::before {
+    content: "";
+    height: 70%;
+    left: -3vw;
+    width: 1px;
+  }
+
+  .task-status-button {
+    border-radius: 8px;
+    font-size: 1.5vh;
+    flex-wrap: nowrap;
+    height: 60%;
+    margin-right: 2vw;
+    transition: 0.2s;
+    width: 10vw;
+  }
+
+  .task-status-button:hover {
+    box-shadow: 0 0 5px var(--box-shadow-color);
+    transform: scale(0.97);
+    transition: 0.2s;
+  }
+
+  .task-delete-button {
+    border-radius: 8px;
+    font-size: 1.5vh;
+    height: 60%;
+    margin-right: 2vw;
+    transition: 0.2s;
+    width: 8vw;
+  }
+
+  .task-delete-button:hover {
+    box-shadow: 0 0 5px var(--box-shadow-color);
+    transform: scale(0.97);
+    transition: 0.2s;
+  }
+}
+
+@keyframes growing {
+  0% {
+    box-shadow: 0 var(--box-shadow-color);
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,15 +1,19 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 
-import '../../styles/EditStatus.css';
+import './EditStatus.css';
 import { setRefresh, setStatus } from '../../App/slices/tasks/tasksSlice';
 import { makePutToServer } from '../../api';
 import generateDate from '../../utils/generateDate';
+import { useEffect } from 'react';
 
 function EditStatus() {
   const selectedTask = useSelector((state) => state.tasksState.selectedTask);
   const refresh = useSelector((state) => state.tasksState.refresh);
   const dispatch = useDispatch();
+
+  const [close, setClose] = useState('');
 
   const data = {
     _id: selectedTask._id,
@@ -18,12 +22,19 @@ function EditStatus() {
     statusTask: selectedTask.statusTask,
   };
 
+  useEffect(() => {
+    setClose()
+  },[]);
+
+  const TIMER = 200;
+
   const handleClick = async ({target}) => {
+    setClose('closing');
+
     let { statusTask , ...dataContent } = data;
     statusTask = target.value;
 
     const generatedData = generateDate();
-    console.log(generatedData);
     const dataWithNewStatus = {
       ...dataContent,
       statusTask,
@@ -31,19 +42,36 @@ function EditStatus() {
     }
 
     await makePutToServer(dataWithNewStatus);
-    dispatch(setStatus(false));
-    dispatch(setRefresh(!refresh));
+
+    setTimeout(() => {
+      dispatch(setStatus(false));
+      dispatch(setRefresh(!refresh));
+    }, TIMER)
   };
+
+  const closeWindow = () => {
+    setClose('closing');
+
+    setTimeout(() => {
+      dispatch(setStatus(false));
+    }, TIMER)
+  }
 
   return (
     <div
-      className="box-edit-status"
+      className={`box-edit-status ${close}`}
       >
+      <button
+        type="button"
+        className='close-button'
+        onClick={ closeWindow }
+      >X</button>
       <div className="title-edit-status">ALTERE O STATUS:</div>
       <div className="buttons-edit-status">
         <button
           type="button"
           value="pending"
+          className="pending"
           onClick={(button) => {
             handleClick(button);
           }}
@@ -53,6 +81,7 @@ function EditStatus() {
         <button
           type="button"
           value="in progress"
+          className="progress"
           onClick={(button) => {
             handleClick(button);
           }}
@@ -62,6 +91,7 @@ function EditStatus() {
         <button
           type="button"
           value="done"
+          className="done"
           onClick={(button) => {
             handleClick(button);
           }}
