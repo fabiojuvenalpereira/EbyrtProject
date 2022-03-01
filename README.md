@@ -35,7 +35,7 @@
 
 ## TRYBE
 #### Quer conhecer mais sobre a [TRYBE](https://www.betrybe.com/)?  Dê uma olhadinha neste link a seguir:
-[![N|trybe](https://uploads-ssl.webflow.com/5fba98ad987231cf0efa3d58/5fba9c9a93a2e77624258d49_Logo.svg)](https://www.betrybe.com/)
+[![N|trybe](https://assets-global.website-files.com/61549abf6fb9ca5e91bc5709/61549abf6fb9ca4630bc5747_Logo.svg)](https://www.betrybe.com/)
 
 
 ## ESTRUTURA DO PROJETO NO GITHUB
