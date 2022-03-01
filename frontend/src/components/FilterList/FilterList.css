@@ -153,18 +153,16 @@
 
   .text-order {
     align-items: center;
-    background-color: var(--card-color-dark);
-    border-radius: 8px 0 0 8px;
     display: flex;
     font-size: 2vh;
-    height: 10vh;
     justify-content: center;
     margin-top: 1vh;
     margin-left: 5vw;
+    margin-right: 10vw;
     position: relative;
     text-transform: uppercase;
     text-align: center;
-    width: 20vw;
+    width: 15vw;
   }
 
   .order-section {

@@ -8,7 +8,7 @@ export const tasksSlice = createSlice({
     status: null,
     editTask: null,
     refresh: false,
-    theme: true,
+    theme: false,
     themeMode: 'light-theme',
     tasks: [],
     menu: 'closed',

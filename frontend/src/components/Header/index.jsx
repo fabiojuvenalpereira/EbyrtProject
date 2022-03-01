@@ -35,6 +35,7 @@ function Header() {
 
   const switchTheme = () =>{
     animation();
+    console.log(theme);
     if (theme === false) dispatch(setThemeMode('dark-theme'));
     if (theme === true) dispatch(setThemeMode('light-theme'));
     dispatch(setTheme(!theme))
