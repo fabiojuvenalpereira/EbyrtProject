@@ -1,7 +1,7 @@
 .box-edit-status {
   animation: in 0.5s ease 0s 1 normal forwards;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 1px #111111db;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 1px var(--box-shadow-color);
   display: flex;
   flex-direction: column;
   left: 0;
@@ -31,8 +31,8 @@
 
 .buttons-edit-status button {
   border: 0;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 1px #11111169;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 1px var(--box-shadow-color);
   outline: 0;
   margin: 0.5em;
   padding: 1.2em;
@@ -55,7 +55,7 @@
 
   .title-edit-status {
     align-items: center;
-    color: var(--card-color-bright);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     font-weight: 800;
@@ -73,8 +73,8 @@
 
   .buttons-edit-status button {
     border: 0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 1px #11111169;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px var(--box-shadow-color);
     width: 12em;
     outline: 0;
     margin: 0.5em;
@@ -87,8 +87,8 @@
   .box-edit-status {
     animation: in 1s ease 0s 1 normal forwards;
     background-color: #4d9de2;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 1px #111111db;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px var(--box-shadow-color);
     display: flex;
     flex-direction: column;
     height: 18em;
@@ -120,8 +120,8 @@
 
   .buttons-edit-status button {
     border: 0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 1px #11111169;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px var(--box-shadow-color);
     width: 12em;
     outline: 0;
     margin: 0.5em;
@@ -138,8 +138,8 @@
   .box-edit-status {
     animation: in 1s ease 0s 1 normal forwards;
     background-color: #4d9de2;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 1px #111111db;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px var(--box-shadow-color);
     display: flex;
     flex-direction: column;
     height: 18em;
@@ -171,8 +171,8 @@
 
   .buttons-edit-status button {
     border: 0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 1px #11111169;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px var(--box-shadow-color);
     width: 12em;
     outline: 0;
     margin: 0.5em;

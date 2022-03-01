@@ -1,8 +1,8 @@
 .main-edit-task {
   animation: in 0.3s ease 0s 1 normal forwards;
-  background: linear-gradient(150deg, #646868, #484949, #595c5c);
-  border-radius: 10px;
-  box-shadow: 0 0 10px 1px #111111db;
+  background: linear-gradient(150deg, var(--card-color-2), var(--card-color), var(--card-color-2));
+  border-radius: 8px;
+  box-shadow: 0 0 10px 1px var(--box-shadow-color);
   display: flex;
   flex-direction: column;
   left: 0;
@@ -22,11 +22,11 @@
 }
 
 .title {
-  color: whitesmoke;
+  color: var(--text-color);
 }
 
 .input-button input[type="text"] {
-  background-color: whitesmoke;
+  background-color: var(--input-color);
   align-self: center;
   border-radius: 8px;
   padding: 1.5em;
@@ -36,10 +36,10 @@
 .input-button button {
   background-color: #3f3f3f;
   border: none;
-  box-shadow: 0 0 10px 2px #00000035;
-  border-radius: 5px;
+  box-shadow: 0 0 10px 2px var(--box-shadow-color);
+  border-radius: 8px;
   cursor: pointer;
-  color: whitesmoke;
+  color: var(--text-color);
   margin-top: 1.5em;
   font-weight: 600;
   transition: 0.2s;
@@ -49,8 +49,8 @@
   align-self: flex-end;
   background-color: #e45b5b;
   border: none;
-  border-radius: 5px;
-  color: whitesmoke;
+  border-radius: 8px;
+  color: var(--text-color);
   cursor: pointer;
   font-weight: 800;
   margin-top: 1vh;
@@ -84,7 +84,7 @@
   }
 
   .title {
-    color: whitesmoke;
+    color: var(--text-color);
     margin-bottom: 1em;
   }
 
@@ -112,7 +112,7 @@
   }
 
   .title {
-    color: whitesmoke;
+    color: var(--text-color);
     margin-bottom: 1em;
   }
 
@@ -142,7 +142,7 @@
   }
 
   .title {
-    color: whitesmoke;
+    color: var(--text-color);
   }
 
   .input-button input[type="text"] {
@@ -156,7 +156,7 @@
   }
 
   .input-button button:hover {
-    box-shadow: 0 0 10px 2px #ffffff35;
+    box-shadow: 0 0 10px 2px var(--box-shadow-color);
     height: 15%;
     transform: scale(0.99);
     transition: 0.2s;

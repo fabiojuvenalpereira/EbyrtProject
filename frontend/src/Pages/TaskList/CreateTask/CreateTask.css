@@ -16,18 +16,18 @@
 
 .create-task-input input[type="text"] {
   background-color: var(--card-color-highlight-dark);
-  border-radius: 15px 0 0 15px;
+  border-radius: 8px 0 0 8px;
   border: none;
-  color: var(--input-color);
-  height: 3em;
+  color: var(--text-color);
+  height: 6vh;
   outline: 0;
   text-indent: 1.5em;
   width: 65vw;
 }
 
-.main-content-form button {
+.create-button {
   background-color: var(--text-color-highlight);
-  border-radius: 0 15px 15px 0;
+  border-radius: 0 8px 8px 0;
   border: none;
   outline: 0;
   transition: 0.2s;
@@ -39,9 +39,14 @@
   filter: invert(100%) sepia(16%) saturate(7463%) hue-rotate(184deg) brightness(116%) contrast(99%);
 }
 
+.mobile-menu {
+  background-color: var(--card-color);
+  color: var(--text-color);
+}
+
 @media screen and (max-width: 600px) {
   .main-content-input-task {
-    width: 100vw;
+    width: 80vw;
   }
 
   .main-content-form {
@@ -53,10 +58,17 @@
     width: 65vw;
   }
 
-  .main-content-form button {
+  .create-button {
     background-color: var(--text-color-highlight);
-    border-radius: 0 15px 15px 0;
+    border-radius: 0;
     width: 12vw;
+  }
+
+  .mobile-menu {
+    border-radius: 0 8px 8px 0;
+    font-size: 1.5vh;
+    padding: 2vw;
+    text-transform: uppercase;
   }
 }
 
@@ -75,10 +87,15 @@
     width: 65vw;
   }
 
-  .main-content-form button {
+  .create-button {
     background-color: var(--text-color-highlight);
-    border-radius: 0 15px 15px 0;
+    border-radius: 0 8px 8px 0;
     width: 12vw;
+  }
+
+  .mobile-menu {
+    visibility: hidden;
+    position: absolute;
   }
 }
 
@@ -96,9 +113,14 @@
     width: 30vw;
   }
 
-  .main-content-form button {
+  .create-button {
     background-color: var(--text-color-highlight);
-    border-radius: 0 15px 15px 0;
+    border-radius: 0 8px 8px 0;
     width: 5vw;
+  }
+
+  .mobile-menu {
+    visibility: hidden;
+    position: absolute;
   }
 }

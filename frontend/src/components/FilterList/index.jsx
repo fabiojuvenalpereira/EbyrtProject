@@ -3,32 +3,41 @@ import React, { useState } from 'react';
 import './FilterList.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { setTasks } from '../../App/slices/tasks/tasksSlice';
+import { setTasks, setMenu} from '../../App/slices/tasks/tasksSlice';
+import { useEffect } from 'react';
 
 function FilterList() {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasksState.tasks);
+  const menu = useSelector((state) => state.tasksState.menu);
 
   const [alfabetic, setAlfabetic] = useState(true);
   const [date, setDate] = useState(true);
   const [status, setStatus] = useState(true);
-  const [menu, setMenu] = useState(true);
+  const [openCLoseMenu, setOpenCLoseMenu] = useState('');
+  
 
   const orderList = (order, field) => {
-    const list = Array.from(tasks);
-    let sortedList;
+    const list = [...tasks];
+    let sortedList
 
     if (order === true) {
       sortedList = list.sort((a, b) => {
-        if (a[field] > b[field]) return 1;
-        if (a[field] < b[field]) return -1;
-        return 0;
+        let first = a[field].toLowerCase();
+        let second = b[field].toLowerCase();
+
+        if (first > second) return 1;
+        if (first < second) return -1;
+        return 0
       });
     } else {
       sortedList = list.sort((a, b) => {
-        if (a[field] > b[field]) return -1;
-        if (a[field] < b[field]) return 1;
-        return 0;
+        let first = a[field].toLowerCase();
+        let second = b[field].toLowerCase();
+
+        if (first > second) return -1;
+        if (first < second) return 1;
+        return 0
       });
     }
 
@@ -53,57 +62,64 @@ function FilterList() {
     dispatch(setTasks(sorted));
   };
 
-  const changeOrderList = (filter) => {
+  const changeOrderList = ({ target }) => {
+    const filter = target.id;
+
     switch (filter) {
       case 'alfabetic':
         return orderAlfabetic(alfabetic, 'taskContent');
       case 'status':
         return orderStatus(status, 'statusTask');
-      default:
-        orderDate(date, 'date');
+      case 'date':
+        return orderDate(date, 'date');
+      default: return '';
     }
   };
 
-  const changeFilter = ({ target }) => {
-    changeOrderList(target.value);
-  };
+  const closeMenu = () => {
+    dispatch(setMenu('closing-menu'));
+  }
 
-  const toggleMenu = () => {
-    setMenu(!menu);
-  };
+  useEffect(() => {
+    setOpenCLoseMenu(menu);
+  }, [menu]);
 
   return (
-    <div className="change-order">
-      <div className="mobile-menu" onClick={ toggleMenu }>
-        ordenar por:
-      </div>
+    <section className={`change-order ${openCLoseMenu}`}>
+      <p className="text-order">ordenar por:</p>
       <div className='order-section'>
-        <p>ordenar por:</p>
-        <ul className="order-section-buttons">
-          <li
+        <div className="order-section-buttons">
+          <div
             className="alfabetic-button"
-            value="alfabetic"
-            onClick={(event) => changeFilter(event)}
+            id="alfabetic"
+            onClick={(event) => changeOrderList(event)}
           >
             tarefa
-          </li>
-          <li
+          </div>
+          <div
             className="date-button"
-            value="date"
-            onClick={(event) => changeFilter(event)}
+            id="date"
+            onClick={(event) => changeOrderList(event)}
           >
             data
-          </li>
-          <li
+          </div>
+          <div
             className="status-button"
-            value="status"
-            onClick={(event) => changeFilter(event)}
+            id="status"
+            onClick={(event) => changeOrderList(event)}
           >
             status
-          </li>
-        </ul>
+          </div>
+          <button
+            type='button'
+            className='button-close'
+            onClick={closeMenu}
+            >
+            fechar
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

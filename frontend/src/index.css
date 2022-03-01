@@ -2,28 +2,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap") ;
 
 :root {
-  --bg-color: #282828;
-  --bg-color-2: #1c1c1c;
-  --card-color: #a2a2a2;
-  --card-color-2: #9b9b9b;
+  --bg-color: #121212;
+  --bg-color-2: #ffffff08;
+  --box-shadow-color: #00000024;
+  --card-color: #232323;
+  --card-color-2: #272727;
   --text-color: #e6e6e6;
-  --text-color-2: #f2f2f2;
+  --text-color-2: #e6e6e6;
   --color-highlight: #f2f2f2;
-  --input-color: #dddddd;
-  --text-color-highlight: #ff6a00d2;
-  --text-color-blue: #43b6ff;
+  --input-color: #dedcdc;
+  --text-color-highlight: #f58220;
+  --text-color-blue: #43b7ffbd;
 }
 
 .light-theme {
-  --bg-color: #e6e6e6;
-  --bg-color-2: #d6d6d6;
-  --card-color: #f7f7f7;
-  --card-color-2: #f3f3f3;
+  --bg-color: #f6f9ff;
+  --bg-color-2: #ffffffb6;
+  --card-color: #ffffff80;
+  --card-color-2: #ffffffe7;
   --text-color: #494949;
   --text-color-2: #464646;
   --color-highlight: #181818;
-  --input-color: #aeaeae;
-  --text-color-highlight: #ff6a00d2;
+  --input-color: #e0e0e0;
+  --text-color-highlight: #f58220;
   --text-color-blue: #43b6ff;
 }
 

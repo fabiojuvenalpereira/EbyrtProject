@@ -11,6 +11,7 @@ export const tasksSlice = createSlice({
     theme: true,
     themeMode: 'light-theme',
     tasks: [],
+    menu: 'closed',
   },
   reducers: {
     selectedTask: (state, action) => {
@@ -43,7 +44,10 @@ export const tasksSlice = createSlice({
 
     setTasks: (state, action) => {
       state.tasks = action.payload
-    }
+    },
+    setMenu: (state, action) => {
+      state.menu = action.payload
+    },
   },
 });
 
@@ -56,6 +60,7 @@ export const {
   setTheme,
   setThemeMode,
   setTasks,
+  setMenu,
 } = tasksSlice.actions
 
 export default tasksSlice.reducer

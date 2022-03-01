@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { makePostToServer } from '../../../api/index';
-import { setRefresh } from '../../../App/slices/tasks/tasksSlice';
+import { setRefresh, setMenu } from '../../../App/slices/tasks/tasksSlice';
 
 import generateObjectToSend from '../../../utils/generateObjectToSend';
 import './CreateTask.css';
@@ -44,6 +44,10 @@ function CreateTask() {
     dispatch(setRefresh(!refresh));
   };
 
+  const mobileMenu = () => {
+    dispatch(setMenu('opening-menu'));
+  }
+
   return (
     <div className={`main-content-input-task ${themeMode}` }>
       <div className="main-content-form">
@@ -66,6 +70,13 @@ function CreateTask() {
               src={addIcon}
               alt="add task icon"
             />
+          </button>
+          <button
+            type="button"
+            className="mobile-menu"
+            onClick={mobileMenu}
+            >
+            ordenar
           </button>
         </label>
       </div>

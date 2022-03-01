@@ -1,5 +1,5 @@
 .change-order {
-  color: var(--card-color-bright);
+  color: var(--text-color);
 }
 
 .order-section {
@@ -14,31 +14,133 @@
 }
 
 .alfabetic-button {
-  background-color: var(--card-color-dark);
-  border-radius: 5px;
+  background-color: var(--card-color-2);
+  border-radius: 8px;
   cursor: pointer;
 }
 
 .date-button {
-  background-color: var(--card-color-dark);
-  border-radius: 5px;
+  background-color: var(--card-color-2);
+  border-radius: 8px;
   cursor: pointer;
 }
 
 .status-button {
-  background-color: var(--card-color-dark);
-  border-radius: 5px;
+  background-color: var(--card-color-2);
+  border-radius: 8px;
   cursor: pointer;
 }
 
-.mobile-menu {
+.text-order {
   position: absolute;
+}
+
+.button-close {
+  border-radius: 8px;
+  position: relative;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.opening-menu {
+  transition: 0.4s;
+}
+
+.closing-menu {
+  transition: 0.4s;
 }
 
 @media screen and (max-width: 600px) {
   .change-order {
+    background-color: #191919;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    transition: 0.5;
+    top: 0;
+    width: 60vw;
+    z-index: 1;
+  }
+
+  .opening-menu {
+    box-shadow: 0 0 5px 2px black;
+    right: 0;
+    width: 60vw;
+  }
+
+  .closing-menu {
+    transition: 0.4s;
+    width: 0;
+  }
+
+  .closed {
+    width: 0;
+  }
+
+  .text-order {
+    padding: 2vh 0;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+  }
+
+  .order-section {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+  }
+
+  .order-section-buttons {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    position: relative;
+    width: 100%;
+  }
+
+  .alfabetic-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10%;
+    margin-top: 5vh;
+    text-align: center;
+    width: 80%;
+  }
+
+  .date-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10%;
+    margin-top: 5vh;
+    text-align: center;
+    width: 80%;
+  }
+
+  .status-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10%;
+    margin-top: 5vh;
+    text-align: center;
+    width: 80%;
+  }
+
+  .button-close {
+    background-color: var(--card-color);
+    bottom: 1vh;
+    color: var(--text-color);
+    height: 10%;
+    transform: scale(0.9);
     position: absolute;
-    visibility: hidden;
+    width: 100%;
   }
 }
 
@@ -49,10 +151,10 @@
     position: relative;
   }
 
-  .mobile-menu {
+  .text-order {
     align-items: center;
     background-color: var(--card-color-dark);
-    border-radius: 5px 0 0 5px;
+    border-radius: 8px 0 0 8px;
     display: flex;
     font-size: 2vh;
     height: 10vh;
@@ -67,7 +169,7 @@
 
   .order-section {
     background-color: var(--card-color-dark);
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 8px 8px 0;
     height: 10vh;
     display: flex;
     flex-direction: row;
@@ -87,7 +189,7 @@
   }
 
   .alfabetic-button {
-    box-shadow: 0 0 2px #00000082;
+    box-shadow: 0 0 2px var(--box-shadow-color);
     margin: 0 1vw;
     padding: 1em;
     text-align: center;
@@ -95,7 +197,7 @@
   }
 
   .date-button {
-    box-shadow: 0 0 2px #00000082;
+    box-shadow: 0 0 2px var(--box-shadow-color);
     margin: 0 1vw;
     padding: 1em;
     text-align: center;
@@ -103,28 +205,42 @@
   }
 
   .status-button {
-    box-shadow: 0 0 2px #00000082;
+    box-shadow: 0 0 2px var(--box-shadow-color);
     margin: 0 1vw;
     padding: 1em;
     text-align: center;
     width: 100%;
   }
+
+  .button-close {
+    position: absolute;
+    visibility: hidden;
+  }
 }
 
 @media screen and (min-width: 1000px) {
+  .change-order {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 18vw;
+    transform: scale(0.8);
+    top: 12vh;
+  }
+
   .order-section {
     display: flex;
     flex-direction: column;
     padding: 1em 0;
-    position: absolute;
     right: 18vw;
     transform: scale(0.8);
     top: 10vh;
     z-index: 10;
   }
 
-  .mobile-menu {
-    visibility: hidden;
+  .text-order {
+    text-transform: uppercase;
   }
 
   .order-section p {
@@ -132,6 +248,7 @@
   }
 
   .alfabetic-button {
+    background-color: var(--card-color-2);
     margin: 0.5em;
     padding: 1em;
     text-align: center;
@@ -140,6 +257,7 @@
   }
 
   .date-button {
+    background-color: var(--card-color-2);
     margin: 0.5em;
     padding: 1em;
     text-align: center;
@@ -147,9 +265,15 @@
   }
 
   .status-button {
+    background-color: var(--card-color-2);
     margin: 0.5em;
     padding: 1em;
     text-align: center;
     width: 8vw;
+  }
+
+  .button-close {
+    position: absolute;
+    visibility: hidden;
   }
 }
