@@ -12,11 +12,17 @@
 
 .change-order {
   color: var(--card-color-bright);
+}
+
+.order-section {
+  display: flex;
+}
+
+.order-section-buttons {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  margin-left: -3vw;
-  transform: scale(0.7);
-  position: absolute;
+  list-style: none;
 }
 
 .alfabetic-button {
@@ -37,38 +43,139 @@
   cursor: pointer;
 }
 
+.mobile-menu {
+  position: absolute;
+}
+
 @media screen and (max-width: 600px) {
   .change-order {
+    position: absolute;
     visibility: hidden;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   .change-order {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+
+  .mobile-menu {
+    align-items: center;
+    background-color: var(--card-color-dark);
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    font-size: 2vh;
+    height: 10vh;
+    justify-content: center;
+    margin-top: 1vh;
+    margin-left: 5vw;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    width: 20vw;
+  }
+
+  .order-section {
+    background-color: var(--card-color-dark);
+    border-radius: 0 5px 5px 0;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1vh;
+    flex-grow: 1;
+    max-width: 70vw;
+  }
+
+  .order-section p {
     visibility: hidden;
+  }
+
+  .order-section-buttons {
+    margin-left: -10vw;
+    width: 100%;
+  }
+
+  .alfabetic-button {
+    box-shadow: 0 0 2px #00000082;
+    margin: 0 1vw;
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+  }
+
+  .date-button {
+    box-shadow: 0 0 2px #00000082;
+    margin: 0 1vw;
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+  }
+
+  .status-button {
+    box-shadow: 0 0 2px #00000082;
+    margin: 0 1vw;
+    padding: 1em;
+    text-align: center;
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 1000px) {
-  .change-order {
-    position: relative;
+  .order-section {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+    position: absolute;
+    right: 18vw;
+    transform: scale(0.8);
+    top: 10vh;
+    z-index: 10;
+  }
+
+  .mobile-menu {
+    visibility: hidden;
+  }
+
+  .order-section p {
+    margin: 0 0.5em;
   }
 
   .alfabetic-button {
     margin: 0.5em;
     padding: 1em;
-    width: 10vw;
+    text-align: center;
+    width: 8vw;
+    z-index: 10;
   }
 
   .date-button {
     margin: 0.5em;
     padding: 1em;
-    width: 10vw;
+    text-align: center;
+    width: 8vw;
   }
 
   .status-button {
     margin: 0.5em;
     padding: 1em;
-    width: 10vw;
+    text-align: center;
+    width: 8vw;
   }
 }
+
+/* @keyframes mobile-menu-anim {
+  0% {
+
+  }
+
+  50% {
+
+  }
+
+  100% {
+
+  }
+} */

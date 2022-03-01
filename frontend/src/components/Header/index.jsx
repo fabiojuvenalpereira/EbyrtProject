@@ -20,7 +20,6 @@ function Header() {
   }, [user]);
 
 
-  //mudar função para um arquivo separado para facilitar mudanças
   const switchTheme = () =>{
     if (theme === false) setSwitchThemeState('dark-theme')
     if (theme === true) setSwitchThemeState('light-theme')

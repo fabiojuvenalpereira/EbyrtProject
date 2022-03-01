@@ -21,12 +21,12 @@ function TaskList() {
         <Header />
       <div className="create-and-classify">
         <CreateTask />
-        <FilterList />
       </div>
+        <FilterList />
       <div className="task-list-box">
         <div className="floating-box">
         { status ? (<EditStatus />) : ('')}
-          { editTask ? (<EditTask />) : ('') }
+        { editTask ? (<EditTask />) : ('') }
         </div>
         <ToDoList />
       </div>
