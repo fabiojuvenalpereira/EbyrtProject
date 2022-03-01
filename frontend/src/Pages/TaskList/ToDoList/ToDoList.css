@@ -1,19 +1,6 @@
-:root {
-  --bg-color: #282828;
-  --card-color: #3d3d3d;
-  --card-color-dark: #333;
-  --card-color-bright: #fefefe;
-  --card-color-highlight-dark: #e5e5e5e5;
-  --card-color-highlight-bright: #e5e5e5e5;
-  --card-text-color-dark: #e5e5e5e5;
-  --text-color-highlight: #ff6a00d2;
-  --text-color-blue: #43b6ff;
-  --text-color-orange: #f58220;
-}
-
 .task-content-card {
   animation: growing 1s ease 0s 1 normal forwards;
-  background: linear-gradient(195deg, var(--card-color) 30%, var(--card-color-dark) 80%, var(--card-color) 98%);
+  background: linear-gradient(195deg, var(--card-color-2) 30%, var(--card-color) 80%, var(--card-color-2) 98%);
   display: flex;
   margin: auto;
   box-shadow: 0 0 10px #0c0c0c9c;
@@ -26,7 +13,7 @@
 }
 
 .task-content-text {
-  color: var(--card-color-bright);
+  color: var(--text-color-2);
   cursor: pointer;
   margin-top: 1vh;
   overflow-wrap: break-word;
@@ -49,7 +36,7 @@
 
 .right-content-text::before {
   content: "";
-  background-color: var(--card-color-highlight-bright);
+  background-color: var(--color-highlight);
   filter: blur(0.7px);
   position: absolute;
   opacity: 0.4;

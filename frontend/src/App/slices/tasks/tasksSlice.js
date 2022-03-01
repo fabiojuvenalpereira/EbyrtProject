@@ -9,6 +9,7 @@ export const tasksSlice = createSlice({
     editTask: null,
     refresh: false,
     theme: true,
+    themeMode: 'light-theme',
     tasks: [],
   },
   reducers: {
@@ -36,6 +37,10 @@ export const tasksSlice = createSlice({
       state.theme = action.payload
     },
 
+    setThemeMode: (state, action) => {
+      state.themeMode = action.payload
+    },
+
     setTasks: (state, action) => {
       state.tasks = action.payload
     }
@@ -49,6 +54,7 @@ export const {
   setEditTask,
   setRefresh,
   setTheme,
+  setThemeMode,
   setTasks,
 } = tasksSlice.actions
 

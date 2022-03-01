@@ -18,6 +18,8 @@ import Loading from '../../../components/Loading';
 function ToDoList() {
   const refresh = useSelector((state) => state.tasksState.refresh);
   const tasks = useSelector((state) => state.tasksState.tasks);
+  const themeMode = useSelector((state) => state.tasksState.themeMode);
+  
   const dispatch = useDispatch();
 
   const [loading, setLoading] = useState(true);
@@ -57,7 +59,7 @@ function ToDoList() {
   };
 
   return (
-    <div className="main-content">
+    <div className={`main-content ${themeMode}`}>
       {loading ? <Loading /> : tasks.map((task) => (
         <div key={task._id} className="task-content-card">
           <div className="left-side-content-card">

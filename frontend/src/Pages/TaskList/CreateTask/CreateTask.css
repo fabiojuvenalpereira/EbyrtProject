@@ -1,15 +1,3 @@
-:root {
-  --bg-color: #282828;
-  --card-color: #3d3d3d;
-  --card-color-dark: #333;
-  --card-color-bright: #fefefe;
-  --card-color-highlight-dark: #e5e5e5e5;
-  --card-color-highlight-bright: #e5e5e5e5;
-  --text-color-highlight: #ff6a00d2;
-  --text-color-blue: #43b6ff;
-  --text-color-orange: #f58220;
-}
-
 .main-content-input-task {
   align-items: center;
   display: flex;
@@ -30,6 +18,7 @@
   background-color: var(--card-color-highlight-dark);
   border-radius: 15px 0 0 15px;
   border: none;
+  color: var(--input-color);
   height: 3em;
   outline: 0;
   text-indent: 1.5em;
@@ -81,6 +70,7 @@
   }
 
   .create-task-input input[type="text"] {
+    background-color: var(--input-color);
     text-indent: 1.5em;
     width: 65vw;
   }

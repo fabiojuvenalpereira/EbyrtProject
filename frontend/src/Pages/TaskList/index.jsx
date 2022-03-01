@@ -15,9 +15,10 @@ import EditTask from '../../components/EditTask';
 function TaskList() {
   const status = useSelector((state) => state.tasksState.status);
   const editTask = useSelector((state) => state.tasksState.editTask);
+  const themeMode = useSelector((state) => state.tasksState.themeMode);
 
   return (
-    <div className="main-task-list-page">
+    <div className={`main-task-list-page ${themeMode}`}>
         <Header />
       <div className="create-and-classify">
         <CreateTask />

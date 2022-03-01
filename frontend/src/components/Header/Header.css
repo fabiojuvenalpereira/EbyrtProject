@@ -1,6 +1,6 @@
 .main-header-content {
-  background-color: var(--bg-color-header);
-  box-shadow: 0 0 10px 1px;
+  background-color: var(--bg-color);
+  box-shadow: 0 0 10px 0 #00000035;
   align-items: center;
   justify-content: space-between;
   display: flex;
@@ -21,12 +21,17 @@
 }
 
 .text-header {
-  color: whitesmoke;
+  color: var(--text-color);
   margin-right: 5px;
 }
 
 .text-header-name {
-  color: whitesmoke;
+  color: var(--text-color);
+}
+
+.anim {
+  animation: switch-theme-animation 0.4s ease-in;
+  transition: 0.3;
 }
 
 @media screen and (max-width: 600px) {
@@ -66,5 +71,15 @@
   .text-header-content {
     display: flex;
     margin-right: 2em;
+  }
+}
+
+@keyframes switch-theme-animation {
+  0% {
+    transform: scale(2);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
