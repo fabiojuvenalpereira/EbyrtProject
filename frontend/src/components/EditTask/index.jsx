@@ -41,19 +41,21 @@ function EditTask() {
 
   return (
     <div className="main-edit-task">
-      <button type="button" className="close-button" onClick={closeWindow}>
-        x
-      </button>
+      <div className="header-edit">
+        <button type="button" className="close-button" onClick={closeWindow}>
+          X
+        </button>
+        <div className="title">Edite Sua Tarefa</div>
+      </div>
 
-      <div className="input-button">
-        <h4 className="title">Edite Sua Tarefa</h4>
+      <div className="input-button-box">
         <input
           className="edit-task-input"
           type="text"
           value={userTextInput}
           onChange={(event) => handleChange(event)}
         />
-        <button type="button" onClick={handleClick}>
+        <button type="button" className="edit-btn" onClick={handleClick}>
           Editar
         </button>
       </div>

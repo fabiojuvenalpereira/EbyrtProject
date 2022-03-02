@@ -15,7 +15,7 @@
 }
 
 .create-task-input input[type="text"] {
-  background-color: var(--card-color-highlight-dark);
+  background-color: var(--card-color);
   border-radius: 8px 0 0 8px;
   border: none;
   color: var(--text-color);
@@ -26,7 +26,7 @@
 }
 
 .create-button {
-  background-color: var(--text-color-highlight);
+  background-color: var(--color-highlight);
   border-radius: 0 8px 8px 0;
   border: none;
   outline: 0;
@@ -40,8 +40,9 @@
 }
 
 .mobile-menu {
-  background-color: var(--card-color);
+  background-color: var(--card-color-2);
   color: var(--text-color);
+  transition: 0.2s;
 }
 
 @media screen and (max-width: 600px) {
@@ -63,8 +64,10 @@
   }
 
   .create-button {
-    background-color: var(--text-color-highlight);
+    background-color: var(--color-highlight);
+    color: var(--input-text-color);
     border-radius: 0;
+    transition: 0.2s;
     width: 12vw;
   }
 
@@ -87,13 +90,16 @@
 
   .create-task-input input[type="text"] {
     background-color: var(--input-color);
+    color: var(--input-text-color);
     text-indent: 1.5em;
+    transition: 0.2s;
     width: 65vw;
   }
 
   .create-button {
-    background-color: var(--text-color-highlight);
+    background-color: var(--color-highlight);
     border-radius: 0 8px 8px 0;
+    transition: 0.2s;
     width: 12vw;
   }
 
@@ -114,13 +120,16 @@
 
   .create-task-input input[type="text"] {
     background-color: var(--input-color);
+    color: var(--input-text-color);
     text-indent: 1.5em;
+    transition: 0.2s;
     width: 30vw;
   }
 
   .create-button {
-    background-color: var(--text-color-highlight);
+    background-color: var(--color-highlight);
     border-radius: 0 8px 8px 0;
+    transition: 0.2s;
     width: 5vw;
   }
 
