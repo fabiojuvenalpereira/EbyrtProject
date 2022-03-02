@@ -51,10 +51,9 @@ function CreateTask() {
   return (
     <div className={`main-content-input-task ${themeMode}` }>
       <div className="main-content-form">
-        <label htmlFor="create-task-input" className="create-task-input">
+        <div className="create-task-input">
           <input
             type="text"
-            name="create-task-input"
             className="create-input-task"
             value={inputText}
             onChange={handleChange}
@@ -78,7 +77,7 @@ function CreateTask() {
             >
             ordenar
           </button>
-        </label>
+        </div>
       </div>
     </div>
   );

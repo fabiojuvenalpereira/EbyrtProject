@@ -35,6 +35,7 @@ function Header() {
 
   const switchTheme = () =>{
     animation();
+    console.log(theme);
     if (theme === false) dispatch(setThemeMode('dark-theme'));
     if (theme === true) dispatch(setThemeMode('light-theme'));
     dispatch(setTheme(!theme))
@@ -43,9 +44,7 @@ function Header() {
   return (
     <div className={`main-header-content ${ themeMode}`}>
       <div className="logo-header-content">
-        <img src={logo} alt="logo" />
-      </div>
-      <div>
+        <img src={logo} alt="logo" className="logo" />
         <div
         className={`switch-theme ${anim}`}
         onClick={ switchTheme }

@@ -28,6 +28,7 @@ function ToDoList() {
     setLoading(true);
 
     const response = await fetchTasks();
+    console.log(response);
 
     dispatch(setTasks(response));
   }

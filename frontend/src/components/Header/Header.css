@@ -1,18 +1,29 @@
 .main-header-content {
   background-color: var(--bg-color-2);
-  box-shadow: 0 0 10px 0 #00000035;
+  box-shadow: 0 0 10px 0 var(--box-shadow-color);
   align-items: center;
   justify-content: space-between;
   display: flex;
   height: 10vh;
   margin-bottom: 1.2em;
+  transition: 0.2s;
 }
 
-.logo-header-content img {
+.logo-header-content {
+  display: flex;
+  width: 30%;
+}
+
+.logo {
   font-weight: 1000;
   height: 8vh;
   margin-left: 1vw;
   text-align: center;
+}
+
+.switch-theme {
+  filter: invert(29%) sepia(0%) saturate(0%) hue-rotate(212deg) brightness(93%) contrast(92%);
+  align-self: center;
 }
 
 .text-header-content {
@@ -31,7 +42,7 @@
 
 .anim {
   animation: switch-theme-animation 0.4s ease-in;
-  transition: 0.3;
+  transition: 0.2s;
 }
 
 @media screen and (max-width: 600px) {

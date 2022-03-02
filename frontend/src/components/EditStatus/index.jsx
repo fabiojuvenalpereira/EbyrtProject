@@ -22,16 +22,12 @@ function EditStatus() {
     statusTask: selectedTask.statusTask,
   };
 
-  useEffect(() => {
-    setClose()
-  },[]);
-
   const TIMER = 200;
 
-  const handleClick = async ({target}) => {
+  const handleClick = async ({ target }) => {
     setClose('closing');
 
-    let { statusTask , ...dataContent } = data;
+    let { statusTask, ...dataContent } = data;
     statusTask = target.value;
 
     const generatedData = generateDate();
@@ -39,14 +35,14 @@ function EditStatus() {
       ...dataContent,
       statusTask,
       date: generatedData,
-    }
+    };
 
     await makePutToServer(dataWithNewStatus);
 
     setTimeout(() => {
       dispatch(setStatus(false));
       dispatch(setRefresh(!refresh));
-    }, TIMER)
+    }, TIMER);
   };
 
   const closeWindow = () => {
@@ -54,19 +50,25 @@ function EditStatus() {
 
     setTimeout(() => {
       dispatch(setStatus(false));
-    }, TIMER)
-  }
+    }, TIMER);
+  };
+
+  useEffect(() => {
+    setClose();
+  }, []);
 
   return (
-    <div
-      className={`box-edit-status ${close}`}
-      >
-      <button
-        type="button"
-        className='close-button'
-        onClick={ closeWindow }
-      >X</button>
-      <div className="title-edit-status">ALTERE O STATUS:</div>
+    <div className={`box-edit-status ${close}`}>
+      <div className="header-edit-box">
+        <button
+          type="button"
+          className="close-button-status"
+          onClick={closeWindow}
+        >
+          X
+        </button>
+        <div className="title-edit-status">ALTERE O STATUS:</div>
+      </div>
       <div className="buttons-edit-status">
         <button
           type="button"

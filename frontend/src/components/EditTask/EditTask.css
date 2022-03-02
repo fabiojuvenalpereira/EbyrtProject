@@ -1,6 +1,6 @@
 .main-edit-task {
   animation: in 0.3s ease 0s 1 normal forwards;
-  background: linear-gradient(150deg, var(--card-color-2), var(--card-color), var(--card-color-2));
+  background: linear-gradient(270deg, var(--popup-color), var(--popup-color-2));
   border-radius: 8px;
   box-shadow: 0 0 10px 1px var(--box-shadow-color);
   display: flex;
@@ -8,12 +8,44 @@
   left: 0;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 18vh;
   position: fixed;
   right: 0;
   z-index: 1;
 }
 
-.input-button {
+.header-edit {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.title {
+  align-items: center;
+  color: var(--text-color);
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  font-weight: 800;
+  justify-content: center;
+  margin-top: 1em;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.close-button {
+  background-color: #e45b5b;
+  border-radius: 3px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 800;
+  margin-top: 1em;
+  margin-right: 1em;
+  padding: 0.5em 0.8em;
+}
+
+.input-button-box {
   animation: in 0.3s ease 0s 1 normal forwards;
   align-items: center;
   display: flex;
@@ -21,11 +53,7 @@
   justify-content: center;
 }
 
-.title {
-  color: var(--text-color);
-}
-
-.input-button input[type="text"] {
+.input-button-box input[type="text"] {
   background-color: var(--input-color);
   align-self: center;
   border-radius: 8px;
@@ -33,100 +61,74 @@
   transition: 0.2s;
 }
 
-.input-button button {
-  background-color: #3f3f3f;
+.edit-btn {
+  background-color: var(--card-color-2);
   border: none;
   box-shadow: 0 0 10px 2px var(--box-shadow-color);
   border-radius: 8px;
   cursor: pointer;
-  color: var(--text-color);
-  margin-top: 1.5em;
+  color: var(--text-color-2);
+  margin-top: 1em;
   font-weight: 600;
   transition: 0.2s;
 }
 
-.close-button {
-  align-self: flex-end;
-  background-color: #e45b5b;
-  border: none;
-  border-radius: 8px;
-  color: var(--text-color);
-  cursor: pointer;
-  font-weight: 800;
-  margin-top: 1vh;
-  margin-right: 1vh;
-  padding: 0.5em;
-  text-align: center;
-  width: 5vh;
-}
-
 @media screen and (max-width: 600px) {
   .main-edit-task {
-    height: 18em;
+    height: 14em;
     width: 18em;
-    margin-top: 18vh;
-  }
-
-  .main-edit-task::before {
-    height: 100%;
-    width: 100%;
-    transform: scale(1.5);
-  }
-
-  .input-button {
-    height: 100%;
-    width: 100%;
-  }
-
-  .input-button input[type="text"] {
-    width: 80%;
-    padding: 1.5em;
   }
 
   .title {
     color: var(--text-color);
-    margin-bottom: 1em;
   }
 
-  .input-button button {
-    height: 15%;
-    width: 50%;
+  .input-button-box {
+    height: 100%;
+    width: 100%;
+  }
+
+  .input-button-box input[type="text"] {
+    width: 80%;
+    padding: 1.5em;
+  }
+
+  .edit-btn {
+    height: 25%;
+    width: 80%;
   }
 }
 
 @media screen and (min-width: 600px) and  (max-width: 1000px) {
   .main-edit-task {
-    height: 18em;
-    width: 18em;
-    margin-top: 18vh;
-  }
-
-  .input-button {
-    height: 100%;
-    width: 100%;
-  }
-
-  .input-button input[type="text"] {
-    width: 80%;
-    padding: 1.5em;
+    height: 14em;
+    width: 20em;
   }
 
   .title {
     color: var(--text-color);
-    margin-bottom: 1em;
   }
 
-  .input-button button {
-    height: 15%;
-    width: 50%;
+  .input-button-box {
+    height: 100%;
+    width: 100%;
+  }
+
+  .input-button-box input[type="text"] {
+    width: 80%;
+    padding: 1.5em;
+  }
+
+  .edit-btn {
+    height: 25%;
+    width: 80%;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .main-edit-task {
-    height: 20em;
+    height: 15em;
     width: 40em;
-    margin-top: 18vh;
   }
 
   .main-edit-task::before {
@@ -135,31 +137,28 @@
     transform: scale(1.5);
   }
 
-  .input-button {
+  .title {
+    color: var(--text-color);
+  }
+
+  .input-button-box {
     justify-content: space-evenly;
     height: 100%;
     width: 100%;
   }
 
-  .title {
-    color: var(--text-color);
-  }
-
-  .input-button input[type="text"] {
-    height: 20%;
+  .input-button-box input[type="text"] {
+    height: 40%;
     width: 90%;
   }
 
-  .input-button button {
-    height: 15%;
-    width: 20%;
+  .edit-btn {
+    height: 30%;
+    width: 50%;
   }
 
-  .input-button button:hover {
+  .edit-btn:hover {
     box-shadow: 0 0 10px 2px var(--box-shadow-color);
-    height: 15%;
-    transform: scale(0.99);
-    transition: 0.2s;
-    width: 20%;
+    transform: scale(0.98);
   }
 }

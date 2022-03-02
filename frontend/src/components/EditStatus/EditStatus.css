@@ -1,5 +1,6 @@
 .box-edit-status {
   animation: in 0.5s ease 0s 1 normal forwards;
+  background: linear-gradient(270deg, var(--popup-color), var(--popup-color-2));
   border-radius: 8px;
   box-shadow: 0 0 10px 1px var(--box-shadow-color);
   display: flex;
@@ -7,22 +8,48 @@
   left: 0;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 18vh;
   position: fixed;
   right: 0;
-  margin-top: 18vh;
+  transition: 0.2s;
   z-index: 1;
+}
+
+.header-edit-box {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
 .title-edit-status {
   align-items: center;
+  color: var(--text-color);
   display: flex;
+  height: 100%;
   flex-direction: column;
-  margin-top: 2.5em;
+  font-weight: 800;
+  justify-content: center;
+  margin-top: 1em;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.close-button-status {
+  align-self: flex-end;
+  background-color: #e45b5b;
+  border: none;
+  border-radius: 3px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 800;
+  margin-top: 1em;
+  margin-right: 1em;
+  padding: 0.5em 0.8em;
 }
 
 .buttons-edit-status {
   align-items: center;
-  animation: buttons 1s ease 0s 1 normal forwards;
+  animation: buttons 0.6s ease 0s 1 normal forwards;
   display: flex;
   flex-direction: column;
   margin-top: auto;
@@ -30,10 +57,9 @@
 }
 
 .buttons-edit-status button {
-  border: 0;
   border-radius: 8px;
   box-shadow: 0 0 10px 1px var(--box-shadow-color);
-  outline: 0;
+  cursor: pointer;
   margin: 0.5em;
   padding: 1.2em;
   text-align: center;
@@ -49,84 +75,31 @@
     width: 18em;
   }
 
-  .closing {
-    animation: out 0.3s ease 0s 1 normal forwards;
-  }
-
-  .title-edit-status {
+  .header-edit-box {
     align-items: center;
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    font-weight: 800;
-    margin-top: 2.5em;
-  }
-
-  .buttons-edit-status {
-    align-items: center;
-    animation: buttons 0.3s ease 0s 1 normal forwards;
-    display: flex;
-    flex-direction: column;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 0.5em;
+    width: 100%;
   }
 
   .buttons-edit-status button {
-    border: 0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px 1px var(--box-shadow-color);
-    width: 12em;
-    outline: 0;
-    margin: 0.5em;
-    padding: 1.2em;
-    text-align: center;
+    font-weight: 800;
+    width: 80%;
+  }
+
+  .closing {
+    animation: out 0.3s ease 0s 1 normal forwards;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   .box-edit-status {
-    animation: in 1s ease 0s 1 normal forwards;
-    background-color: #4d9de2;
-    border-radius: 8px;
-    box-shadow: 0 0 10px 1px var(--box-shadow-color);
-    display: flex;
-    flex-direction: column;
     height: 18em;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    position: fixed;
-    right: 0;
     width: 18em;
-    margin-top: 18vh;
-    z-index: 1;
-  }
-
-  .title-edit-status {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 2.5em;
-  }
-
-  .buttons-edit-status {
-    align-items: center;
-    animation: buttons 1s ease 0s 1 normal forwards;
-    display: flex;
-    flex-direction: column;
-    margin-top: auto;
-    margin-bottom: auto;
   }
 
   .buttons-edit-status button {
-    border: 0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px 1px var(--box-shadow-color);
     width: 12em;
-    outline: 0;
-    margin: 0.5em;
     padding: 1.2em;
-    text-align: center;
   }
 
   .closing {
@@ -134,50 +107,15 @@
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1000px) {
   .box-edit-status {
-    animation: in 1s ease 0s 1 normal forwards;
-    background-color: #4d9de2;
-    border-radius: 8px;
-    box-shadow: 0 0 10px 1px var(--box-shadow-color);
-    display: flex;
-    flex-direction: column;
-    height: 18em;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    position: fixed;
-    right: 0;
-    width: 18em;
-    margin-top: 18vh;
-    z-index: 1;
-  }
-
-  .title-edit-status {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 2.5em;
-  }
-
-  .buttons-edit-status {
-    align-items: center;
-    animation: buttons 1s ease 0s 1 normal forwards;
-    display: flex;
-    flex-direction: column;
-    margin-top: auto;
-    margin-bottom: auto;
+    height: 20em;
+    width: 20em;
   }
 
   .buttons-edit-status button {
-    border: 0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px 1px var(--box-shadow-color);
-    width: 12em;
-    outline: 0;
-    margin: 0.5em;
-    padding: 1.2em;
-    text-align: center;
+    height: 30%;
+    width: 80%;
   }
 
   .closing {

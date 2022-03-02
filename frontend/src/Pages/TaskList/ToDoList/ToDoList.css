@@ -39,6 +39,7 @@
   background-color: var(--color-highlight);
   filter: blur(0.7px);
   position: absolute;
+  transition: 0.2s;
   opacity: 0.4;
 }
 
@@ -46,6 +47,7 @@
   align-items: center;
   cursor: pointer;
   display: flex;
+  font-weight: 800;
   justify-content: center;
 }
 
@@ -55,28 +57,27 @@
   color: var(--text-color);
   cursor: pointer;
   display: flex;
+  font-weight: 800;
   justify-content: center;
   text-align: center;
 }
 
 .progress {
-  background: linear-gradient(80deg, #f3f303, #f3eb03, #fcd600);
-  text-shadow: -1px 2px 14px #282828;
-  transition: 1s;
+  background: linear-gradient(80deg, var(--button-progress), var(--button-progress-2));
+  color: var(--text-color);
+  transition: 0.2s;
 }
 
 .done {
+  background: linear-gradient(80deg, var(--button-done), var(--button-done-2));
   color: var(--text-color);
-  background: linear-gradient(80deg, #64ee07, #44ee06, #21990e);
-  text-shadow: -1px 2px 14px #282828;
-  transition: 1s;
+  transition: 0.2s;
 }
 
 .pending {
-  background: linear-gradient(80deg, #ff7f1e, #ff6f00, #dc6002);
+  background: linear-gradient(80deg, var(--button-pending), var(--button-pending-2));
   color: var(--text-color);
-  text-shadow: 1px 2px 4px #282828;
-  transition: 1s;
+  transition: 0.2s;
 }
 
 @media screen and (max-width: 600px) {
@@ -165,12 +166,12 @@
   .right-content-text::before {
     content: "";
     height: 70%;
-    left: -3vw;
+    left: -4vw;
     width: 1px;
   }
 
   .task-status-button {
-    border-radius: 8px;
+    box-shadow: 0 0 10px 0 var(--box-shadow-color);
     flex-grow: 0.3;
     font-size: 3vw;
     margin-right: 2vw;
@@ -178,7 +179,7 @@
   }
 
   .task-delete-button {
-    border-radius: 8px;
+    box-shadow: 0 0 10px 0 var(--box-shadow-color);
     flex-grow: 0.3;
     font-size: 3vw;
     margin-right: 2vw;
@@ -225,6 +226,7 @@
   }
 
   .task-status-button {
+    box-shadow: 0 0 10px 5px var(--box-shadow-color);
     border-radius: 8px;
     font-size: 1.5vh;
     flex-wrap: nowrap;
@@ -242,11 +244,12 @@
 
   .task-delete-button {
     border-radius: 8px;
+    box-shadow: 0 0 10px 5px var(--box-shadow-color);
     font-size: 1.5vh;
     height: 60%;
     margin-right: 2vw;
     transition: 0.2s;
-    width: 8vw;
+    width: 7vw;
   }
 
   .task-delete-button:hover {

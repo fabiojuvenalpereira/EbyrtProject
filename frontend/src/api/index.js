@@ -5,6 +5,7 @@ export async function fetchTasks() {
   const response = await fetch(`${URL}`);
 
   const dataFromGet = await response.json();
+  console.log(dataFromGet);
   return dataFromGet;
 }
 
