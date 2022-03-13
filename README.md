@@ -77,7 +77,7 @@
 
 - [Node.js]((https://nodejs.org/)) - Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web. [14 ou superior].
 
-- [Imsonia](https://insomnia.rest/download) - É uma ferramenta cliente de API REST, que tem a capacidade de realizar requisições http. Ela foi desenvolvida para facilitar os testes e design de APIs REST. [2021.7.2]
+- [Insomnia](https://insomnia.rest/download) - É uma ferramenta cliente de API REST, que tem a capacidade de realizar requisições http. Ela foi desenvolvida para facilitar os testes e design de APIs REST. [2021.7.2]
 - [Git](https://git-scm.com/downloads) - É um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software, mas pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo.
 - [GitHub](https://github.com/) - é uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. Ele permite que programadores, utilitários ou qualquer usuário cadastrado na plataforma contribuam em projetos privados e/ou Open Source de qualquer lugar do mundo.
 
