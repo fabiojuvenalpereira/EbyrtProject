@@ -24,7 +24,7 @@ function InputName() {
 
   const handleClick = () => {
     const lastCaracter = userNameInput[userNameInput.length - 1];
-    if (userNameInput.length >= 6 && lastCaracter !== ' ') {
+    if (userNameInput.length >= 5 && lastCaracter !== ' ') {
       saveUser();
     }
   };

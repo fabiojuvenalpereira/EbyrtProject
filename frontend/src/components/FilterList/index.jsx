@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './FilterList.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { setTasks, setMenu} from '../../App/slices/tasks/tasksSlice';
-import { useEffect } from 'react';
+import { setTasks, setMenu } from '../../App/slices/tasks/tasksSlice';
 
 function FilterList() {
   const dispatch = useDispatch();
@@ -15,29 +14,28 @@ function FilterList() {
   const [date, setDate] = useState(true);
   const [status, setStatus] = useState(true);
   const [openCLoseMenu, setOpenCLoseMenu] = useState('');
-  
 
   const orderList = (order, field) => {
     const list = [...tasks];
-    let sortedList
+    let sortedList;
 
     if (order === true) {
       sortedList = list.sort((a, b) => {
-        let first = a[field].toLowerCase();
-        let second = b[field].toLowerCase();
+        const first = a[field].toLowerCase();
+        const second = b[field].toLowerCase();
 
         if (first > second) return 1;
         if (first < second) return -1;
-        return 0
+        return 0;
       });
     } else {
       sortedList = list.sort((a, b) => {
-        let first = a[field].toLowerCase();
-        let second = b[field].toLowerCase();
+        const first = a[field].toLowerCase();
+        const second = b[field].toLowerCase();
 
         if (first > second) return -1;
         if (first < second) return 1;
-        return 0
+        return 0;
       });
     }
 
@@ -78,7 +76,7 @@ function FilterList() {
 
   const closeMenu = () => {
     dispatch(setMenu('closing-menu'));
-  }
+  };
 
   useEffect(() => {
     setOpenCLoseMenu(menu);
@@ -87,9 +85,10 @@ function FilterList() {
   return (
     <section className={`change-order ${openCLoseMenu}`}>
       <p className="text-order">ordenar por:</p>
-      <div className='order-section'>
+      <div className="order-section">
         <div className="order-section-buttons">
           <div
+            aria-hidden="true"
             className="alfabetic-button block-select"
             id="alfabetic"
             onClick={(event) => changeOrderList(event)}
@@ -97,6 +96,7 @@ function FilterList() {
             tarefa
           </div>
           <div
+            aria-hidden="true"
             className="date-button block-select"
             id="date"
             onClick={(event) => changeOrderList(event)}
@@ -104,6 +104,7 @@ function FilterList() {
             data
           </div>
           <div
+            aria-hidden="true"
             className="status-button block-select"
             id="status"
             onClick={(event) => changeOrderList(event)}
@@ -111,10 +112,10 @@ function FilterList() {
             status
           </div>
           <button
-            type='button'
-            className='button-close'
+            type="button"
+            className="button-close"
             onClick={closeMenu}
-            >
+          >
             fechar
           </button>
         </div>

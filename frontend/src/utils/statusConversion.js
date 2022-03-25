@@ -7,8 +7,7 @@ const statusConversion = (status) => {
     case 'done':
       return 'Pronto';
     default:
-      'done';
-      break;
+      return 'done';
   }
 };
 

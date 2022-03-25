@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
 
 import './EditStatus.css';
 import { setRefresh, setStatus } from '../../App/slices/tasks/tasksSlice';
 import { makePutToServer } from '../../api';
 import generateDate from '../../utils/generateDate';
-import { useEffect } from 'react';
 
 function EditStatus() {
   const selectedTask = useSelector((state) => state.tasksState.selectedTask);
@@ -16,6 +14,7 @@ function EditStatus() {
   const [close, setClose] = useState('');
 
   const data = {
+    // eslint-disable-next-line no-underscore-dangle
     _id: selectedTask._id,
     userName: selectedTask.userName,
     taskContent: selectedTask.taskContent,
@@ -27,9 +26,10 @@ function EditStatus() {
   const handleClick = async ({ target }) => {
     setClose('closing');
 
+    // eslint-disable-next-line prefer-const
     let { statusTask, ...dataContent } = data;
-    statusTask = target.value;
 
+    statusTask = target.value;
     const generatedData = generateDate();
     const dataWithNewStatus = {
       ...dataContent,
@@ -54,17 +54,17 @@ function EditStatus() {
   };
 
   const escFunction = ({ key }) => {
-    if (key === "Escape") {
+    if (key === 'Escape') {
       setClose('closing');
 
       setTimeout(() => {
         dispatch(setStatus(false));
       }, TIMER);
     }
-  }
+  };
 
   useEffect(() => {
-    document.addEventListener("keydown", escFunction, false);
+    document.addEventListener('keydown', escFunction, false);
     setClose();
   }, []);
 

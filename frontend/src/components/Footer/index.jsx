@@ -9,7 +9,7 @@ function Footer() {
         <div>©Fabio Juvenal Pereira</div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
