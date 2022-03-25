@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './UserNameInput.css';
 
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../App/slices/tasks/tasksSlice';
@@ -52,7 +51,7 @@ function InputName() {
 
         </div>
 
-        <div className="enter-button" onClick={handleClick}>
+        <div aria-hidden="true" className="enter-button" onClick={handleClick}>
           entrar
         </div>
 

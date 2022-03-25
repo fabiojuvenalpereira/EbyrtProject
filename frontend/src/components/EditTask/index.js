@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import './EditTask.css';
@@ -38,6 +38,10 @@ function EditTask() {
   const closeWindow = () => {
     dispatch(setEditTask(false));
   };
+
+  useEffect(() => {
+    
+  })
 
   return (
     <div className="main-edit-task">

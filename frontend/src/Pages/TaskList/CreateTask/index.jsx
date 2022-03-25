@@ -37,10 +37,11 @@ function CreateTask() {
       userName,
       inputText,
       initialStatus
-    );
-
-    await makePostToServer(objectGenerated);
-
+      );
+      
+      await makePostToServer(objectGenerated);
+      
+    setInputText('')
     dispatch(setRefresh(!refresh));
   };
 

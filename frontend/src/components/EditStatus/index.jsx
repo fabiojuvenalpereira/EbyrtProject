@@ -53,7 +53,18 @@ function EditStatus() {
     }, TIMER);
   };
 
+  const escFunction = ({ key }) => {
+    if (key === "Escape") {
+      setClose('closing');
+
+      setTimeout(() => {
+        dispatch(setStatus(false));
+      }, TIMER);
+    }
+  }
+
   useEffect(() => {
+    document.addEventListener("keydown", escFunction, false);
     setClose();
   }, []);
 
