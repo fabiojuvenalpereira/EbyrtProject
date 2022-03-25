@@ -15,12 +15,11 @@ function Header() {
   const theme = useSelector((state) => state.tasksState.theme);
   const themeMode = useSelector((state) => state.tasksState. themeMode);
 
-  const navigate = useNavigate();
-
-  const dispatch = useDispatch();
-  
   const [userName, setUserName] = useState('');
   const [anim, setAnim] = useState('');
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const animation = () => {
     const TIMER = 500;
@@ -30,7 +29,7 @@ function Header() {
     }, TIMER);
   }
 
-  const switchTheme = () =>{
+  const switchTheme = () => {
     animation();
     console.log(theme);
     if (theme === false) dispatch(setThemeMode('dark-theme'));
@@ -68,13 +67,14 @@ function Header() {
         <p className="text-header">olá,</p>
         <div className="text-header-name">{userName}</div>
       </div>
-      <button
-        type="button"
-        className="exit-button"
-        onClick={ exit }
-      >
-        Sair
-      </button>
+      <div  className="exit-button">
+        <button
+          type="button"
+          onClick={ exit }
+        >
+          Sair
+        </button>
+      </div>
     </div>
   );
 }

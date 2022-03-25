@@ -27,17 +27,13 @@ function ToDoList() {
   const fetch = async () => {
     setLoading(true);
 
+    const user = JSON.parse(localStorage.getItem('user'))
+
     const response = await fetchTasks();
-    console.log(response);
+    const filteredByName = response.filter((task) => task.userName === user)
 
-    dispatch(setTasks(response));
+    dispatch(setTasks(filteredByName));
   }
-
-  useEffect(() => {
-    fetch();
-
-    setLoading(false);
-  }, [refresh]);
 
   const handleClick = (button, taskContent) => {
     const { target } = button;
@@ -59,6 +55,12 @@ function ToDoList() {
     dispatch(setRefresh(!refresh));
   };
 
+  useEffect(() => {
+    fetch();
+
+    setLoading(false);
+  }, [refresh]);
+
   return (
     <div className={`main-content ${themeMode}`}>
       {loading ? <Loading /> : tasks.map((task) => (
@@ -78,7 +80,7 @@ function ToDoList() {
           <div className="right-content-text">
             <div
               id="status"
-              className={`task-status-button  ${task.statusTask} block-select`}
+              className={`task-status-button  ${task.statusTask} `}
               onClick={(button) => handleClick(button, task)}
             >
               {statusConversion(task.statusTask)}

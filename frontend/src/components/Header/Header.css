@@ -11,7 +11,6 @@
 
 .logo-header-content {
   display: flex;
-  width: 30%;
 }
 
 .logo {
@@ -43,6 +42,14 @@
 .anim {
   animation: switch-theme-animation 0.4s ease-in;
   transition: 0.2s;
+}
+
+.exit-button button {
+  background: none;
+  color: var(--text-color);
+  margin-right: 1em;
+  padding: 1em;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 600px) {
