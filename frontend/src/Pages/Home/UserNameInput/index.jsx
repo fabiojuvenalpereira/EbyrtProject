@@ -23,12 +23,15 @@ function InputName() {
   };
 
   const handleClick = () => {
-    saveUser();
+    const lastCaracter = userNameInput[userNameInput.length - 1];
+    if (userNameInput.length >= 6 && lastCaracter !== ' ') {
+      saveUser();
+    }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    saveUser();
+    handleClick();
   };
 
   return (
