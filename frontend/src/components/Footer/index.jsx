@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className="footer-content">
       <div className="footer-text">
-      ©Fabio Juvenal Pereira
+        <div>©Fabio Juvenal Pereira</div>
       </div>
     </div>
   )

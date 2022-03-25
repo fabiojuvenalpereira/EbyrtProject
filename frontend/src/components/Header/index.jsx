@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
 
 import './Header.css';
 
@@ -13,17 +14,13 @@ function Header() {
   const user = useSelector((state) => state.tasksState.user);
   const theme = useSelector((state) => state.tasksState.theme);
   const themeMode = useSelector((state) => state.tasksState. themeMode);
-  
+
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   
   const [userName, setUserName] = useState('');
   const [anim, setAnim] = useState('');
-
-  useEffect(() => {
-    const userFromLocalStorage = JSON.parse(localStorage.getItem('user'));
-    setUserName(user !== null ? user : userFromLocalStorage);
-  }, [user]);
-
 
   const animation = () => {
     const TIMER = 500;
@@ -40,6 +37,16 @@ function Header() {
     if (theme === true) dispatch(setThemeMode('light-theme'));
     dispatch(setTheme(!theme))
   }
+
+  const exit = () => {
+    localStorage.clear();
+    navigate('/') 
+  }
+
+  useEffect(() => {
+    const userFromLocalStorage = JSON.parse(localStorage.getItem('user'));
+    setUserName(user !== null ? user : userFromLocalStorage);
+  }, [user]);
 
   return (
     <div className={`main-header-content ${ themeMode}`}>
@@ -61,6 +68,13 @@ function Header() {
         <p className="text-header">olá,</p>
         <div className="text-header-name">{userName}</div>
       </div>
+      <button
+        type="button"
+        className="exit-button"
+        onClick={ exit }
+      >
+        Sair
+      </button>
     </div>
   );
 }

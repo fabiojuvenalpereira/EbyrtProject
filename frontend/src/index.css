@@ -67,3 +67,8 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
+
+/* bloquear seleção de texto para os itens com esta classe */
+.block-select {
+  user-select: none;
+}

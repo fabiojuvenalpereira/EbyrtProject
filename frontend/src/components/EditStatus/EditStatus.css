@@ -145,7 +145,7 @@
 
 @keyframes buttons {
   0% {
-    transform: scaleX(0);
+    transform: scaleX(1);
   }
 
   100% {

@@ -90,21 +90,21 @@ function FilterList() {
       <div className='order-section'>
         <div className="order-section-buttons">
           <div
-            className="alfabetic-button"
+            className="alfabetic-button block-select"
             id="alfabetic"
             onClick={(event) => changeOrderList(event)}
           >
             tarefa
           </div>
           <div
-            className="date-button"
+            className="date-button block-select"
             id="date"
             onClick={(event) => changeOrderList(event)}
           >
             data
           </div>
           <div
-            className="status-button"
+            className="status-button block-select"
             id="status"
             onClick={(event) => changeOrderList(event)}
           >

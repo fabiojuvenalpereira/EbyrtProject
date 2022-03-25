@@ -78,13 +78,13 @@ function ToDoList() {
           <div className="right-content-text">
             <div
               id="status"
-              className={`task-status-button  ${task.statusTask}`}
+              className={`task-status-button  ${task.statusTask} block-select`}
               onClick={(button) => handleClick(button, task)}
             >
               {statusConversion(task.statusTask)}
             </div>
             <div
-              className="task-delete-button"
+              className="task-delete-button block-select"
               onClick={() => deleteTask(task)}
             >
               Deletar

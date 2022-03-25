@@ -24,13 +24,13 @@ function TaskList() {
         <CreateTask />
       </div>
         <FilterList />
-      <div className="task-list-box">
+      <main className="task-list-box">
         <div className="floating-box">
         { status ? (<EditStatus />) : ('')}
         { editTask ? (<EditTask />) : ('') }
         </div>
         <ToDoList />
-      </div>
+      </main>
       <div className="footer-content">
         <Footer />
       </div>

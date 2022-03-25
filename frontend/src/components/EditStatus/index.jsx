@@ -59,17 +59,17 @@ function EditStatus() {
 
   return (
     <div className={`box-edit-status ${close}`}>
-      <div className="header-edit-box">
+      <div className="header-edit-box block-select">
         <button
           type="button"
-          className="close-button-status"
+          className="close-button-status block-select"
           onClick={closeWindow}
         >
           X
         </button>
         <div className="title-edit-status">ALTERE O STATUS:</div>
       </div>
-      <div className="buttons-edit-status">
+      <div className="buttons-edit-status block-select">
         <button
           type="button"
           value="pending"
