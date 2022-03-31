@@ -33,9 +33,9 @@ Copie o ssh do projeto `git@github.com:fabiojuvenalpereira/EbytrProject.git`
 Desenho simplificado de como os dados são armazenados no banco de dados.
 ![exemplo de armazenamento de dados](https://thumbs2.imgbox.com/34/65/NYJLq8at_t.png)
 
-A API consta com 4 requisições: 
-  * `/` [`POST`] Cria uma nova tarefa e adiciona no banco
-  * `/` [`GET`] Busca toda tarefa que esta no banco
-  * `/` [`PUT`]  Edita dados de uma tarefa já cadastrada no banco
-  * `/:id` [`DELETE`] Deleta uma tarefa cadastrada no banco
+Requisições básicas da API:
+  * `/` `POST` Cria uma nova tarefa e adiciona no banco
+  * `/` `GET` Busca toda tarefa que esta no banco
+  * `/` `PUT`  Edita dados de uma tarefa já cadastrada no banco
+  * `/:id` `DELETE` Deleta uma tarefa cadastrada no banco
 
