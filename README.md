@@ -28,7 +28,7 @@
 	   * [Imagens](#imagens)
 * [Softwares Utilizados](#softwares-e-ferramentas-utilizadas)
  * [Como Instalar](#como-instalar)
-* [Sobre Mim](#)
+* [Sobre Mim](#sobre-mim)
 <!--te-->
 	
 
@@ -120,7 +120,7 @@ B --> A
 - [Fórum Stack Overflow](https://stackoverflow.com/) 
 - [w3schools](https://www.w3schools.com/jsref/default.asp)
 
-##
+## Sobre Mim
 <div align="center">
 	<a href="https://www.linkedin.com/in/fabiojuvenalpereira/">Linkedin</a>
 	<a href="https://github.com/fabiojuvenalpereira">GitHub</a>
