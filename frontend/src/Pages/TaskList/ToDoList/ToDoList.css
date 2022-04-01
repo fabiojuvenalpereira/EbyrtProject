@@ -12,6 +12,12 @@
   flex-direction: column;
 }
 
+.status-change {
+  height: 100%;
+  width: 1vw;
+  border-radius: 10px 0 0 10px;
+}
+
 .task-content-text {
   color: var(--text-color-2);
   cursor: pointer;
@@ -45,6 +51,8 @@
 
 .task-status-button {
   align-items: center;
+  background: none;
+  color: var(--text-color);
   cursor: pointer;
   display: flex;
   font-weight: 800;
@@ -53,7 +61,7 @@
 
 .task-delete-button {
   align-items: center;
-  background: linear-gradient(195deg, #e82222 30%, #d35148 80%, #d34d4d 98%);
+  background: none;
   color: var(--text-color);
   cursor: pointer;
   display: flex;
@@ -191,9 +199,9 @@
 @media screen and (min-width: 1000px) {
   .task-content-card {
     border-radius: 8px;
-    height: 10vw;
+    height: 8vw;
     margin-top: 1em;
-    width: 60vw;
+    width: 50vw;
   }
 
   .left-side-content-card {
@@ -226,25 +234,22 @@
   }
 
   .task-status-button {
-    box-shadow: 0 0 10px 5px var(--box-shadow-color);
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 1.5vh;
     flex-wrap: nowrap;
     height: 60%;
     margin-right: 2vw;
     transition: 0.2s;
-    width: 10vw;
+    width: 7vw;
   }
 
   .task-status-button:hover {
-    box-shadow: 0 0 5px var(--box-shadow-color);
-    transform: scale(0.97);
+    color: deepskyblue;
     transition: 0.2s;
   }
 
   .task-delete-button {
-    border-radius: 8px;
-    box-shadow: 0 0 10px 5px var(--box-shadow-color);
+    border-radius: 5px;
     font-size: 1.5vh;
     height: 60%;
     margin-right: 2vw;
@@ -253,8 +258,7 @@
   }
 
   .task-delete-button:hover {
-    box-shadow: 0 0 5px var(--box-shadow-color);
-    transform: scale(0.97);
+    color: crimson;
     transition: 0.2s;
   }
 }

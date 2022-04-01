@@ -66,6 +66,7 @@ function ToDoList() {
       {loading ? <Loading /> : tasks.map((task) => (
         // eslint-disable-next-line no-underscore-dangle
         <div key={task._id} className="task-content-card">
+          <div className={`status-change ${task.statusTask} `} />
           <div className="left-side-content-card">
             <div
               aria-hidden="true"
@@ -83,7 +84,7 @@ function ToDoList() {
             <div
               aria-hidden="true"
               id="status"
-              className={`task-status-button  ${task.statusTask} `}
+              className="task-status-button"
               onClick={(button) => handleClick(button, task)}
             >
               {statusConversion(task.statusTask)}

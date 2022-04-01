@@ -59,6 +59,7 @@
 
   .create-task-input input[type="text"] {
     background-color: var(--input-color);
+    color: var(--input-text-color);
     text-indent: 1.5em;
     width: 60vw;
   }
@@ -111,7 +112,7 @@
 
 @media screen and (min-width: 1000px) {
   .main-content-input-task {
-    margin-left: 20vw;
+    margin-left: 25vw;
   }
 
   .main-content-form {
@@ -123,7 +124,7 @@
     color: var(--input-text-color);
     text-indent: 1.5em;
     transition: 0.2s;
-    width: 30vw;
+    width: 25vw;
   }
 
   .create-button {
