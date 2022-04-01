@@ -1,4 +1,4 @@
-import generateDate from '../utils/generateDate';
+import generateDate from './generateDate';
 
 const generateObjectToSend = async (userName, taskContent, statusTask) => {
   const data = {
@@ -8,7 +8,7 @@ const generateObjectToSend = async (userName, taskContent, statusTask) => {
     statusTask,
   };
 
-  return data
-}
+  return data;
+};
 
-export default generateObjectToSend
+export default generateObjectToSend;

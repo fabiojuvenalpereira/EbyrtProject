@@ -1,16 +1,15 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import './TaskList.css';
 
 import CreateTask from './CreateTask';
-import ToDoList from './ToDoList'
+import ToDoList from './ToDoList';
 import Header from '../../components/Header';
 import EditStatus from '../../components/EditStatus';
 import Footer from '../../components/Footer';
-import FilterList from '../../components/FilterList/';
+import FilterList from '../../components/FilterList';
 import EditTask from '../../components/EditTask';
-
 
 function TaskList() {
   const status = useSelector((state) => state.tasksState.status);
@@ -19,23 +18,23 @@ function TaskList() {
 
   return (
     <div className={`main-task-list-page ${themeMode}`}>
-        <Header />
+      <Header />
       <div className="create-and-classify">
         <CreateTask />
       </div>
-        <FilterList />
-      <div className="task-list-box">
+      <FilterList />
+      <main className="task-list-box">
         <div className="floating-box">
-        { status ? (<EditStatus />) : ('')}
-        { editTask ? (<EditTask />) : ('') }
+          { status ? (<EditStatus />) : ('')}
+          { editTask ? (<EditTask />) : ('') }
         </div>
         <ToDoList />
-      </div>
+      </main>
       <div className="footer-content">
         <Footer />
       </div>
     </div>
-  )
+  );
 }
 
 export default TaskList;

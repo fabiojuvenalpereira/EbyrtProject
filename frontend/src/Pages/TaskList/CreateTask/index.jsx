@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { useEffect } from 'react';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { makePostToServer } from '../../../api/index';
@@ -23,6 +21,23 @@ function CreateTask() {
   const [userName, setUserName] = useState('');
   const initialStatus = 'pending';
 
+  const handleClick = async () => {
+    const objectGenerated = await generateObjectToSend(
+      userName,
+      inputText,
+      initialStatus,
+    );
+
+    await makePostToServer(objectGenerated);
+
+    setInputText('');
+    dispatch(setRefresh(!refresh));
+  };
+
+  const mobileMenu = () => {
+    dispatch(setMenu('opening-menu'));
+  };
+
   useEffect(() => {
     const getUserFromLocalStorage = JSON.parse(localStorage.getItem('user'));
     setUserName(user !== null ? user : getUserFromLocalStorage);
@@ -32,24 +47,8 @@ function CreateTask() {
     setInputText(target.value);
   };
 
-  const handleClick = async () => {
-    const objectGenerated = await generateObjectToSend(
-      userName,
-      inputText,
-      initialStatus
-    );
-
-    await makePostToServer(objectGenerated);
-
-    dispatch(setRefresh(!refresh));
-  };
-
-  const mobileMenu = () => {
-    dispatch(setMenu('opening-menu'));
-  }
-
   return (
-    <div className={`main-content-input-task ${themeMode}` }>
+    <div className={`main-content-input-task ${themeMode}`}>
       <div className="main-content-form">
         <div className="create-task-input">
           <input
@@ -65,7 +64,7 @@ function CreateTask() {
             onClick={handleClick}
           >
             <img
-              className='add-icon'
+              className="add-icon"
               src={addIcon}
               alt="add task icon"
             />
@@ -74,7 +73,7 @@ function CreateTask() {
             type="button"
             className="mobile-menu"
             onClick={mobileMenu}
-            >
+          >
             ordenar
           </button>
         </div>

@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './UserNameInput.css';
 
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../App/slices/tasks/tasksSlice';
@@ -24,12 +23,15 @@ function InputName() {
   };
 
   const handleClick = () => {
-    saveUser();
+    const lastCaracter = userNameInput[userNameInput.length - 1];
+    if (userNameInput.length >= 5 && lastCaracter !== ' ') {
+      saveUser();
+    }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    saveUser();
+    handleClick();
   };
 
   return (
@@ -52,7 +54,7 @@ function InputName() {
 
         </div>
 
-        <div className="enter-button" onClick={handleClick}>
+        <div aria-hidden="true" className="enter-button" onClick={handleClick}>
           entrar
         </div>
 

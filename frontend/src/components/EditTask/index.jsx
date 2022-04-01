@@ -24,7 +24,7 @@ function EditTask() {
     const prepareTaskToUpdate = await generateObjectToSend(
       userName,
       userTextInput,
-      statusTask
+      statusTask,
     );
 
     const taskWithId = { ...prepareTaskToUpdate, _id };
@@ -41,14 +41,14 @@ function EditTask() {
 
   return (
     <div className="main-edit-task">
-      <div className="header-edit">
+      <div className="header-edit block-select">
         <button type="button" className="close-button" onClick={closeWindow}>
           X
         </button>
-        <div className="title">Edite Sua Tarefa</div>
+        <div className="title block-select">Edite Sua Tarefa</div>
       </div>
 
-      <div className="input-button-box">
+      <div className="input-button-box block-select block-select">
         <input
           className="edit-task-input"
           type="text"

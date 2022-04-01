@@ -1,2 +1,4 @@
+frontend/src/App.js
+frontend/src/index.js
 node_modules
 tests
