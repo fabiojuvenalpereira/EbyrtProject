@@ -119,7 +119,7 @@ Em seguida, realizar o comando para baixar e instalar as dependências.
 	npm install
 ##
 
-### Depois de ter instalado as dependencias em ambos os módulos, para executarmos de fato o projeto em localhost,
+### Depois de instaladas as dependências em ambos os módulos, para executarmos de fato o projeto em localhost,
 precisaremos de usar dois terminais, um para o front end e outro para o back end. 
 
 Caso esteja utilizando o vscode, é só clicar no menu superior `Terminal`, `Novo Terminal`.
