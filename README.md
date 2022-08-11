@@ -63,8 +63,13 @@
 *  A tarefa deve possuir um status editável: pendente, em andamento ou pronto;
  
 ### DESENVOLVIMENTO
-
 #### COMO FOI FEITO
+ Iniciei o desenvolvimento desenhando como seria o funcionamento inicial da aplicação. Levando em consideração a forma de persistência dos dados para cada usuário, tendo em vista que não haverá login. Então, elaborei uma forma de armazenar os dados em um banco de dados não relacional, utilizando como base o nome do usuário para armazenar suas tarefas, existem vários motivos, porém, todos reverséiveis e de várias formas. Como por exemplo, realizar o controle de cadastro de usuário, não deixando criar novos usuários como o mesmo nome, para que não haja conflitos de usuários.
+ 
+Tendo toda a ideia base em mente, os próximos passos foram iniciar o desenvolvimento das aplicações em si, iniciei pelo Back end, que seria o que daria vida para a aplicação. Para desenvolver o Back End resolvi usar uma tríade muito conhecida ( Node.js,Express, MongoDb).
+
+Em seguida parti para o Front End, resolvi desenvolver uma aplicação que consumiria a API criada no Back utilizando React.js com Redux. Tentei implementar um sistema responsivo, que funciona em vários tamanhos de tela, como por exemplo, tela de computador, tablet e celular. Utilizei um conceito de interface simples, tendo a possibilidade de utlização de tema claro e tema escuro, conforme a preferência do usuário.
+
 
 #### IMAGENS
 
