@@ -83,16 +83,70 @@
 
 ## COMO INSTALAR
 
-Para conseguir instalar e fazer com que o código rode no seu computador, você vai precisar seguir alguns
+Para conseguir instalar e fazer com que o código execute em seu computador, você vai precisar seguir alguns
 requisitos.
 
 Primeiro você precisará de ter os softwares utilizados para criar instalados em sua máquina, mas não se preocupe você poderá encontrá-los na seção de softwares e ferramentas utilizadas, que é esta [aqui](#softwares-e-ferramentas-utilizadas). As versões dos softwares que utilizei, estão logo ao final da síntese, contidas entre colchetes assim como neste exemplo: **[1.64.2]**.
 
-Tendo os softwares instalados em sua  máquina você precisará realizar os seguintes passos
+Tendo os softwares instalados em sua  máquina você precisará realizar os seguintes passos:
+##	
+### Você precisará de clonar o repositório em sua máquina, para isso utilize o seguinte comando:
 ####
 	git clone git@github.com:fabiojuvenalpereira/EbytrProject.git
+	
+### Depois você precisará entrar na pasta que será criada em seu computador, utilizando o seguinte comando:
+####
+	cd EbyrtProject
+##
+### Agora, precisaremos instalar as dependências necessárias nos módulos do projeto:
 
+### Primeiro, vamos instalar as dependências necessárias do módulo de front end:
+Para isso vamos entrar na pasta chamada frontend, utilizando o seguinte comando:
+	
+	cd frontend
 
+Logo depois, precisaremos realizar o comando para baixar e instalar as dependências para o projeto.
+
+	npm install
+##
+### Depois de instaladas as dependências do módulo de front, vamos instalar as dependências do módulo de backend.
+Para isso, precisaremos de voltar para a pasta principal da aplicação, logo em seguida entrar na pasta do módulo de backend.
+	
+	cd ../backend
+
+Em seguida, realizar o comando para baixar e instalar as dependências.
+	
+	npm install
+##
+
+### Depois de ter instalado as dependencias em ambos os módulos, para executarmos de fato o projeto em localhost,
+precisaremos de usar dois terminais, um para o front end e outro para o back end. 
+
+Caso esteja utilizando o vscode, é só clicar no menu superior `Terminal`, `Novo Terminal`.
+Certifique-se que você esteja na pasta raiz do projeto, ou seja, na pasta EbyrtProject.
+
+Em um terminal execute o comando.
+
+	cd backend
+
+Logo em seguida, execute o comando.
+
+	npm run dev
+*Certifique se que o MongoDb esteja rodando localmente 
+Se tudo aconteceu conforme o esperado, no terminal deve aparecer uma mensagem dizendo que a aplicação foi iniciada na porta `localhost:3001`.
+	
+Em um terminal execute o comando.
+
+	cd frontend
+	
+Logo em seguida, execute o comando.
+	
+	npm start
+
+Se tudo estiver ocorrido conforme o esperado, no terminal deve aparecer uma mensagem dizendo que a aplicação foi iniciada na porta `localhost:3000` e você será redirecionado para seu navegador. Visualizando a tela principal da aplicação. Caso isso não aconteça, você poderá tentar digitar em seu navegador o seguinte link:
+
+	http://localhost:3000/
+	
 
 ## COMO FUNCIONA
 #####  Desenho simbólico do armazenamento de dados realizado no banco de dados:
