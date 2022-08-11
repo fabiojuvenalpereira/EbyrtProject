@@ -1,7 +1,7 @@
 # EbytrProject FrontEnd
-###  Olha só, você está agora do diretório de frontend do projeto EbytrProject.
+###  Veja que legal, você está agora do diretório de frontend do projeto EbytrProject.
 
-#### Aqui é onde está  toda a parte visual do projeto. Geralmente é a parte que os usuários finais se encantam, aqui você vai encontrar uma aplicação realizada com React Redux, muito carinho e um pouquinho de café...
+#### Aqui é onde está  toda a parte visual do projeto. Geralmente é a parte que os usuários finais se encantam, aqui você vai encontrar uma aplicação realizada com React/Redux, muito carinho e um pouquinho de café...
 
 ##
 
